@@ -1,212 +1,184 @@
 @import "theme_variables";
-@import "banner";
 
-.b-header {
-  width: 100%;
-  background-color: $tertiary;
-  height: 48px;
-  margin-bottom: 0;
+/*-------------------------------------------------
+   VARIABLES: choose the colors of your banner
+-------------------------------------------------*/
 
-  .contents {
-    margin: 8px 0;
-  }
+$main-color: #5270FE;
+$background-color: #BFD7FF;
 
-  .title {
-    float: left;
-    margin-right: 24px;
-    a {
-      color: $secondary;
+/*---------------------------------------
+   SECTION:  BOXES
+-----------------------------------------*/
+
+.section-header {
+    padding-bottom: 20px;
+    h2 {
+        margin-bottom: 20px;
     }
-    &:visited {
-      color: $secondary;
-    }
-  }
+}
 
-  #brand-logo {
-    max-height: 32px;
-  }
+.banner-box {
+    margin-bottom: 18px;
+    background-image: url($header);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: $background-color; /* to be sure that even if the image above will not be loaded there will be at least a colored background */
+}
 
-  #brand-text-logo {
-    line-height: 32px;
-    margin: 0;
-  }
-
-  nav.links {
-    float: left;
-  }
-
-  .nav-pills {
-    margin-bottom: 0;
-    > li > a {
-      color: $secondary;
-      line-height: 22px;
-      &:hover {
-        color: $quaternary;
-        background-color: dark-light-diff($quaternary, $tertiary, -70%, 70%);
-      }
-      &.active > a, > a.active {
-        color: $secondary;
-        background-color: $quaternary;
-      }
-    }
-  }
-
-  .panel {
-    float: right;
-    position: relative;
-  }
-
-  .menu-panel {
-    position: absolute;
-    top: 100%;
-    right: -10px;
-    z-index: 1001;
-  }
-
-  ul.icons {
+.x-title {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
     text-align: center;
-    margin: 0 0 0 5px;
-    > li {
-      float: left;
-      list-style: none;
-    }
-    [class^="fa fa-"] {
-      width: 28px;
-      height: 28px;
-      font-size: 16px;
-      line-height: 28px;
-      display: inline-block;
-      margin: 2px;
-    }
-  }
-
-  .panel > ul.icons {
-    float: right;
-    [class^="fa fa-"] {
-      color: $secondary;
-    }
-  }
+    color: $main-color;
 }
 
-.d-header {
-    margin-top: 48px;
-}
-
-.docked .d-header {
-    margin-top: 0;
-}
-
-.b-banner {
-  display: none;
-  padding-top: 111px;
-  margin-bottom: -111px;
-  position: relative;
-  overflow: hidden;
-  font-size: 16px;
-  line-height: 150%;
-  h1 {
-    margin: 30px 0 20px 0;
-  }
-  .description {
-    margin:0 20%;
-  }
-  &.default {
-    text-align: center;
-    background-color: $tertiary;
-    color: scale-color($tertiary, $lightness: 95%);
-    img.banner-image {
-      width: 100%;
-      max-width: 100%;
-    }
-    .overlay {
-      background-color: scale-color($quaternary, $lightness: -85%);
-      color: scale-color($quaternary, $lightness: 95%);
-      text-shadow: 1px 1px scale-color($quaternary, $lightness: -100%);
-      position: absolute;
-      top: 111px;
-      width: 100%;
-      height: 100%;
-      padding: 30px 0;
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s, opacity 0.2s linear;
-      h1 {
-        color: $quaternary;
-      }
-    }
-    &:hover .overlay {
-      visibility: visible;
-      opacity: 0.85;
-    }
-  }
-  &.smart {
-    background-color: dark-light-diff($quaternary, $secondary, 70%, -70%);
-    .banner-image {
-      border: 32px solid  scale-color($quaternary, $lightness: 60%);
-      border-radius: 250px;
-      float: left;
-      margin:15px 30px 10px 10px;
-      position: relative;
-      height: 215px;
-      width: 215px;
-      overflow: hidden;
-    }
-    h1 {
-      color: $quaternary;
-      margin-top: 50px;
-    }
-    .banner-links {
-      float: right;
-      width: 30%;
-      margin-left: 30px;
-      font-size: 14px;
-      line-height: 100%;
-      ul {
-        margin: 0 0 0 10px;
-        li {
-          margin: 10px 0;
-        }
-      }
-    }
-  }
-}
-.navigation-topics .b-banner, .navigation-categories .b-banner {
-  display: block;
-}
-
-@media only screen and (max-width: 1000px) {
-  .b-banner {
-    font-size: 14px;
-    line-height: 125%;
-  }
-  .b-banner.smart .banner-image {
-    display: none;
-  }
-  .b-banner.smart .banner-image, .b-banner.smart .banner-text {
+.description p {
     margin-bottom: 10px;
-  }
-  .b-banner .description {
-    margin: 0;
-  }
-  .b-banner.smart .banner-links {
-    width: 35%;
-  }
-  .banner-links > div > p:first-child {
-    margin-top: 0;
-  }
-  .b-banner h1 {
-    margin: 0;
-    font-size: 1.4em;
-  }
-  .b-banner.smart h1 {
-    margin: 20px 0;
-  }
-  .b-banner.default .overlay {
-    padding: 10px 0;
-  }
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
 }
-@media only screen and (max-width: 480px) {
-  .b-banner {
-    display: none !important;
-  }
+
+.banner-box .single-box {
+    padding-bottom: 20px;
+    .x-icon {
+        font-size: 70px;
+    }
+}
+
+
+//COLUMNS MANAGEMENT
+
+.col3 {
+    width: 30%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col2 {
+    width: 45%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col4 {
+    width: 22.5%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container::after, .row::after {
+    clear: both;
+}
+
+.col2, .col3, .col4 {
+    text-align: center;
+}
+
+.row::after {
+    content: " ";
+    display: table;
+}
+
+//ICON AND BOX HEADING COLOR
+
+.banner-box .single-box .x-icon, .single-box h3 {
+    color: $main-color;
+}
+
+//BOX HEADING POSITIONING
+
+.banner-box .single-box h3 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+//COLORED LINE
+
+.colored-line {
+    margin: auto;
+    width: 165px;
+    height: 1px;
+    background: $main-color;
+}
+
+//SINGLE BOX, TEXT ALIGNMENT
+
+.box p {
+    text-align: center;
+}
+
+//TEXT ALIGNMENT INSIDE BUTTONS
+
+#my-button {
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+//IMAGE SIZE AS ICON SIZE
+
+.responsive-img {
+    border-style: none;
+    border-width: 1px;
+    height: 70px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+//LIST ALIGNMENT
+
+.feature-list {
+    text-align: center;
+    list-style-type: none;
+}
+
+
+//BUTTON BACKGROUND
+
+.col2, .col3, .col4 {
+    .btn.btn-icon-text.ember-view {
+        background: $main-color;
+    }
+}
+
+//CLOSE BUTTON ON THE TOP RIGHT
+
+.banner-box .close {
+    border: none;
+    background: transparent;
+    padding-top: 5px;
+    float: right;
+}
+
+//MAKE IT A FULL WIDTH BANNER
+
+.banner-box .container {
+    max-width: 70%;
+    margin: 0 auto;
+}
+.banner-box {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+
+}
+#main-outlet {
+    padding-top: 64px; /*this value must be changed if the height of the header has been changed*/
+}
+.navigation-container,
+.alert.alert-info {
+    margin-top: 18px;
+    margin-bottom: 0px;
 }

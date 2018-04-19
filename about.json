@@ -3,6 +3,7 @@
   "about_url": "URL",
   "license_url": "URL",
   "assets": {
+    "header" : "assets/header.jpg"
   },
   "color_schemes": {
     "financialpeace": {
@@ -16,6 +17,6 @@
       "danger": "a62b24",
       "success": "35bd59",
       "love": "e64b40"
-    }    
+    }
   }
 }
