@@ -26,12 +26,42 @@ $background-color: #BFD7FF;
 
 .banner-box {
     margin-bottom: 18px;
-    background-image: url($header);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: $background-color; /* to be sure that even if the image above will not be loaded there will be at least a colored background */
+/* to be sure that even if the image above will not be loaded there will be at least a colored background */
 }
+.banner-box::after {
+  content: "";
+  background-image: url($header);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: $background-color;   
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+// div {
+//   width: 200px;
+//   height: 200px;
+//   display: block;
+//   position: relative;
+// }
+//
+// div::after {
+//   content: "";
+//   background: url(image.jpg);
+//   opacity: 0.5;
+//   top: 0;
+//   left: 0;
+//   bottom: 0;
+//   right: 0;
+//   position: absolute;
+//   z-index: -1;
+// }
 
 .x-title {
     padding-left: 15px;
