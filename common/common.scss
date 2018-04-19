@@ -4,30 +4,17 @@ html {
   font-family: 'canada-type-gibson', 'open sans', sans-serif !important;
 }
 
-
-
-/*-------------------------------------------------
-   VARIABLES: choose the colors of your banner
--------------------------------------------------*/
-
-$main-color: #5270FE;
-$background-color: #BFD7FF;
-
-/*---------------------------------------
-   SECTION:  BOXES
------------------------------------------*/
-
 .section-header {
-    padding-bottom: 20px;
-    h2 {
-        margin-bottom: 20px;
-    }
+  padding-bottom: 20px;
+  h1 {
+    margin-bottom: 20px;
+  }
 }
 
 .banner-box {
-    margin-bottom: 18px;
-/* to be sure that even if the image above will not be loaded there will be at least a colored background */
+  margin-bottom: 18px;
 }
+
 .banner-box::after {
   content: "";
   background-image: url($header);

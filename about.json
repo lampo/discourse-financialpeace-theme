@@ -3,7 +3,8 @@
   "about_url": "URL",
   "license_url": "URL",
   "assets": {
-    "header" : "assets/header.jpg"
+    "header" : "assets/header.jpg",
+    "gds" : "assets/gds-main.css"
   },
   "color_schemes": {
     "financialpeace": {
