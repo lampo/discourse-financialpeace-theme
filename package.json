@@ -10,8 +10,8 @@
   "scripts": {
     "build": "yarn clean && yarn build:scss",
     "build:scss": "yarn build:scss-common",
-    "build:scss-common": "scss-bundle --includePaths ./node_modules -e ./src/sass/common.scss -d ./dist/common/common.scss",
-    "clean": "rimraf ./dist/common/common.scss",
+    "build:scss-common": "scss-bundle --includePaths ./node_modules -e ./src/sass/common.scss -d ./common/common.scss",
+    "clean": "rimraf ./common/common.scss",
     "lint": "yarn scss-lint",
     "scss-lint": "scss-lint --config node_modules/ramsey-boilerplate/config/.scss-lint.yml sass"
   },
