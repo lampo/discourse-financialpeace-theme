@@ -1,0 +1,11 @@
+.Hero {
+  &--welcome {
+    margin-top: 2rem;
+  }
+}
+.gds-Hero-container {
+  max-width: 500px;
+  @include gds-respond-to(legacy-desk) {
+    @include gds-rhythm-padding(6 4);
+  }
+}
