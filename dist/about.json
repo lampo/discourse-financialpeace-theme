@@ -1,0 +1,26 @@
+{
+  "name": "financialpeace",
+  "about_url": "https://www.financialpeace.com",
+  "license_url": "https://www.daveramsey.com",
+  "assets": {
+    "logo": "assets/financial_peace_logo.png",
+    "headline_swash": "assets/headline_swash_2x.png",
+    "new_here_background": "assets/new_here_background.png",
+    "questions_background": "assets/questions_background.png",
+    "welcome_header": "assets/welcome_header.png"
+  },
+  "color_schemes": {
+    "financialpeace": {
+      "primary": "1f2426",
+      "secondary": "000000",
+      "tertiary": "0073b9",
+      "quaternary": "e64b40",
+      "header_background": "ffffff",
+      "header_primary": "1f2426",
+      "highlight": "ffec22",
+      "danger": "a62b24",
+      "success": "35bd59",
+      "love": "e64b40"
+    }
+  }
+}

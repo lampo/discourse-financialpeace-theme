@@ -1,0 +1,38 @@
+@import url("https://use.typekit.net/ndh0ilz.css");
+@import "gazelle-design-system/sass/tools";
+@import "variables"; // Override variables
+@import "gazelle-design-system/sass/base";
+@import "gazelle-design-system/sass/utilities";
+@import "gazelle-design-system/sass/components/button";
+@import "gazelle-design-system/sass/components/hero";
+@import "fonts/wilderness";
+@import "mixins";
+
+html {
+  background-color: $gds-color-background-default;
+  scroll-behavior: smooth;
+  @include gds-typeset(xs);
+}
+
+body {
+  font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+  font-family: "canada-type-gibson", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 600;
+}
+
+h1 {
+  @include gds-typeset(xl, true);
+  font-weight: $gds-font-weight-semibold
+}
+
+h3 {
+  font-family: "proxima-nova", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  @include gds-typeset(m, true);
+}

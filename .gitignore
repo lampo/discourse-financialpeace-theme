@@ -1,2 +1,17 @@
+# ignore cached dependency files
+node_modules/
+
+# ignore documentation source files
+sassdoc/
+
+# ignore built assets
+assets/
+design-tokens/dist/*
+coverage/
+
+# ignore files
+.DS_Store
 .discourse-site
-HELP
+*.log
+*.tgz
+*.tar.gz
