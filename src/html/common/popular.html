@@ -1,0 +1,48 @@
+<script id="popular-item-template" type="text/x-handlebars-template">
+  {{#each this}}
+    <div class="popular-item">
+      <a href="{{link}}" class="popular-link">
+        <div class="popular-icon"><img src="{{icon}}" /></div>
+        <div class="popular-description">{{title}}</div>
+      </a>
+    </div>
+  {{/each}}
+</script>
+
+<script>
+  $(function() {
+    var source = $("#popular-item-template").html();
+    var template = Handlebars.compile(source);
+    var popular = [{ title: "Budget",
+                      link: "#",
+                      icon: "image.png"
+                    },
+                    {
+                      title: "Beat Debt",
+                      link: "#",
+                      icon: "image.png"
+                    },
+                    {
+                      title: "Savings",
+                      link: "#",
+                      icon: "image.png"
+                    },
+                    {
+                      title: "Retirement",
+                      link: "#",
+                      icon: "image.png"
+                    },
+                    {
+                      title: "Celebrations & Milestones",
+                      link: "#",
+                      icon: "image.png"
+                    },
+                    {
+                      title: "Start New",
+                      link: "#",
+                      icon: "image.png"
+                    }]
+    var html = template(popular);
+    $('#popular-items-results').html(html);
+  });
+</script>

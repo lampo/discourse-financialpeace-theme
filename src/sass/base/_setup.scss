@@ -5,6 +5,8 @@
 @import "gazelle-design-system/sass/utilities";
 @import "gazelle-design-system/sass/components/button";
 @import "gazelle-design-system/sass/components/hero";
+@import "gazelle-design-system/sass/components/card_group";
+@import "gazelle-design-system/sass/components/card";
 @import "fonts/wilderness";
 @import "mixins";
 
@@ -15,7 +17,7 @@ html {
 }
 
 body {
-  font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $gds-font-family;
 }
 
 h1,
@@ -23,16 +25,31 @@ h2,
 h4,
 h5,
 h6 {
-  font-family: "canada-type-gibson", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: 600;
+  font-family: $gds-font-family-bold;
+  font-weight: $gds-font-weight-semibold;
 }
 
 h1 {
-  @include gds-typeset(xl, true);
-  font-weight: $gds-font-weight-semibold
+  @include gds-typeset(xl);
 }
 
 h3 {
-  font-family: "proxima-nova", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   @include gds-typeset(m, true);
+}
+
+.d-header {
+  position: fixed;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}
+.call-out {
+  font-family: Wilderness;
+  font-size: 96px;
+  font-weight: 400;
 }

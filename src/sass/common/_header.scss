@@ -1,6 +1,21 @@
+.homepage-wrapper,
+.homepage-footer {
+  display: none;
+
+}
+.navigation-topics .homepage-wrapper,
+.navigation-topics .homepage-footer {
+  display: block;
+}
+.homepage-wrapper {
+  margin-top: 6rem;
+}
+
 .Hero {
   &--welcome {
     margin-top: 2rem;
+    min-width: 320px;
+    position: relative;
   }
 }
 .gds-Hero-container {
@@ -8,4 +23,24 @@
   @include gds-respond-to(legacy-desk) {
     @include gds-rhythm-padding(6 4);
   }
+}
+
+.triangle-topleft {
+  border-right: 150px solid transparent;
+  border-top: 80px solid $gds-color-amber-50;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+.triangle-bottomright {
+  border-bottom: 80px solid $gds-color-amber-50;
+  border-left: 150px solid transparent;
+  bottom: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  width: 0;
 }
