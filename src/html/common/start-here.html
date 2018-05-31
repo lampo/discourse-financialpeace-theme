@@ -1,0 +1,41 @@
+<script>
+  $(function() {
+    var source = $("#start-here-template").html();
+    var template = Handlebars.compile(source);
+    var data = $.get("/search.json?expanded=true&q=after:2018-05-16%20status:noreplies", customDataSuccess);
+    var html = template(data);
+    $('#DocumentResults').html(html);
+  });
+</script>
+
+<script id="start-here-template" type="text/x-handlebars-template">
+  {{#each this}}
+    <tr class="topic-list-item category-uncategorized {{has-excerpt}} {{pinned}} ember-view">
+      <td class="main-link clearfix" colspan="2">
+        <span class="link-top-line">
+          <div class="topic-statuses">
+            <a href="{{link}}" title="{{title}}" class="topic-status">
+              <i class="fa fa-thumb-tack d-icon d-icon-thumb-tack"></i>
+            </a>
+          </div>
+          <a href="{{link}}" class="title raw-link raw-topic-link"{{title}}></a>
+          <span class="topic-post-badges">  </span>
+        </span>
+        <div class="topic-excerpt">
+          {{topic-excerpt}}
+          <a href="{{link}}">read more</a>
+        </div>
+      </td>
+      <td class="posters">
+        <a href="/u/system" data-user-card="system" class="latest single">
+          <img alt="" width="25" height="25" src="{{poster}}" class="avatar latest single" title="{{poster}}">
+        </a>
+      </td>
+      <td class="num age activity" title="First post: {{date}}">
+        <a class="post-activity" href="/t/welcome-to-discourse/8/1">
+          <span class="relative-date" data-time="1525986587392" data-format="tiny">12d</span>
+        </a>
+      </td>
+    </tr>
+  {{/each}}
+</script>

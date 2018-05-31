@@ -2313,6 +2313,7 @@ $gds-line-height-m: 1.875rem;
 $gds-line-height-l: 2.5rem;
 $gds-line-height-xl: 4rem;
 $gds-line-height-base: 1.25rem;
+$gds-font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
  // Override variables
 html,
 body {
@@ -2850,6 +2851,135 @@ a {
   }
 }
 
+.gds-CardGroup {
+  background-color: $gds-color-gray-10;
+  padding: gds-rhythm(2);
+
+  &-title {
+    @include scut-center-block($gds-site-width);
+    margin-bottom: gds-rhythm();
+  }
+
+  &-list {
+    @include scut-center-block($gds-site-width);
+    @include scut-list-unstyled;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include gds-respond-to(palm-only) {
+      max-width: scut-em(400);
+    }
+
+    @include gds-respond-to(lap-and-up) {
+      @include scut-clearfix;
+    }
+  }
+
+  &-item {
+    margin-top: gds-rhythm(2);
+
+    @include gds-respond-to(lap-and-up) {
+      float: left;
+      margin-left: 4%;
+      width: 48%;
+
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+
+      &:nth-child(odd) {
+        margin-left: 0;
+      }
+    }
+
+    @media only screen and (min-width: scut-em(880)) {
+      margin-left: 2%;
+      width: 32%;
+
+      &:nth-child(3) {
+        margin-top: 0;
+      }
+
+      &:nth-child(odd) {
+        margin-left: 2%;
+      }
+
+      &:nth-child(3n+1) {
+        margin-left: 0;
+      }
+    }
+
+    @media only screen and (min-width: scut-em(1000)) {
+      margin-left: 1.33333%;
+      width: 24%;
+
+      &:nth-child(4) {
+        margin-top: 0;
+      }
+
+      &:nth-child(odd) {
+        margin-left: 1.33333%;
+      }
+
+      &:nth-child(3n+1) {
+        margin-left: 1.33333%;
+      }
+
+      &:nth-child(4n+1) {
+        margin-left: 0;
+      }
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.gds-Card {
+  background-color: $gds-color-white;
+
+  @include gds-respond-to(lap-and-up) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-body {
+    @include gds-rhythm-padding(2 1);
+    max-width: $gds-line-length-limit;
+  }
+
+  &-imageLink {
+    display: block;
+    flex-shrink: 0;
+  }
+
+  &-image {
+    @include scut-center-block;
+    display: block;
+  }
+
+  &-title {
+    margin-bottom: gds-rhythm();
+  }
+
+  &-text {
+    max-width: $gds-line-length-limit;
+  }
+
+  &-footer {
+    @include gds-rhythm-padding(n 1);
+    margin-top: auto;
+    border-top: 1px solid $gds-color-gray-30;
+    text-align: center;
+  }
+
+  &-transitionalCta {
+    @include gds-rhythm-padding(1 n);
+    display: block;
+  }
+}
+
 @font-face {
   font-family: "Wilderness";
   font-style: normal;
@@ -2887,7 +3017,7 @@ html {
 }
 
 body {
-  font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $gds-font-family;
 }
 
 h1,
@@ -2895,23 +3025,119 @@ h2,
 h4,
 h5,
 h6 {
-  font-family: "canada-type-gibson", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: 600;
+  font-family: $gds-font-family-bold;
+  font-weight: $gds-font-weight-semibold;
 }
 
 h1 {
-  @include gds-typeset(xl, true);
-  font-weight: $gds-font-weight-semibold
+  @include gds-typeset(xl);
 }
 
 h3 {
-  font-family: "proxima-nova", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   @include gds-typeset(m, true);
+}
+
+.d-header {
+  position: fixed;
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+}
+.call-out {
+  font-family: Wilderness;
+  font-size: 96px;
+  font-weight: 400;
+}
+
+.admin-content {
+  padding: 2rem;
+}
+
+.version-check .version-number {
+  font-size: 1em;
+}
+
+.badge-wrapper.bullet .badge-category-bg {
+  display: none;
+}
+
+.container {
+  &.list-container {
+    background: $gds-color-white;
+    padding: 3rem;
+  }
+}
+
+.create-topics-notice {
+  display: none;
+}
+
+.list-controls {
+  background: $gds-color-white;
+  padding: 3rem 3rem 0;
+  .btn {
+    background: $gds-color-blue-40;
+    color: $gds-color-white;
+  }
+}
+
+.category-name {
+  border: solid 1px $gds-color-gray-30;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.topic-list {
+  thead {
+    display: none;
+  }
+  .category-name {
+    color: $gds-color-gray-30;
+    font-weight: $gds-font-weight-normal;
+  }
+  .raw-topic-link {
+    font-weight:  $gds-font-weight-bold;
+  }
+  .posts-map.post {
+    display: none;
+  }
+  .age.activity {
+    display: none;
+  }
+  .views {
+    display: none;
+  }
+  .posts {
+      width: 90px;
+  }
+  a.posts-map.badge-posts.heatmap-::after {
+    content: " replies";
+  }
+}
+
+.homepage-wrapper,
+.homepage-footer {
+  display: none;
+
+}
+.navigation-topics .homepage-wrapper,
+.navigation-topics .homepage-footer {
+  display: block;
+}
+.homepage-wrapper {
+  margin-top: 6rem;
 }
 
 .Hero {
   &--welcome {
     margin-top: 2rem;
+    min-width: 320px;
+    position: relative;
   }
 }
 .gds-Hero-container {
@@ -2919,6 +3145,35 @@ h3 {
   @include gds-respond-to(legacy-desk) {
     @include gds-rhythm-padding(6 4);
   }
+}
+
+.triangle-topleft {
+  border-right: 150px solid transparent;
+  border-top: 80px solid $gds-color-amber-50;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+
+.triangle-bottomright {
+  border-bottom: 80px solid $gds-color-amber-50;
+  border-left: 150px solid transparent;
+  bottom: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  width: 0;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer__link {
+  display: inline-block;
+  padding: 1rem;
 }
 
 
