@@ -9,9 +9,14 @@
           <div class="gds-Hero-subtitle">Take a quick second to say hi!</div>
         </h3>
         <div class="gds-Hero-cta">
-          <a href="#" class="gds-Button gds-Button--alternate">Introduce Yourself</a>
+          <a id="introduction-link" href="#" class="gds-Button gds-Button--alternate">Introduce Yourself</a>
         </div>
       </div>
     </footer>
   </div>
+</script>
+<script type="text/discourse-plugin" version="0.8.13">
+  $(document).ready(function() {
+    $('#introduction-link').attr("href", settings.introduce_yourself);
+  });
 </script>

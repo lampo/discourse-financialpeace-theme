@@ -1,7 +1,7 @@
 brand_name:
-  default: ''
+  default: 'Financial Peace'
 website_url:
-  default: ''
+  default: 'www.finacialpeace.com'
 logo_url:
   default: ''
 mobile_logo_url:
@@ -12,3 +12,11 @@ links:
 icons:
   type: list
   default: ''
+daily_check_in:
+  type: string
+  default: ''
+  description: "Enter full url for the Daily Check-in link on Homepage."
+introduce_yourself:
+  type: string
+  default: ''
+  description: "Enter full url for Introduce Yourself link on Homepage."

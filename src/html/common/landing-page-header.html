@@ -11,7 +11,7 @@
           <div class="gds-Hero-subtitle">Ask a Question, Share Your Store, Celebrate Wins Big or Small.</div>
         </h3>
         <div class="gds-Hero-cta">
-          <a href="#" class="gds-Button gds-Button--alternate">Daily Check In</a>
+          <a id="daily-check-in" href="#" class="gds-Button gds-Button--alternate">Daily Check In</a>
         </div>
       </div>
     </header>
@@ -48,4 +48,9 @@
     </div> -->
 
   </div>
+</script>
+<script type="text/discourse-plugin" version="0.8.13">
+  $(document).ready(function() {
+    $('#daily-check-in').attr("href", settings.daily_check_in);
+  });
 </script>
