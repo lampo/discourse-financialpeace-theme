@@ -12,6 +12,7 @@ coverage/
 # ignore files
 .DS_Store
 .discourse-site
+.vscode
 *.log
 *.tgz
 *.tar.gz

@@ -1,78 +1,81 @@
 <script id="question-card-template" type="text/x-handlebars-template">
   {{#each this}}
-    <li class='gds-CardGroup-item gds-Card'>
+    <li class='gds-FeatureGroup-feature'>
       <div class='topic-poster'>
         <a href="/u/{{post.username}}" data-user-card="{{post.username}}">
           {{avatar post imageSize="large"}}
         </a>
       </div>
       <div class='gds-Card-body'>
-        <h3 class='gds-Heading gds-Heading--tertiary gds-Card-title'>{{post.blurb}}</h3>
-        <div class='gds-Text gds-Card-text'>Updated {{updated}} <br>by <strong>  <a href="/u/{{post.username}}" data-user-card="{{post.username}}">{{post.username}}</a></strong></div>
-        <a href='/t/{{topic.slug}}/{{topic.id}}' class='gds-Card-imageLink'>Comment</a>
+        <h3 class='gds-Heading gds-Heading--tertiary gds-Card-title'></h3>
+        <div class='gds-Text gds-Card-text'>
+          <p>{{post.blurb}}</p> 
+          Updated {{updated}} <br>by <strong>  <a href="/u/{{post.username}}" data-user-card="{{post.username}}">{{post.username}}</a></strong></div>
+        <a href='/t/{{topic.slug}}/{{topic.id}}' class='gds-Button'>Comment</a>
       </div>
     </li>
   {{/each}}
 </script>
 
 <script type="text/javascript">
-  var createdCards = false;
-  Discourse.Route.reopen({
-    activate: function() {
-      this._super();
-      Em.run.next(function(){
-        if(window.location.pathname == "/"){
-          createdCards = false;
-          createCards();
+    var createdCards = false;
+    Discourse.Route.reopen({
+        activate: function() {
+            this._super();
+            Em.run.next(function() {
+                if (window.location.pathname == "/") {
+                    createdCards = false;
+                    createCards();
+                }
+            });
         }
-      });
+    });
+
+    function createCards() {
+        if (createdCards === true) return;
+        var dataPath = "/search.json?expanded=true&q=after:" + getPastDate() + "&status:noreplies";
+        $.get(dataPath, cardDataSuccess);
+        createdCards = true;
+    };
+
+    function cardDataSuccess(resp, status, ele) {
+        var source = $("#question-card-template").html();
+        var template = Handlebars.compile(source);
+        var cards = new Array();
+
+        if (resp.posts.length >= 3) {
+            var arraylength = 3;
+        } else {
+            var arraylength = resp.posts.length;
+        }
+
+        for (var i = 0; i < arraylength; i++) {
+            var post = resp.posts[i];
+            var topic = findElement(resp.topics, "id", post.topic_id);
+            var d = new Date(topic.bumped_at);
+            var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
+            var card = {
+                post: post,
+                topic: topic,
+                updated: updated
+            }
+            cards.push(card);
+        }
+        var html = template(cards);
+        $('#question-cards').html(html);
     }
-  });
 
-  function createCards(){
-    if(createdCards === true) return;
-    var dataPath = "/search.json?expanded=true&q=after:" + getPastDate() + "&status:noreplies";
-    console.log(dataPath);
-    $.get(dataPath, customDataSuccess);
-    createdCards = true;
-  };
-
-  function customDataSuccess(resp, status, ele){
-    var source = $("#question-card-template").html();
-    var template = Handlebars.compile(source);
-    var cards = new Array();
-
-    if (resp.posts.length >= 3) {
-      var arraylength = 3;
-    } else {
-      var arraylength = resp.posts.length;
+    function findElement(arr, propName, propValue) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i][propName] == propValue) {
+                return arr[i];
+            }
+        }
     }
 
-    for (var i = 0; i < arraylength; i++) {
-      var post = resp.posts[i];
-      var topic = findElement(resp.topics, "id", post.topic_id);
-      var d = new Date(topic.bumped_at);
-      var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
-      var card = { post:    post,
-                   topic:   topic,
-                   updated: updated }
-      cards.push(card);
+    function getPastDate() {
+        var pastDate = new Date();
+        var dayOfMonth = pastDate.getDate();
+        return pastDate.setDate(dayOfMonth - 1);
     }
-    var html = template(cards);
-    $('#question-cards').html(html);
-  }
-
-  function findElement(arr, propName, propValue) {
-    for (var i=0; i < arr.length; i++) {
-      if (arr[i][propName] == propValue) {
-        return arr[i];
-      }
-    }
-  }
-
-  function getPastDate() {
-    var pastDate = new Date();
-    var dayOfMonth = pastDate.getDate();
-    return pastDate.setDate(dayOfMonth - 1);
-  }
 </script>

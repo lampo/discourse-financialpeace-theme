@@ -1,46 +1,85 @@
 .homepage-wrapper,
 .homepage-footer {
-  display: none;
-
+    display: none;
 }
+
 .navigation-topics .homepage-wrapper,
 .navigation-topics .homepage-footer {
-  display: block;
+    display: block;
 }
+
 .homepage-wrapper {
-  margin-top: 6rem;
+    margin-top: 6rem;
 }
 
 .Hero {
-  &--welcome {
-    margin-top: 2rem;
-    min-width: 320px;
-    position: relative;
-  }
+    &--welcome {
+        margin-top: 2rem;
+        min-width: 320px;
+        position: relative;
+    }
 }
+
 .gds-Hero-container {
-  max-width: 500px;
-  @include gds-respond-to(legacy-desk) {
-    @include gds-rhythm-padding(6 4);
-  }
+    max-width: 500px;
+    @include gds-respond-to(legacy-desk) {
+        @include gds-rhythm-padding(6 4);
+    }
 }
 
 .triangle-topleft {
-  border-right: 150px solid transparent;
-  border-top: 80px solid $gds-color-amber-50;
-  height: 0;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 0;
+    border-right: 150px solid transparent;
+    border-top: 80px solid $gds-color-amber-50;
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
 }
 
 .triangle-bottomright {
-  border-bottom: 80px solid $gds-color-amber-50;
-  border-left: 150px solid transparent;
-  bottom: 0;
-  height: 0;
-  position: absolute;
-  right: 0;
-  width: 0;
+    border-bottom: 80px solid $gds-color-amber-50;
+    border-left: 150px solid transparent;
+    bottom: 0;
+    height: 0;
+    position: absolute;
+    right: 0;
+    width: 0;
+}
+
+.contained-row {
+  margin: 0 auto;
+  max-width: 1080px;
+  overflow: hidden;
+}
+
+.popular-wrapper {
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  float: left;
+}
+
+.startHere-wrapper {
+  float: left;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
+}
+
+.questions-wrapper {
+  background-color: lightblue;
+  padding: 20px;
+  .gds-Heading--secondary{
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.gds-FeatureGroup-feature {
+  background: white;
+  padding-top: 1rem;
 }

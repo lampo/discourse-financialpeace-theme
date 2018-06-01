@@ -1,0 +1,27 @@
+.topic-list {
+    thead {
+        display: none;
+    }
+    .category-name {
+        color: $gds-color-gray-30;
+        font-weight: $gds-font-weight-normal;
+    }
+    .raw-topic-link {
+        font-weight: $gds-font-weight-bold;
+    }
+    .posts-map.post {
+        display: none;
+    }
+    .age.activity {
+        display: none;
+    }
+    .views {
+        display: none;
+    }
+    .posts {
+        width: 90px;
+    }
+    a.posts-map.badge-posts.heatmap-::after {
+        content: " replies";
+    }
+}

@@ -14,32 +14,32 @@
     var source = $("#popular-item-template").html();
     var template = Handlebars.compile(source);
     var popular = [{ title: "Budget",
-                      link: "#",
+                      link: "/tags/budget",
                       icon: "image.png"
                     },
                     {
                       title: "Beat Debt",
-                      link: "#",
+                      link: "/tags/beat-debt",
                       icon: "image.png"
                     },
                     {
                       title: "Savings",
-                      link: "#",
+                      link: "/tags/savings",
                       icon: "image.png"
                     },
                     {
                       title: "Retirement",
-                      link: "#",
+                      link: "/tags/retirement",
                       icon: "image.png"
                     },
                     {
                       title: "Celebrations & Milestones",
-                      link: "#",
+                      link: "/tags/celebrations",
                       icon: "image.png"
                     },
                     {
                       title: "Start New",
-                      link: "#",
+                      link: "",
                       icon: "image.png"
                     }]
     var html = template(popular);
