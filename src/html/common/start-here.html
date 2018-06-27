@@ -1,58 +1,82 @@
 <script>
-    $(function() {
-        var source = $("#start-here-template").html();
-        var template = Handlebars.compile(source);
-        var data = $.get("/c/get-started.json", startHereDataSuccess);
-    });
+  startHere();
+  
+  function startHere() {
+    if ($("#StartHereResults").length > 0) return;
+    $.get("/c/get-started.json", startHereDataSuccess);
+  };
 
-    function startHereDataSuccess(resp, status, ele) {
-        var source = $("#start-here-template").html();
-        var template = Handlebars.compile(source);
-        var html = template(resp.topic_list.topics);
-        $('#StartHereResults').html(html);
+  function startHereDataSuccess(resp, status, ele) {
+    var template = $('script[data-template="start-here-template"]').text().split(/\$\{(.+?)\}/g);
+    var list = new Array();
+
+    if (resp.topic_list.topics.length > 6) {
+        var arraylength = 6;
+    } else {
+        var arraylength = resp.topic_list.topics.length;
     }
+
+    for (var i = 0; i < arraylength; i++) {
+        var topic = resp.topic_list.topics[i];
+        var d = new Date(topic.last_posted_at);
+        var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
+        var item = {
+          created_at: topic.created_at,
+          excerpt: topic.excerpt,
+          id: topic.id,
+          lastPostDate: updated,
+          last_poster_username: topic.last_poster_username,
+          pinned: pinClass(topic.pinned),
+          title: topic.title,
+          slug: topic.slug
+        }
+      list.push(item);
+    }
+
+    $('#StartHereResults').append(list.map(function(item) {
+        return template.map(render(item)).join('');
+    }));
+  }
+
+  function pinClass(pinned) {
+    if (pinned === true ) {
+      return " pinned"
+    } else {
+      return ""
+    }
+  }
 </script>
 
-<script id="start-here-template" type="text/x-handlebars-template">
-    {{#each this}}
-    <tr class="topic-list-item category-uncategorized {{#if pinned}}pinned {{/if}}ember-view">
-        <td class="main-link clearfix" colspan="2">
-          <span class="link-top-line">
-            <div class="topic-statuses">
-              <a href="/t/{{slug}}/{{id}}" title="{{title}}" class="topic-status">
-                <i class="fa fa-thumb-tack d-icon d-icon-thumb-tack"></i>
-              </a>
-            </div>
-            <a href="/t/{{slug}}/{{id}}" class="title raw-link raw-topic-link">{{title}}</a>
-            <span class="topic-post-badges">  </span>
-          </span>
-          <div class="topic-excerpt">
-              {{excerpt}}
-              <a href="/t/{{slug}}/{{id}}">read more</a>
+<script type="text/template" data-template="start-here-template">
+  <tr class="topic-list-item category-uncategorized ${pinned} ember-view">
+      <td class="main-link clearfix" colspan="2">
+        <span class="link-top-line">
+          <div class="topic-statuses">
+            <a href="/t/${slug}/${id}" title="${title}" class="topic-status">
+              <i class="fa fa-thumb-tack d-icon d-icon-thumb-tack"></i>
+            </a>
           </div>
-          <div class='creator'>
-            {{#if showCategory}} {{category-link category}} {{/if}} 
-            {{~#if creator ~}}
-             <a href="/users/{{creator.username}}" data-auto-route="true" data-user-card="{{creator.username}}">{{creator.username}}</a> <a href={{url}}>{{format-date createdAt format="tiny"}}</a> 
-            {{~/if ~}} 
-            {{raw "list/action-list"
-            topic=topic postNumbers=liked_post_numbers className="likes" icon="heart"}}
+          <a href="/t/${slug}/${id}" class="title raw-link raw-topic-link">${title}</a>
+          <span class="topic-post-badges">  </span>
+        </span>
+        <div class="topic-excerpt">
+            ${excerpt}
+            <a href="/t/${slug}/${id}">read more</a>
         </div>
-      </td>
-      <td class="last-post">
-          <div class='poster-avatar'>
-              <a href="{{lastPostUr}}" data-user-card="{{last_poster_username}}">{{avatar lastPoster usernamePath="username" imageSize="medium"}}</a>
-          </div>
-          <div class='poster-info'>
-              <a href="{{lastPostUrl}}">{{format-date bumpedAt format="tiny"}} </a>
-              <span class='editor'><a href="/users/{{last_poster_username}}" data-auto-route="true" data-user-card="{{last_poster_username}}">{{last_poster_username}}</a></span>
-          </div>
-      </td>
-      <td class="num age activity" title="First post: {{created_at}}">
-          <a class="post-activity" href="/t/{{slug}}/{{id}}">
-              <span class="relative-date" data-time="{{created_at}}" data-format="tiny">12d</span>
-          </a>
-      </td>
-    </tr>
-    {{/each}}
-</script>
+    </td>
+    <td class="num age activity" title="First post: ${created_at}">
+        <a class="post-activity" href="/t/${slug}/${id}">
+            <span class="relative-date" data-time="${created_at}" data-format="tiny">${created_at}</span>
+        </a>
+    </td>
+    <td class="last-post">
+        <div class='poster-avatar'>
+            <a href="/users/${last_poster_username}" data-user-card="${last_poster_username}">${avatar}</a>
+        </div>
+        <div class='poster-info'>
+            <a href="${lastPostUrl}">${lastPostDate} </a>
+            <span class='editor'><a href="/users/${last_poster_username}" data-auto-route="true" data-user-card="${last_poster_username}">${last_poster_username}</a></span>
+        </div>
+    </td>
+  </tr>
+</script>  

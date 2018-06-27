@@ -22,7 +22,6 @@
         if ($("#question-cards").length > 0) return;
         var dataPath = "/search.json?expanded=true&q=after:" + getPastDate() + "&status:noreplies";
         $.get(dataPath, cardDataSuccess);
-        createdCards = true;
     };
 
     function cardDataSuccess(resp, status, ele) {
