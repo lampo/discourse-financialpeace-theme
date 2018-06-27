@@ -283,49 +283,35 @@
     $('#daily-check-in').attr("href", settings.daily_check_in);
   });
 </script>
-<script id="question-card-template" type="text/x-handlebars-template">
-  {{#each this}}
-    <li class='gds-FeatureGroup-feature'>
-      <div class='topic-poster'>
-        <a href="/u/{{post.username}}" data-user-card="{{post.username}}">
-          {{avatar post imageSize="large"}}
-        </a>
-      </div>
-      <div class='gds-Card-body'>
-        <h3 class='gds-Heading gds-Heading--tertiary gds-Card-title'></h3>
-        <div class='gds-Text gds-Card-text'>
-          <p>{{post.blurb}}</p> 
-          Updated {{updated}} <br>by <strong>  <a href="/u/{{post.username}}" data-user-card="{{post.username}}">{{post.username}}</a></strong></div>
-        <a href='/t/{{topic.slug}}/{{topic.id}}' class='gds-Button'>Comment</a>
-      </div>
-    </li>
-  {{/each}}
+<script type="text/template" data-template="question-card-template">
+  <li class='gds-FeatureGroup-feature'>
+    <div class='topic-poster'>
+      <a href="/u/${username}" data-user-card="${username}">
+        <img alt="" width="50" height="50" src="${avatar}" class="avatar">
+      </a>
+    </div>
+    <div class='gds-Card-body'>
+      <h3 class='gds-Heading gds-Heading--tertiary gds-Card-title'></h3>
+      <div class='gds-Text gds-Card-text'>
+        <p>${blurb}</p> 
+        Updated ${updated} <br>by <strong>  <a href="/u/${username}" data-user-card="${username}">${username}</a></strong></div>
+      <a href='/t/${slug}/${id}' class='gds-Button'>Comment</a>
+    </div>
+  </li>
 </script>
 
 <script type="text/javascript">
-    var createdCards = false;
-    Discourse.Route.reopen({
-        activate: function() {
-            this._super();
-            Em.run.next(function() {
-                if (window.location.pathname == "/") {
-                    createdCards = false;
-                    createCards();
-                }
-            });
-        }
-    });
+    createCards();
 
     function createCards() {
-        if (createdCards === true) return;
+        if ($("#question-cards").length > 0) return;
         var dataPath = "/search.json?expanded=true&q=after:" + getPastDate() + "&status:noreplies";
         $.get(dataPath, cardDataSuccess);
         createdCards = true;
     };
 
     function cardDataSuccess(resp, status, ele) {
-        var source = $("#question-card-template").html();
-        var template = Handlebars.compile(source);
+        var template = $('script[data-template="question-card-template"]').text().split(/\$\{(.+?)\}/g);
         var cards = new Array();
 
         if (resp.posts.length >= 3) {
@@ -340,14 +326,19 @@
             var d = new Date(topic.bumped_at);
             var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
             var card = {
-                post: post,
-                topic: topic,
-                updated: updated
+                username: post.username,
+                blurb: post.blurb,
+                id: post.topic_id,
+                slug: topic.slug,
+                lastPoster: topic.lastPoster,
+                updated: updated,
+                avatar: post.avatar_template.replace("{size}", "50")
             }
-            cards.push(card);
+          cards.push(card);
         }
-        var html = template(cards);
-        $('#question-cards').html(html);
+        $('#question-cards').append(cards.map(function(card) {
+            return template.map(render(card)).join('');
+          }));
     }
 
     function findElement(arr, propName, propValue) {
@@ -363,6 +354,14 @@
         var dayOfMonth = pastDate.getDate();
         return pastDate.setDate(dayOfMonth - 1);
     }
+
+    function render(props) {
+      return function(tok, i) {
+        return (i % 2) ? props[tok] : tok;
+      };
+    }
+
+    
 </script>
 <script>
     $(function() {

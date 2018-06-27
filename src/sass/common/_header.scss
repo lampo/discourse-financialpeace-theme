@@ -82,4 +82,17 @@
 .gds-FeatureGroup-feature {
   background: white;
   padding-top: 1rem;
+  margin-top: 20px;
+}
+
+.gds-FeatureGroup-feature:first-child {
+  margin-top: 20px;
+}
+
+.topic-poster img {
+  margin-top: -40px;
+  background: white;
+  padding: 10px;
+  border-radius: 50px;
+  border: solid 1px blue;
 }
