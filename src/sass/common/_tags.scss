@@ -1,0 +1,29 @@
+.tags-page.financial-peace {
+  .dropdown-toggle {
+    display: none;
+  }
+}
+.financial-peace {
+  .list-controls {
+    padding: 0;
+  }
+  .tag-sort-options {
+    display: none;
+  }
+  .tag-box {
+    float: left;
+    width: auto;
+    margin-right: 20px;
+    a {
+      background: rgb(0, 154, 226);
+      color: #fff;
+      font-weight: bold;
+      display: block;
+      padding: 10px;
+      border-radius: 3px;
+    }
+    .tag-count {
+      display: none;
+    }
+  }
+}
