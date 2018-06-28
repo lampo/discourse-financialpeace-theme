@@ -3291,3 +3291,168 @@ a {
   border: solid 1px blue;
 }
 
+/* Josh Young */
+/* TODO: 
+- Order CSS declarations alphabetically.
+- Switch to gazelle:
+  - colors
+  - fonts 
+  - breakpoints
+- Add more data to populate and style other elements.
+*/
+body {
+  background: rgb(243, 246, 247);
+}
+
+/* Desktop - mobile first */
+.user-profile-avatar {
+  margin-top: 11px;
+  margin-left: 5px;
+}
+.user-table .wrapper section {
+  padding: 30px 20px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 15px #ccc;
+  background: #fff;
+}
+
+.user-main .about {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 15px #ccc;
+}
+
+.controls ul li:first-child a {
+  background: rgb(0, 104, 176);
+  color: #fff;
+  padding: 15px 10px !important;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.controls ul li:last-child {
+  display: none !important;
+}
+.stats-section {
+  border-bottom: 1px solid #ccc;
+}
+.stats-title {
+  text-transform: capitalize;
+}
+.stats-section {
+  > * {
+    padding: 0 10px;
+  }
+}
+.stats-title {
+  font-size: 1.1rem;
+}
+.top-sub-section {
+  border-bottom: 1px solid #ccc;
+  > * {
+    padding: 0 10px;
+  }
+  h3 {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+  }
+  li {
+    border-left: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.badges-section {
+  > * {
+    padding: 0 10px;
+  }
+}
+
+.main-nav.nav-pills {
+  li a.active {
+    background: rgb(0, 104, 176);
+  }
+  li a {
+    border-radius: 3px;
+    margin: 2px;
+    background: rgb(207, 212, 214);
+  }
+}
+
+.user-table .wrapper section.user-navigation {
+  box-shadow: none;
+  ul.nav-stacked {
+    background: rgb(207, 212, 214);
+    border-radius: 7px;
+    padding: 20px;
+    a {
+      color: #000;
+      padding: 0;
+      padding-bottom: 10px;
+    }
+  }
+}
+.user-archive button {
+  background: rgb(207, 212, 214);
+  width: 100%;
+  border-radius: 3px;
+}
+
+.user-stream {
+  .avatar-link {
+    margin-right: 100px;
+    float: right;
+  }
+  .time {
+    margin-right: -100px;
+  }
+}
+.stream-topic-details {
+  .stream-topic-title a {
+    color: #000;
+    font-weight: 900;
+  }
+  .category-name {
+    color: rgb(183, 186, 188);
+    font-weight: normal;
+    border: none;
+  }
+}
+
+@media(min-width: 35em) {
+  .top-section {
+    display: flex;
+    &.stats-section {
+      display: block;
+    }
+    > * {
+      float: none !important;
+    }
+  }
+  .stats-section {
+    margin-bottom: 45px;
+  }
+  .top-sub-section {
+    margin: 0 10px 30px 10px;
+  }
+}
+
+@media(min-width: 75em) {
+  .top-sub-section {
+    h3 {
+      font-size: 2rem;
+    }
+  }
+  .stats-section {
+    h3 {
+      font-size: 2rem;
+    }
+  }
+  .badges-section {
+    h3 {
+      font-size: 2rem;
+    }
+  }
+}
+/* end - Desktop mobile first */
+
