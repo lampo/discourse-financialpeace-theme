@@ -3137,15 +3137,6 @@ a {
     padding: 0.5rem;
     text-decoration: none;
 }
-.footer {
-  text-align: center;
-}
-
-.footer__link {
-  display: inline-block;
-  padding: 1rem;
-}
-
 .homepage-wrapper,
 .homepage-footer {
     display: none;
@@ -3208,6 +3199,52 @@ a {
   margin-top: 20px;
 }
 
+td.num.views, td.num.activity{
+    display: none;
+}
+
+th.views.num, th.activity.num {
+    display: none;
+}
+
+.nav-pills {
+    li.active a {
+    background-color: $gds-color-blue-50;
+    border-radius: 2px;
+    }
+}
+
+.category-name {
+    border: 1px solid $gds-color-gray-50;
+    border-radius: 2px;
+    color: $gds-color-gray-60;
+    font-weight: normal;
+}
+
+.latest.single img{
+    height: 40px;
+    width: 40px;
+}
+
+#create-topic {
+    background-color: $gds-color-blue-50;
+    border-radius: 2px;
+}
+
+title.raw-link.raw-topic-link a{
+    color: $gds-color-black;
+    font-size: 1rem;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer__link {
+  display: inline-block;
+  padding: 1rem;
+}
+
 .popular-wrapper {
   max-width: 400px;
   background: white;
@@ -3233,62 +3270,6 @@ a {
   margin: 10px;
   height: 100px;
   width: 100px;
-}
-
-.questions-wrapper {
-  background-color: $gds-color-blue-30;
-  border-radius: 15px;
-  padding: 20px;
-  .gds-Heading--secondary {
-    color: $gds-color-white;
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-}
-
-.startHere-wrapper {
-  float: left;
-  margin: 20px;
-  padding: 20px;
-  background-color: white;
-  max-width: 600px;
-  width: 100%;
-}
-
-.topic-list {
-    thead {
-        display: none;
-    }
-    .category-name {
-        color: $gds-color-gray-30;
-        font-weight: $gds-font-weight-normal;
-    }
-    .raw-topic-link {
-        font-weight: $gds-font-weight-bold;
-    }
-    .posts-map.post {
-        display: none;
-    }
-    .age.activity {
-        display: none;
-    }
-    .views {
-        display: none;
-    }
-    .posts {
-        width: 90px;
-    }
-    a.posts-map.badge-posts.heatmap-::after {
-        content: " replies";
-    }
-}
-
-.topic-poster img {
-  margin-top: -40px;
-  background: white;
-  padding: 10px;
-  border-radius: 50px;
-  border: solid 1px blue;
 }
 
 /* Josh Young */
@@ -3455,4 +3436,60 @@ body {
   }
 }
 /* end - Desktop mobile first */
+
+.questions-wrapper {
+  background-color: $gds-color-blue-30;
+  border-radius: 15px;
+  padding: 20px;
+  .gds-Heading--secondary {
+    color: $gds-color-white;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
+
+.startHere-wrapper {
+  float: left;
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  max-width: 600px;
+  width: 100%;
+}
+
+.topic-list {
+    thead {
+        display: none;
+    }
+    .category-name {
+        color: $gds-color-gray-30;
+        font-weight: $gds-font-weight-normal;
+    }
+    .raw-topic-link {
+        font-weight: $gds-font-weight-bold;
+    }
+    .posts-map.post {
+        display: none;
+    }
+    .age.activity {
+        display: none;
+    }
+    .views {
+        display: none;
+    }
+    .posts {
+        width: 90px;
+    }
+    a.posts-map.badge-posts.heatmap-::after {
+        content: " replies";
+    }
+}
+
+.topic-poster img {
+  margin-top: -40px;
+  background: white;
+  padding: 10px;
+  border-radius: 50px;
+  border: solid 1px blue;
+}
 

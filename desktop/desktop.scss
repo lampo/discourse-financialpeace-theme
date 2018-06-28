@@ -1,7 +1,7 @@
 // Using desktop.scss for any scss that requires variables stored in Discourse. Primarily an image assets
 
 .Hero--welcome {
-  background: url($header_blue_background);
+  background: url($header-blue-background);
   background-size: cover;
 }
 
