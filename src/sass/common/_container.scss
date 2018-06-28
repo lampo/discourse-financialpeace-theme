@@ -1,25 +1,28 @@
 .container {
-    &.list-container {
-        background: $gds-color-white;
-        padding: 3rem;
-    }
+  &.list-container {
+    background: $gds-color-white;
+    padding: 3rem;
+  }
 }
 
 .create-topics-notice {
-    display: none;
+  display: none;
 }
 
 .list-controls {
-    background: $gds-color-white;
-    padding: 3rem 3rem 0;
-    .btn {
-        background: $gds-color-blue-40;
-        color: $gds-color-white;
-    }
+  background: $gds-color-white;
+  padding: 3rem 3rem 0;
+  .btn {
+    background: $gds-color-blue-40;
+    color: $gds-color-white;
+  }
 }
 
 .category-name {
-    border: solid 1px $gds-color-gray-30;
-    padding: 0.5rem;
-    text-decoration: none;
+  border: 1px solid $gds-color-gray-50;
+  border-radius: 2px;
+  color: $gds-color-gray-60;
+  font-weight: normal;
+  padding: 0.5rem;
+  text-decoration: none;
 }
