@@ -9,8 +9,9 @@
   },
   "scripts": {
     "build": "yarn clean && yarn build:html && yarn build:scss",
-    "build:scss": "yarn build:scss-common",
+    "build:scss": "yarn build:scss-common && yarn build:scss-mobile",
     "build:scss-common": "scss-bundle --includePaths ./node_modules -e ./sass/common.scss -d ../common/common.scss",
+    "build:scss-mobile": "scss-bundle --includePaths ./node_modules -e ./sass/mobile.scss -d ../mobile/mobile.scss",
     "build:html": "cat ./html/common/* >| ../common/head_tag.html",
     "clean": "rimraf ../common/common.scss",
     "lint": "yarn scss-lint",
@@ -20,7 +21,8 @@
     "watch:all": "yarn watch:scss && yarn watch:html"
   },
   "dependencies": {
-    "gazelle-design-system": "^0.27.2"
+    "gazelle-design-system": "^0.27.2",
+    "yarn": "^1.7.0"
   },
   "devDependencies": {
     "autoprefixer": "^8.4.1",
