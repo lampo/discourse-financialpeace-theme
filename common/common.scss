@@ -3493,3 +3493,64 @@ body {
   border: solid 1px blue;
 }
 
+/* Josh Young */
+/* TODO:
+  - add gazelle styles.
+  - insure that the elements that are being hidden cannot be removed from the admin.
+*/
+
+.financial-peace.navigation-categories {
+  .nav.nav-pills {
+    display: none;
+  }
+  button {
+    border-radius: 4px;
+    padding: 10px;
+  }
+}
+
+.financial-peace {
+
+  .category-list {
+    tbody {
+      border-top-width: 1px;
+    }
+    th.category, th.topics {
+      display: none;
+    }
+  }
+
+  .category-list .category-name {
+    border: none;
+  }
+  .category-list .topics .value {
+    color: #000;
+    &:after {
+      content: 'Topics';
+      padding-left: 10px;
+    }
+  }
+
+  /* TODO: There may be a way to do this in the admin console: */
+  .columns {
+    display: none;
+  }
+  .categories-and-latest div.column:last-child {
+    display: none;
+  }
+}
+
+.financial-peace {
+  .category-list-item {
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  .categories-and-latest div.column {
+    font-size: inherit;
+  }
+  .topic-list .posts-map {
+    font-size: inherit;
+  }
+}
+
