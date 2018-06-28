@@ -2,48 +2,9 @@
 @import "common/admin";
 @import "common/badges";
 @import "common/container";
-@import "common/header";
 @import "common/footer";
-
-// Table of contents
-//
-// - Base
-//   - Base override
-//
-// - Badge
-// - Button
-// - Code
-// - Cooked
-//   - Aside
-// - Dropdown
-// - Form
-//   - Auto complete
-//   - Colour picker
-//   - D editor
-//   - Select2
-// - Header
-// - List control
-// - Login
-// - Material icons
-// - Menu panel
-// - Modal
-//   - Edit topic status update
-// - Notification
-// - Picker
-// - Reply
-// - Search
-// - Share
-// - Table
-// - Timeline
-// - Topic
-//   - Topic list
-//     - Category list
-//     - Suggested topics
-//   - Topic post
-// - User
-//   - User badge
-//   - User card
-//
-// - Other pages
-//   - About
-//   - Admin
+@import "common/header";
+@import "common/popular";
+@import "common/question_cards";
+@import "common/start_here";
+@import "common/topic_list";

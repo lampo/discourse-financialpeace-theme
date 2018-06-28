@@ -12,12 +12,12 @@
   "color_schemes": {
     "financialpeace": {
       "primary": "1f2426",
-      "secondary": "000000",
+      "secondary": "1f2426",
       "tertiary": "0073b9",
       "quaternary": "e64b40",
       "header_background": "ffffff",
       "header_primary": "1f2426",
-      "highlight": "ffec22",
+      "highlight": "ffec82",
       "danger": "a62b24",
       "success": "35bd59",
       "love": "e64b40"

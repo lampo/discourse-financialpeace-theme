@@ -1,0 +1,26 @@
+.popular-wrapper {
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  float: left;
+}
+
+.popular-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  max-width: 300px;
+  margin: 10px auto;
+}
+
+.popular-link {
+  border: solid 2px #999;
+  padding: 10px;
+  border-radius: 15px;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  height: 100px;
+  width: 100px;
+}
