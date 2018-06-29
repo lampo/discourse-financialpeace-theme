@@ -1,8 +1,35 @@
-.startHere-wrapper {
-  float: left;
-  margin: 20px;
-  padding: 20px;
-  background-color: white;
-  max-width: 600px;
-  width: 100%;
+.financial-peace {
+  .startHere-wrapper {
+    float: left;
+    max-width: 600px;
+    width: 100%;
+  }
+  .startHere {
+    background-color: white;
+    border-radius: 7px;
+    box-shadow: 1px 1px 11px #ccc;
+    padding: 40px;
+    margin: 20px;
+  }
+  .startHere-header {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+    }
+  }
+  .startHere {
+    tbody {
+      border-top-width: 1px;
+    }
+    td {
+      padding: 34px 0;
+    }
+    .d-icon-thumb-tack {
+      display: none;
+    }
+    .editor {
+      display: none;
+    }
+  }
 }
