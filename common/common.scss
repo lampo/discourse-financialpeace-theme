@@ -3261,6 +3261,14 @@ a {
   font-weight: 400;
 }
 
+body {
+  background: rgb(243, 246, 247);
+}
+
+tbody {
+  border-top-width: 1px;
+}
+
 .admin-content {
   padding: 2rem;
 }
@@ -3362,6 +3370,9 @@ a {
   padding-top: 1rem;
   margin-top: 20px;
 }
+.gds-FeatureGroup-feature {
+  border-radius: 10px;
+}
 
 td.num.views, td.num.activity{
     display: none;
@@ -3409,217 +3420,246 @@ title.raw-link.raw-topic-link a{
   padding: 1rem;
 }
 
-.popular-wrapper {
-  max-width: 400px;
-  background: white;
-  padding: 20px;
-  margin: 20px;
-  float: left;
-}
-
-.popular-header {
-  text-align: center;
-  h2 {
-    padding-bottom: 10px;
+.financial-peace {
+  .popular-wrapper {
+    float: left;
+    width: 100%;
   }
-}
-
-.popular-items {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 100%;
-  max-width: 300px;
-  margin: 10px auto;
-}
-
-.popular-link {
-  border: 2px solid #efefef;
-  background: rgb(243, 246, 247);
-  padding: 10px;
-  border-radius: 15px;
-  display: block;
-  text-align: center;
-  margin: 10px;
-  height: 100px;
-  width: 100px;
-  svg {
-    margin-top: 15px;
+  .popular {
+    border-radius: 7px;
+    box-shadow: 1px 1px 11px #ccc;
+    background: #fff;
+    padding: 40px 0;
+    margin: 20px;
   }
-}
 
-/* TODO: Find a better way to vertically center icons */
-.popular-items {
-  .popular-item:nth-child(5) .popular-link {
-    svg {
-      margin-top: 0;
+  .popular-header {
+    h2 {
+      padding-bottom: 10px;
+      text-align: center;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  .popular-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    .popular-item {
+      border: 2px solid #efefef;
+      background: rgb(243, 246, 247);
+      padding: 10px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      height: 100px;
+      width: 100px;
+      text-align: center;
+      &:hover {
+        border: 2px solid rgba(249, 161, 25, 0.3);
+        svg {
+          transform: scale(1.1);
+        }
+      }
+    }
+    .popular-link {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  @media(min-width: 1000px) {
+    .popular-wrapper {
+      max-width: 400px;
+    }
+    .popular-header h2 {
+      margin-left: 40px;
+      text-align: left;
+      background-position: bottom left;
     }
   }
 }
 
-/* Josh Young */
-/* TODO: 
-- Order CSS declarations alphabetically.
-- Switch to gazelle:
-  - colors
-  - fonts 
-  - breakpoints
-- Add more data to populate and style other elements.
-*/
-body {
-  background: rgb(243, 246, 247);
-}
+.financial-peace {
+  /* Josh Young */
+  /* TODO: 
+  - Order CSS declarations alphabetically.
+  - Switch to gazelle:
+    - colors
+    - fonts 
+    - breakpoints
+  - Add more data to populate and style other elements.
+  */
 
-/* Desktop - mobile first */
-.user-profile-avatar {
-  margin-top: 11px;
-  margin-left: 5px;
-}
-.user-table .wrapper section {
-  padding: 30px 20px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 15px #ccc;
-  background: #fff;
-}
-
-.user-main .about {
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 1px 1px 15px #ccc;
-}
-
-.controls ul li:first-child a {
-  background: rgb(0, 104, 176);
-  color: #fff;
-  padding: 15px 10px !important;
-  border-radius: 5px;
-  margin-right: 10px;
-  margin-top: 10px;
-}
-.controls ul li:last-child {
-  display: none !important;
-}
-.stats-section {
-  border-bottom: 1px solid #ccc;
-}
-.stats-title {
-  text-transform: capitalize;
-}
-.stats-section {
-  > * {
-    padding: 0 10px;
+  /* Desktop - mobile first */
+  .user-profile-avatar {
+    margin-top: 11px;
+    margin-left: 5px;
   }
-}
-.stats-title {
-  font-size: 1.1rem;
-}
-.top-sub-section {
-  border-bottom: 1px solid #ccc;
-  > * {
-    padding: 0 10px;
+  .user-table .wrapper section {
+    padding: 30px 20px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 15px #ccc;
+    background: #fff;
   }
-  h3 {
-    font-size: 1.1rem;
+
+  .user-main .about {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 1px 1px 15px #ccc;
+  }
+
+  .controls ul li:first-child a {
+    background: rgb(0, 104, 176);
+    color: #fff;
+    padding: 15px 10px !important;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .controls ul li:last-child {
+    display: none !important;
+  }
+  .stats-section {
+    border-bottom: 1px solid #ccc;
+  }
+  .stats-title {
     text-transform: capitalize;
   }
-  li {
-    border-left: none;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-.badges-section {
-  > * {
-    padding: 0 10px;
-  }
-}
-
-.main-nav.nav-pills {
-  li a.active {
-    background: rgb(0, 104, 176);
-  }
-  li a {
-    border-radius: 3px;
-    margin: 2px;
-    background: rgb(207, 212, 214);
-  }
-}
-
-.user-table .wrapper section.user-navigation {
-  box-shadow: none;
-  ul.nav-stacked {
-    background: rgb(207, 212, 214);
-    border-radius: 7px;
-    padding: 20px;
-    a {
-      color: #000;
-      padding: 0;
-      padding-bottom: 10px;
-    }
-  }
-}
-.user-archive button {
-  background: rgb(207, 212, 214);
-  width: 100%;
-  border-radius: 3px;
-}
-
-.user-stream {
-  .avatar-link {
-    margin-right: 100px;
-    float: right;
-  }
-  .time {
-    margin-right: -100px;
-  }
-}
-.stream-topic-details {
-  .stream-topic-title a {
-    color: #000;
-    font-weight: 900;
-  }
-  .category-name {
-    color: rgb(183, 186, 188);
-    font-weight: normal;
-    border: none;
-  }
-}
-
-@media(min-width: 35em) {
-  .top-section {
-    display: flex;
-    &.stats-section {
-      display: block;
-    }
+  .stats-section {
     > * {
-      float: none !important;
+      padding: 0 10px;
     }
   }
-  .stats-section {
-    margin-bottom: 45px;
+  .stats-title {
+    font-size: 1.1rem;
   }
   .top-sub-section {
-    margin: 0 10px 30px 10px;
-  }
-}
-
-@media(min-width: 75em) {
-  .top-sub-section {
-    h3 {
-      font-size: 2rem;
+    border-bottom: 1px solid #ccc;
+    > * {
+      padding: 0 10px;
     }
-  }
-  .stats-section {
     h3 {
-      font-size: 2rem;
+      font-size: 1.1rem;
+      text-transform: capitalize;
+    }
+    li {
+      border-left: none;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
   .badges-section {
-    h3 {
-      font-size: 2rem;
+    > * {
+      padding: 0 10px;
     }
   }
+
+  .main-nav.nav-pills {
+    li a.active {
+      background: rgb(0, 104, 176);
+    }
+    li a {
+      border-radius: 3px;
+      margin: 2px;
+      margin-right: 10px;
+      background: rgb(207, 212, 214);
+    }
+  }
+
+  .user-table .wrapper section {
+    &.user-navigation {
+      box-shadow: none;
+      ul.nav-stacked {
+        background: rgb(207, 212, 214);
+        border-radius: 7px;
+        padding: 20px;
+        min-height: 250px;
+        a {
+          color: #000;
+          padding: 0;
+          padding-bottom: 10px;
+          font-size: 1rem;
+        }
+      }
+    }
+    &.user-right {
+      box-shadow: none;
+    }
+  }
+  .user-archive button {
+    background: rgb(207, 212, 214);
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  .user-stream {
+    .avatar-link {
+      margin-right: 100px;
+      float: right;
+    }
+    .time {
+      margin-right: -100px;
+    }
+  }
+  .stream-topic-details {
+    .stream-topic-title a {
+      color: #000;
+      font-weight: 900;
+    }
+    .category-name {
+      color: rgb(183, 186, 188);
+      font-weight: normal;
+      border: none;
+    }
+  }
+  .topic-list {
+    td {
+      padding: 40px 0;
+    }
+  }
+
+  @media(min-width: 35em) {
+    .top-section {
+      display: flex;
+      &.stats-section {
+        display: block;
+      }
+      > * {
+        float: none !important;
+      }
+    }
+    .stats-section {
+      margin-bottom: 45px;
+    }
+    .top-sub-section {
+      margin: 0 10px 30px 10px;
+    }
+  }
+
+  @media(min-width: 75em) {
+    .top-sub-section {
+      h3 {
+        font-size: 2rem;
+      }
+    }
+    .stats-section {
+      h3 {
+        font-size: 2rem;
+      }
+    }
+    .badges-section {
+      h3 {
+        font-size: 2rem;
+      }
+    }
+  }
+  /* end - Desktop mobile first */
 }
-/* end - Desktop mobile first */
 
 .questions-wrapper {
   background-color: $gds-color-blue-30;
@@ -3635,8 +3675,12 @@ body {
 .financial-peace {
   .startHere-wrapper {
     float: left;
-    max-width: 600px;
     width: 100%;
+  }
+  @media(min-width: 1000px) {
+    .startHere-wrapper {
+      max-width: 600px;
+    }
   }
   .startHere {
     background-color: white;
@@ -3653,9 +3697,6 @@ body {
     }
   }
   .startHere {
-    tbody {
-      border-top-width: 1px;
-    }
     td {
       padding: 34px 0;
     }
@@ -3668,40 +3709,42 @@ body {
   }
 }
 
-.topic-list {
+.financial-peace {
+  .topic-list {
     thead {
-        display: none;
+      display: none;
     }
     .category-name {
-        color: $gds-color-gray-30;
-        font-weight: $gds-font-weight-normal;
+      color: $gds-color-gray-30;
+      font-weight: $gds-font-weight-normal;
     }
     .raw-topic-link {
-        font-weight: $gds-font-weight-bold;
+      font-weight: $gds-font-weight-bold;
     }
     .posts-map.post {
-        display: none;
+      display: none;
     }
     .age.activity {
-        display: none;
+      display: none;
     }
     .views {
-        display: none;
+      display: none;
     }
     .posts {
-        width: 90px;
+      width: 90px;
     }
     a.posts-map.badge-posts.heatmap-::after {
-        content: " replies";
+      content: " replies";
     }
-}
+  }
 
-.topic-poster img {
-  margin-top: -40px;
-  background: white;
-  padding: 10px;
-  border-radius: 50px;
-  border: solid 1px blue;
+  .topic-poster img {
+    margin-top: -40px;
+    background: white;
+    padding: 10px;
+    border-radius: 50px;
+    border: solid 1px blue;
+  }
 }
 
 /* Josh Young */
@@ -3723,9 +3766,6 @@ body {
 .financial-peace {
 
   .category-list {
-    tbody {
-      border-top-width: 1px;
-    }
     th.category, th.topics {
       display: none;
     }
@@ -3771,6 +3811,11 @@ body {
   }
 }
 .financial-peace {
+  .tag-show-heading {
+    i, .discourse-tag {
+      display: none;
+    }
+  }
   .list-controls {
     padding: 0;
   }
@@ -3795,14 +3840,19 @@ body {
   }
 }
 
-.financial-peace {
+.tag-show-heading {
+  a:first-child {
+    padding-bottom: 8px;
+  }
+}
 
+.financial-peace {
   #topic-title h1 {
     padding-bottom: 2rem;
     a {
       color: $gds-color-gray-70;
       font-size: 2rem;
-      }
+    }
   }
 
   .container {
@@ -3822,7 +3872,7 @@ body {
   }
 
   .topic-meta-data a {
-    color:  $gds-color-black;
+    color: $gds-color-black;
     padding-top: 2rem;
   }
 
@@ -3836,6 +3886,7 @@ body {
     border-radius: 8px;
     margin-bottom: 1rem;
     padding-left: 1rem;
+    padding-top: 1.5rem;
     max-width: 50rem;
   }
 
@@ -3845,10 +3896,27 @@ body {
     border: none;
   }
 
-  .post-stream > div:first-child {
-    background-color: $gds-color-white;
-    border-radius: 0;
-    border-top: 1px solid $gds-color-gray-30;
+  .post-stream {
+    > div:first-child {
+      background-color: transparent;
+      border-top: 1px solid $gds-color-gray-30;
+      border-radius: unset;
+    }
+    .topic-post:nth-child(2) {
+      position: relative;
+      &::after {
+        border-bottom: 30px solid $gds-color-gray-20;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        content: '';
+        display: block;
+        height: 0; 
+        left: 25px;
+        position: absolute;
+        top: -20px;
+        width: 0; 
+      }
+    }
   }
 
   nav.post-controls button.create {
@@ -3867,14 +3935,9 @@ body {
     font-weight: normal;
   }
   
-  .latest.single img{
+  .latest.single img {
     height: 40px;
     width: 40px;
-  }
-  
-  #create-topic {
-    background-color: $gds-color-blue-50;
-    border-radius: 2px;
   }
   
   .topic-list .link-top-line .raw-topic-link {
@@ -3909,10 +3972,10 @@ body {
   th.activity.num {
     display: none;
   }
+
   .topic-status-info,
   .topic-body {
     border: none;
   }
-
 }
 

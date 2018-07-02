@@ -1,11 +1,10 @@
 .financial-peace {
-
   #topic-title h1 {
     padding-bottom: 2rem;
     a {
       color: $gds-color-gray-70;
       font-size: 2rem;
-      }
+    }
   }
 
   .container {
@@ -25,7 +24,7 @@
   }
 
   .topic-meta-data a {
-    color:  $gds-color-black;
+    color: $gds-color-black;
     padding-top: 2rem;
   }
 
@@ -39,6 +38,7 @@
     border-radius: 8px;
     margin-bottom: 1rem;
     padding-left: 1rem;
+    padding-top: 1.5rem;
     max-width: 50rem;
   }
 
@@ -48,10 +48,27 @@
     border: none;
   }
 
-  .post-stream > div:first-child {
-    background-color: $gds-color-white;
-    border-radius: 0;
-    border-top: 1px solid $gds-color-gray-30;
+  .post-stream {
+    > div:first-child {
+      background-color: transparent;
+      border-top: 1px solid $gds-color-gray-30;
+      border-radius: unset;
+    }
+    .topic-post:nth-child(2) {
+      position: relative;
+      &::after {
+        border-bottom: 30px solid $gds-color-gray-20;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        content: '';
+        display: block;
+        height: 0; 
+        left: 25px;
+        position: absolute;
+        top: -20px;
+        width: 0; 
+      }
+    }
   }
 
   nav.post-controls button.create {
@@ -70,14 +87,9 @@
     font-weight: normal;
   }
   
-  .latest.single img{
+  .latest.single img {
     height: 40px;
     width: 40px;
-  }
-  
-  .container button {
-    background-color: $gds-color-blue-50;
-    border-radius: 2px;
   }
   
   .topic-list .link-top-line .raw-topic-link {
@@ -112,9 +124,9 @@
   th.activity.num {
     display: none;
   }
+
   .topic-status-info,
   .topic-body {
     border: none;
   }
-
 }

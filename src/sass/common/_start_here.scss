@@ -1,8 +1,12 @@
 .financial-peace {
   .startHere-wrapper {
     float: left;
-    max-width: 600px;
     width: 100%;
+  }
+  @media(min-width: 1000px) {
+    .startHere-wrapper {
+      max-width: 600px;
+    }
   }
   .startHere {
     background-color: white;
@@ -19,9 +23,6 @@
     }
   }
   .startHere {
-    tbody {
-      border-top-width: 1px;
-    }
     td {
       padding: 34px 0;
     }
