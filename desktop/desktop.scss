@@ -9,6 +9,8 @@ a class added that indicated this in the markup
 .Hero--welcome {
   background: url($header-blue-background);
   background-size: cover;
+  background-position: bottom;
+  margin-bottom: 33px;
 }
 
 .questions-wrapper {
@@ -39,4 +41,10 @@ a class added that indicated this in the markup
 
 .tag-show-heading a:first-child {
   background: url($start_here_underline) no-repeat bottom center;
+}
+
+.gds-Card-text {
+  a {
+    background: url($start_here_underline) no-repeat bottom center;
+  }
 }

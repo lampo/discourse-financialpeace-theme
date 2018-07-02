@@ -8,12 +8,13 @@
     box-shadow: 1px 1px 11px $gds-color-gray-30;
     background: $gds-color-white;
     padding: 40px 0;
-    margin: 20px;
   }
 
   .popular-header {
     h2 {
-      padding-bottom: 10px;
+      padding-bottom: 14px;
+      margin-bottom: 30px;
+      font-size: 2rem;
       text-align: center;
       background-position: bottom center;
       background-repeat: no-repeat;
@@ -21,24 +22,31 @@
   }
 
   .popular-items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
     width: 100%;
-    max-width: 300px;
-    margin: 10px auto;
+    width: 320px;
+    margin: 0 auto;
     .popular-item {
-      border: 2px solid $gds-color-gray-10;
+      border: 1px solid #E8ECED;
+      float: left;
       background: $gds-color-gray-10;
-      padding: 10px;
-      border-radius: 15px;
+      padding: 16px;
+      border-radius: 7px;
       display: flex;
       align-items: center;
-      margin: 10px;
-      height: 100px;
-      width: 100px;
+      height: 120px;
+      width: 120px;
       text-align: center;
+      margin-bottom: 10px;
+      &:nth-child(odd) {
+        margin-right: 10px;
+      }
+      &:nth-child(5),
+      &:nth-child(6) {
+        margin-bottom: 0;
+      }
       &:hover {
-        border: 2px solid $gds-color-yellow-80;
+        border: 1px solid $gds-color-amber-40;
         svg {
           transform: scale(1.1);
         }
@@ -47,6 +55,10 @@
     .popular-link {
       display: block;
       width: 100%;
+      .popular-description {
+        color: $gds-color-black;
+        font-size: 1rem;
+      }
     }
   }
 

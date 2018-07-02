@@ -8,8 +8,9 @@
     <div class='gds-Card-body'>
       <h3 class='gds-Heading gds-Heading--tertiary gds-Card-title'></h3>
       <div class='gds-Text gds-Card-text'>
+        <a href="/u/${username}" data-user-card="${username}">${name}</a>
         <p>${blurb}</p> 
-        Updated ${updated} <br>by <strong>  <a href="/u/${username}" data-user-card="${username}">${username}</a></strong></div>
+      </div>
       <a href='/t/${slug}/${id}' class='gds-Button'>Comment</a>
     </div>
   </li>
@@ -40,8 +41,10 @@
             var d = new Date(topic.bumped_at);
             var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
             var card = {
+                name: post.name,
                 username: post.username,
-                blurb: post.blurb,
+                //TODO: Set This to break at the end of a word:
+                blurb: post.blurb.substring(0, 70),
                 id: post.topic_id,
                 slug: topic.slug,
                 lastPoster: topic.lastPoster,
@@ -74,6 +77,4 @@
         return (i % 2) ? props[tok] : tok;
       };
     }
-
-    
 </script>

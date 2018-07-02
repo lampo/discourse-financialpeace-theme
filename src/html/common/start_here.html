@@ -6,6 +6,13 @@
     $.get("/c/get-started.json", startHereDataSuccess);
   };
 
+  var linkTags = function(tags) {
+    var tags = tags.map(function(tag) {
+      return "<a href='/tags/"+tag+"'>" + tag + "</a>";
+    });
+    return tags.join('');
+  };
+
   function startHereDataSuccess(resp, status, ele) {
     var template = $('script[data-template="start-here-template"]').text().split(/\$\{(.+?)\}/g);
     var list = new Array();
@@ -28,7 +35,8 @@
           last_poster_username: topic.last_poster_username,
           pinned: pinClass(topic.pinned),
           title: topic.title,
-          slug: topic.slug
+          slug: topic.slug,
+          tags: linkTags(topic.tags)
         }
       list.push(item);
     }
@@ -57,17 +65,8 @@
             </a>
           </div>
           <a href="/t/${slug}/${id}" class="title raw-link raw-topic-link">${title}</a>
-          <span class="topic-post-badges">  </span>
+          <div class="topic-post-tags">${tags}</div>
         </span>
-        <div class="topic-excerpt">
-            ${excerpt}
-            <a href="/t/${slug}/${id}">read more</a>
-        </div>
-    </td>
-    <td class="num age activity" title="First post: ${created_at}">
-        <a class="post-activity" href="/t/${slug}/${id}">
-            <span class="relative-date" data-time="${created_at}" data-format="tiny">${created_at}</span>
-        </a>
     </td>
     <td class="last-post">
         <div class='poster-avatar'>
@@ -77,6 +76,11 @@
             <a href="${lastPostUrl}">${lastPostDate} </a>
             <span class='editor'><a href="/users/${last_poster_username}" data-auto-route="true" data-user-card="${last_poster_username}">${last_poster_username}</a></span>
         </div>
+    </td>
+    <td class="num age activity" title="First post: ${created_at}">
+        <a class="post-activity" href="/t/${slug}/${id}">
+            <span class="relative-date" data-time="${created_at}" data-format="tiny">${created_at}</span>
+        </a>
     </td>
   </tr>
 </script>  

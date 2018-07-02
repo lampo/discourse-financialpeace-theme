@@ -33,6 +33,12 @@
     }
   }
 
+  .wrap > .category-get-started {
+    background:  $gds-color-white;
+    border-radius: 6px;
+    box-shadow: 1px 1px 15px #ccc;
+  }
+
   /* TODO: There may be a way to do this in the admin console: */
   .columns {
     display: none;
