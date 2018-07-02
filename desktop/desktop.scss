@@ -16,23 +16,27 @@ a class added that indicated this in the markup
   background-size: cover;
 }
 
-  .startHere-header {
-    h2 {
-      background: url($start_here_underline) no-repeat bottom left;
-    }
+.startHere-header {
+  h2 {
+    background: url($start_here_underline) no-repeat bottom left;
   }
-  .startHere {
-    /* 
-    TODO: 
-    Right now this is displayed on all rows. 
-    This needs to be only set on rows which have a response.
-    */
-    td.last-post {
-      background: url($tack_triangle) no-repeat top right; 
-    }
+}
+.startHere {
+  /* 
+  TODO: 
+  Right now this is displayed on all rows. 
+  This needs to be only set on rows which have a response.
+  */
+  td.last-post {
+    background: url($tack_triangle) no-repeat top right; 
   }
+}
 .popular-header {
   h2 {
-    background: url($start_here_underline) no-repeat bottom center;
+    background-image: url($start_here_underline);
   }
+}
+
+.tag-show-heading a:first-child {
+  background: url($start_here_underline) no-repeat bottom center;
 }
