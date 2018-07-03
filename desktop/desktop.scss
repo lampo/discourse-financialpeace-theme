@@ -9,6 +9,8 @@ a class added that indicated this in the markup
 .Hero--welcome {
   background: url($header-blue-background);
   background-size: cover;
+  background-position: bottom;
+  margin-bottom: 33px;
 }
 
 .questions-wrapper {

@@ -1,49 +1,53 @@
 .homepage-wrapper,
 .homepage-footer {
-    display: none;
+  display: none;
 }
 
 .navigation-topics .homepage-wrapper,
 .navigation-topics .homepage-footer {
-    display: block;
-}
-
-.homepage-wrapper {
-    margin-top: 6rem;
+  display: block;
 }
 
 .Hero {
-    &--welcome {
-        margin-top: 2rem;
-        min-width: 320px;
-        position: relative;
-    }
+  &--welcome {
+    margin-top: 4rem;
+    min-width: 320px;
+    position: relative;
+  }
+}
+
+.tech-support {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  font-weight: normal;
+  text-decoration: underline
 }
 
 .triangle-topleft {
-    border-right: 150px solid transparent;
-    border-top: 80px solid $gds-color-amber-50;
-    height: 0;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 0;
+  border-right: 150px solid transparent;
+  border-top: 80px solid $gds-color-amber-50;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 0;
 }
 
 .triangle-bottomright {
-    border-bottom: 80px solid $gds-color-amber-50;
-    border-left: 150px solid transparent;
-    bottom: 0;
-    height: 0;
-    position: absolute;
-    right: 0;
-    width: 0;
+  border-bottom: 80px solid $gds-color-amber-50;
+  border-left: 150px solid transparent;
+  bottom: 0;
+  height: 0;
+  position: absolute;
+  right: 0;
+  width: 0;
 }
 
 .contained-row {
-  margin: 0 auto;
-  max-width: 1080px;
+  max-width: 1200px;
   overflow: hidden;
+  margin: 0 auto 20px auto;
 }
 
 .gds-Hero-container {
