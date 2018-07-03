@@ -4,6 +4,11 @@
   }
 }
 .financial-peace {
+  .tag-show-heading {
+    i, .discourse-tag {
+      display: none;
+    }
+  }
   .list-controls {
     padding: 0;
   }
@@ -25,5 +30,11 @@
     .tag-count {
       display: none;
     }
+  }
+}
+
+.tag-show-heading {
+  a:first-child {
+    padding-bottom: 8px;
   }
 }

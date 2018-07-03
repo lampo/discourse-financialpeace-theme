@@ -1,0 +1,132 @@
+.financial-peace {
+  #topic-title h1 {
+    padding-bottom: 2rem;
+    a {
+      color: $gds-color-gray-70;
+      font-size: 2rem;
+    }
+  }
+
+  .container {
+    padding: 2rem 2rem 0 2rem;
+  }
+
+  .category-site-feedback {
+    background-color: $gds-color-white;
+    margin-top: 2rem;
+    padding: 15px;
+  }
+
+  button.reply {
+    background-color: $gds-color-blue-30;
+    border-radius: 2px;
+    color: $gds-color-white;
+  }
+
+  .topic-meta-data a {
+    color: $gds-color-black;
+    padding-top: 2rem;
+  }
+
+  .names a {
+    font-weight: 600;
+  }
+
+  .topic-post {
+    background-color: $gds-color-gray-20;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+    max-width: 50rem;
+  }
+
+  .topic-avatar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: none;
+  }
+
+  .post-stream {
+    > div:first-child {
+      background-color: transparent;
+      border-top: 1px solid $gds-color-gray-30;
+      border-radius: unset;
+    }
+    .topic-post:nth-child(2) {
+      position: relative;
+      &::after {
+        border-bottom: 30px solid $gds-color-gray-20;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        content: '';
+        display: block;
+        height: 0; 
+        left: 25px;
+        position: absolute;
+        top: -20px;
+        width: 0; 
+      }
+    }
+  }
+
+  nav.post-controls button.create {
+    color: $gds-color-white;
+  }
+    
+  .container li.active a {
+    background-color: $gds-color-blue-50;
+    border-radius: 2px;
+  }
+  
+  .category-name {
+    border: 1px solid $gds-color-gray-50;
+    border-radius: 2px;
+    color: $gds-color-gray-60;
+    font-weight: normal;
+  }
+  
+  .latest.single img {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .topic-list .link-top-line .raw-topic-link {
+    color: $gds-color-gray-80;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .topic-list .num.posts-map.posts a {
+    color: $gds-color-gray-60;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+
+  .topic-list td {
+    padding: 2rem 0;
+  }
+
+  .actions {
+    min-width: 220px;
+  }
+
+  .topic-map,
+  .topic-footer-main-buttons,
+  .topic-notifications-button,
+  .topic-timeline,
+  .suggested-topics-message,
+  a.badge-wrapper:nth-child(2),
+  td.num.views, 
+  td.num.activity,
+  th.views.num,
+  th.activity.num {
+    display: none;
+  }
+
+  .topic-status-info,
+  .topic-body {
+    border: none;
+  }
+}
