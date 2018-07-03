@@ -5,8 +5,8 @@
   }
   .popular {
     border-radius: 7px;
-    box-shadow: 1px 1px 11px #ccc;
-    background: #fff;
+    box-shadow: 1px 1px 11px $gds-color-gray-30;
+    background: $gds-color-white;
     padding: 40px 0;
     margin: 20px;
   }
@@ -27,8 +27,8 @@
     max-width: 300px;
     margin: 10px auto;
     .popular-item {
-      border: 2px solid #efefef;
-      background: rgb(243, 246, 247);
+      border: 2px solid $gds-color-gray-10;
+      background: $gds-color-gray-10;
       padding: 10px;
       border-radius: 15px;
       display: flex;
@@ -38,7 +38,7 @@
       width: 100px;
       text-align: center;
       &:hover {
-        border: 2px solid rgba(249, 161, 25, 0.3);
+        border: 2px solid $gds-color-yellow-80;
         svg {
           transform: scale(1.1);
         }
