@@ -1,11 +1,21 @@
 .financial-peace {
+  header .inner {
+    margin: 0 auto;
+    position: relative;
+    max-width: 1200px;
+  }
+  .questions-wrapper,
+  .homepage-footer {
+    max-width: 72rem;
+    margin: 0 auto;
+  }
   .startHere-wrapper {
     float: left;
     width: 100%;
   }
   @media(min-width: 1000px) {
     .startHere-wrapper {
-      max-width: 600px;
+      max-width: 800px;
     }
   }
   .startHere {
@@ -13,7 +23,8 @@
     border-radius: 7px;
     box-shadow: 1px 1px 11px $gds-color-gray-30;
     padding: 40px;
-    margin: 20px;
+    margin-right: 20px;
+    padding-bottom: 0;
   }
   .startHere-header {
     h2 {
@@ -32,5 +43,53 @@
     .editor {
       display: none;
     }
+    .topic-list tr {
+      border-top: 1px solid $gds-color-gray-30;
+      border-bottom: none;
+    }
+  }
+  footer {
+    border-radius: 6px;
+  }
+}
+
+.topic-post-tags {
+  a {
+    color: $gds-color-gray-40;
+    padding-right: 0.3rem;
+    &:hover {
+      color: $gds-color-blue-50;
+    }
+    &::after {
+      content: ', ';
+    }
+  }
+  :last-child {
+    &::after {
+      content: '';
+    }
+  }
+}
+
+.gds-Heading--secondary {
+  font-size: 2rem;
+}
+
+.gds-Card-body {
+  padding-top: 0;
+}
+
+.gds-Card-text {
+  p {
+    margin-top: 30px;
+    max-width: 200px;
+    font-size: 20px;
+  }
+  a {
+    color: $gds-color-gray-50;
+    font-size: 20px;
+    font-weight: 200;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
   }
 }
