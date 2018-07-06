@@ -14,36 +14,45 @@
   }
 }
 
-.financial-peace {
-
-  .category-list {
-    th.category, th.topics {
-      display: none;
-    }
-  }
-
-  .category-list .category-name {
-    border: none;
-  }
-  .category-list .topics .value {
-    color: $gds-color-black;
-    &:after {
-      content: 'Topics';
-      padding-left: 10px;
-    }
-  }
-
-  .wrap > .category-get-started {
-    background:  $gds-color-white;
-    border-radius: 6px;
-    box-shadow: 1px 1px 15px #ccc;
-  }
-
-  /* TODO: There may be a way to do this in the admin console: */
-  .columns {
+.category-list {
+  th.category, th.topics {
     display: none;
   }
-  .categories-and-latest div.column:last-child {
-    display: none;
+}
+
+.category-list {
+  border: none;
+}
+.category-list .topics .value {
+  color: $gds-color-black;
+  &:after {
+    content: 'Topics';
+    padding-left: 10px;
+  }
+}
+
+.wrap > .category-get-started {
+  background:  $gds-color-white;
+  border-radius: 6px;
+  box-shadow: 1px 1px 15px #ccc;
+}
+
+/* TODO: There may be a way to do this in the admin console: */
+.columns {
+  display: none;
+}
+
+.categories-and-latest div.column:last-child {
+  display: none;
+}
+
+.badge-wrapper {
+  border: 1px solid $gds-color-gray-50;
+  border-radius: 2px;
+  padding: 5px;
+  
+  .category-name {
+    color: $gds-color-gray-60;
+    font-weight: normal;
   }
 }

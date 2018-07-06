@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>money-coins copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Budget-Topic-Page" transform="translate(-541.000000, -138.000000)" stroke="#FFFFFF" stroke-width="3">
+            <g id="money-coins-copy" transform="translate(543.000000, 140.000000)">
+                <polyline id="Shape" stroke-linecap="square" points="18.6666667 30 0 30 0 0 40 0 40 19.0909091"></polyline>
+                <circle id="Oval" stroke-linecap="square" cx="20" cy="14" r="4"></circle>
+                <path d="M36,16.8571429 L36,11.4285714 C32.9195455,11.4285714 30.5454545,9.06578571 30.5454545,6 L11.4545455,6 C11.4545455,9.06578571 9.08045455,11.4285714 6,11.4285714 L6,19.5714286 C9.08045455,19.5714286 11.4545455,21.9342143 11.4545455,25 L19.6363636,25" id="Shape" stroke-linecap="square"></path>
+                <path d="M24,25 L24,30.7142857 C24,33.0814286 27.5813333,35 32,35 C36.4186667,35 40,33.0814286 40,30.7142857 L40,25" id="Shape"></path>
+                <path d="M24,30 L24,35.7142857 C24,38.0814286 27.5813333,40 32,40 C36.4186667,40 40,38.0814286 40,35.7142857 L40,30" id="Shape"></path>
+                <ellipse id="Oval" stroke-linecap="square" cx="32" cy="25" rx="8" ry="4"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

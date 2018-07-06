@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="26px" viewBox="0 0 25 26" version="1.1">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    
+    
+    <defs/>
+    <g id="Responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rsp.-Landing-Page" transform="translate(-316.000000, -471.000000)">
+            <g id="Group-16" transform="translate(316.000000, 471.000000)">
+                <g id="Group-15-Copy-2">
+                    <polygon id="Rectangle-13" fill="#F9AD2C" points="0 0 25 0 25 25"/>
+                    <g id="Group-14" transform="translate(14.000000, 3.000000)" fill="#FFFFFF">
+                        <rect id="Rectangle-2" x="1.14285714" y="0" width="5.71428571" height="1.22222222" rx="0.611111111"/>
+                        <rect id="Rectangle-2-Copy" x="0" y="6.11111111" width="8" height="1.22222222" rx="0.611111111"/>
+                        <polygon id="Rectangle-3" points="2.54152785 0 5.41931522 0 6.85302734 7.33333333 1.14285714 7.34362793"/>
+                        <path d="M3.42857143,7.33333333 L4.57142857,7.33333333 L4.57142857,10.4285714 C4.57142857,10.7441627 4.31559129,11 4,11 L4,11 C3.68440871,11 3.42857143,10.7441627 3.42857143,10.4285714 L3.42857143,7.33333333 Z" id="Rectangle-4"/>
+                    </g>
+                </g>
+                <g id="Group-15-Copy" transform="translate(0.000000, 1.000000)">
+                    <polygon id="Rectangle-13" fill="#F9AD2C" points="0 0 25 0 25 25"/>
+                    <g id="Group-14" transform="translate(14.000000, 3.000000)" fill="#FFFFFF">
+                        <rect id="Rectangle-2" x="1.14285714" y="0" width="5.71428571" height="1.22222222" rx="0.611111111"/>
+                        <rect id="Rectangle-2-Copy" x="0" y="6.11111111" width="8" height="1.22222222" rx="0.611111111"/>
+                        <polygon id="Rectangle-3" points="2.54152785 0 5.41931522 0 6.85302734 7.33333333 1.14285714 7.34362793"/>
+                        <path d="M3.42857143,7.33333333 L4.57142857,7.33333333 L4.57142857,10.4285714 C4.57142857,10.7441627 4.31559129,11 4,11 L4,11 C3.68440871,11 3.42857143,10.7441627 3.42857143,10.4285714 L3.42857143,7.33333333 Z" id="Rectangle-4"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

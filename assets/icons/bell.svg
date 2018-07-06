@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="24px" viewBox="0 0 23 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Action Right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="Header/Desktop" transform="translate(-1233.000000, -21.000000)" stroke="#69757A">
+            <g id="Action" transform="translate(1219.000000, 8.000000)">
+                <g id="Icon/Notification" transform="translate(0.500000, 0.000000)">
+                    <g id="bell-53" transform="translate(16.000000, 14.000000)">
+                        <path d="M12,19 C12,20.7 10.7,22 9,22 C7.3,22 6,20.7 6,19" id="Shape" stroke-width="2"></path>
+                        <path d="M16,12 C16,9.5 16,7 16,7 C16,3.1 12.9,0 9,0 C5.1,0 2,3.1 2,7 C2,7 2,9.5 2,12 C2,16 0,19 0,19 L18,19 C18,19 16,16 16,12 Z" id="Shape" stroke-width="2"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

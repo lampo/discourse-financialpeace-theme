@@ -18,8 +18,14 @@ html {
 }
 
 body {
+  background: $gds-color-gray-10;
   font-family: $gds-font-family;
 }
+
+tbody {
+  border-top: none;
+}
+
 
 h1,
 h2,
@@ -49,6 +55,7 @@ a {
     color: inherit;
   }
 }
+
 .call-out {
   font-family: Wilderness;
   font-size: 96px;
