@@ -5,7 +5,6 @@ node_modules/
 sassdoc/
 
 # ignore built assets
-assets/
 design-tokens/dist/*
 coverage/
 

@@ -74,9 +74,6 @@
   }
 
   .main-nav.nav-pills {
-    li a.active {
-      background: $gds-color-blue-50;
-    }
     li a {
       border-radius: 3px;
       margin: 2px;
@@ -124,11 +121,6 @@
     .stream-topic-title a {
       color: $gds-color-black;
       font-weight: 900;
-    }
-    .category-name {
-      color: $gds-color-gray-20;
-      font-weight: normal;
-      border: none;
     }
   }
   .topic-list {

@@ -3224,8 +3224,14 @@ html {
 }
 
 body {
+  background: $gds-color-gray-10;
   font-family: $gds-font-family;
 }
+
+tbody {
+  border-top: none;
+}
+
 
 h1,
 h2,
@@ -3255,18 +3261,11 @@ a {
     color: inherit;
   }
 }
+
 .call-out {
   font-family: Wilderness;
   font-size: 96px;
   font-weight: 400;
-}
-
-body {
-  background: $gds-color-gray-10;
-}
-
-tbody {
-  border-top: none;
 }
 
 .admin-content {
@@ -3279,6 +3278,79 @@ tbody {
 
 .badge-wrapper.bullet .badge-category-bg {
   display: none;
+}
+
+/* Josh Young */
+/* TODO:
+  - add gazelle styles.
+  - insure that the elements that are being hidden cannot be removed from the admin.
+*/
+
+.financial-peace.navigation-categories {
+  .nav.nav-pills {
+    display: none;
+  }
+  button {
+    border-radius: 4px;
+    padding: 10px;
+  }
+}
+
+.category-list {
+  th.category, th.topics {
+    display: none;
+  }
+}
+
+.category-list {
+  border: none;
+}
+.category-list .topics .value {
+  color: $gds-color-black;
+  &:after {
+    content: 'Topics';
+    padding-left: 10px;
+  }
+}
+
+.wrap > .category-get-started {
+  background:  $gds-color-white;
+  border-radius: 6px;
+  box-shadow: 1px 1px 15px #ccc;
+}
+
+/* TODO: There may be a way to do this in the admin console: */
+.columns {
+  display: none;
+}
+
+.categories-and-latest div.column:last-child {
+  display: none;
+}
+
+.badge-wrapper {
+  border: 1px solid $gds-color-gray-50;
+  border-radius: 2px;
+  padding: 5px;
+  
+  .category-name {
+    color: $gds-color-gray-60;
+    font-weight: normal;
+  }
+}
+
+.financial-peace {
+  .category-list-item {
+    h3 {
+      font-size: $gds-font-size-xs;
+    }
+  }
+  .categories-and-latest div.column {
+    font-size: inherit;
+  }
+  .topic-list .posts-map {
+    font-size: inherit;
+  }
 }
 
 .container {
@@ -3301,14 +3373,38 @@ tbody {
   }
 }
 
-.category-name {
-  border: 1px solid $gds-color-gray-50;
-  border-radius: 2px;
-  color: $gds-color-gray-60;
-  font-weight: normal;
-  padding: 0.5rem;
-  text-decoration: none;
+td.num.views, td.num.activity{
+  display: none;
 }
+
+th.views.num, th.activity.num {
+  display: none;
+}
+
+.latest.single img{
+  height: 40px;
+  width: 40px;
+}
+
+#create-topic {
+  background-color: $gds-color-blue-50;
+  border-radius: 2px;
+}
+
+title.raw-link.raw-topic-link a{
+  color: $gds-color-black;
+  font-size: $gds-font-size-xs;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer__link {
+  display: inline-block;
+  padding: 1rem;
+}
+
 .homepage-wrapper,
 .homepage-footer {
   display: none;
@@ -3385,50 +3481,13 @@ tbody {
   border-radius: 10px;
 }
 
-td.num.views, td.num.activity{
-    display: none;
+.select-kit.dropdown-select-box .select-kit-row .texts .name {
+  font-weight: $gds-font-weight-semibold;;
 }
-
-th.views.num, th.activity.num {
-    display: none;
-}
-
 .nav-pills {
-    li.active a {
-    background-color: $gds-color-blue-50;
+  li.active a {
     border-radius: 2px;
-    }
-}
-
-.category-name {
-    border: 1px solid $gds-color-gray-50;
-    border-radius: 2px;
-    color: $gds-color-gray-60;
-    font-weight: normal;
-}
-
-.latest.single img{
-    height: 40px;
-    width: 40px;
-}
-
-#create-topic {
-    background-color: $gds-color-blue-50;
-    border-radius: 2px;
-}
-
-title.raw-link.raw-topic-link a{
-    color: $gds-color-black;
-    font-size: $gds-font-size-xs;
-}
-
-.footer {
-  text-align: center;
-}
-
-.footer__link {
-  display: inline-block;
-  padding: 1rem;
+  }
 }
 
 .financial-peace {
@@ -3583,9 +3642,6 @@ title.raw-link.raw-topic-link a{
   }
 
   .main-nav.nav-pills {
-    li a.active {
-      background: $gds-color-blue-50;
-    }
     li a {
       border-radius: 3px;
       margin: 2px;
@@ -3633,11 +3689,6 @@ title.raw-link.raw-topic-link a{
     .stream-topic-title a {
       color: $gds-color-black;
       font-weight: 900;
-    }
-    .category-name {
-      color: $gds-color-gray-20;
-      font-weight: normal;
-      border: none;
     }
   }
   .topic-list {
@@ -3802,108 +3853,6 @@ title.raw-link.raw-topic-link a{
   }
 }
 
-.financial-peace {
-  .topic-list {
-    thead {
-      display: none;
-    }
-    .category-name {
-      color: $gds-color-gray-30;
-      font-weight: $gds-font-weight-normal;
-    }
-    .raw-topic-link {
-      font-weight: $gds-font-weight-bold;
-    }
-    .posts-map.post {
-      display: none;
-    }
-    .age.activity {
-      display: none;
-    }
-    .views {
-      display: none;
-    }
-    .posts {
-      width: 90px;
-    }
-    a.posts-map.badge-posts.heatmap-::after {
-      content: " replies";
-    }
-  }
-
-  .topic-poster img {
-    margin-top: -40px;
-    background: $gds-color-white;
-    padding: 10px;
-    border-radius: 50px;
-    border: solid 1px $gds-color-blue-50;
-  }
-}
-
-/* Josh Young */
-/* TODO:
-  - add gazelle styles.
-  - insure that the elements that are being hidden cannot be removed from the admin.
-*/
-
-.financial-peace.navigation-categories {
-  .nav.nav-pills {
-    display: none;
-  }
-  button {
-    border-radius: 4px;
-    padding: 10px;
-  }
-}
-
-.financial-peace {
-
-  .category-list {
-    th.category, th.topics {
-      display: none;
-    }
-  }
-
-  .category-list .category-name {
-    border: none;
-  }
-  .category-list .topics .value {
-    color: $gds-color-black;
-    &:after {
-      content: 'Topics';
-      padding-left: 10px;
-    }
-  }
-
-  .wrap > .category-get-started {
-    background:  $gds-color-white;
-    border-radius: 6px;
-    box-shadow: 1px 1px 15px #ccc;
-  }
-
-  /* TODO: There may be a way to do this in the admin console: */
-  .columns {
-    display: none;
-  }
-  .categories-and-latest div.column:last-child {
-    display: none;
-  }
-}
-
-.financial-peace {
-  .category-list-item {
-    h3 {
-      font-size: $gds-font-size-xs;
-    }
-  }
-  .categories-and-latest div.column {
-    font-size: inherit;
-  }
-  .topic-list .posts-map {
-    font-size: inherit;
-  }
-}
-
 .tags-page.financial-peace {
   .dropdown-toggle {
     display: none;
@@ -3927,9 +3876,8 @@ title.raw-link.raw-topic-link a{
     width: auto;
     margin-right: 20px;
     a {
-      background: $gds-color-blue-20;
+      background: $gds-color-blue-30;
       color: $gds-color-white;
-      font-weight: bold;
       display: block;
       padding: 10px;
       border-radius: 3px;
@@ -3946,136 +3894,159 @@ title.raw-link.raw-topic-link a{
   }
 }
 
-.financial-peace {
-  #topic-title h1 {
-    padding-bottom: 2rem;
-    a {
-      color: $gds-color-gray-70;
-      font-size: 2rem;
-    }
-  }
-
-  .container {
-    padding: 2rem 2rem 0 2rem;
-  }
-
-  .category-site-feedback {
-    background-color: $gds-color-white;
-    margin-top: 2rem;
-    padding: 15px;
-  }
-
-  button.reply {
-    background-color: $gds-color-blue-30;
-    border-radius: 2px;
-    color: $gds-color-white;
-  }
-
-  .topic-meta-data a {
-    color: $gds-color-black;
-    padding-top: 2rem;
-  }
-
-  .names a {
-    font-weight: 600;
-  }
-
-  .topic-post {
-    background-color: $gds-color-gray-20;
-    border: none;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    padding-top: 1.5rem;
-    max-width: 50rem;
-  }
-
-  .topic-avatar {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border: none;
-  }
-
-  .post-stream {
-    > div:first-child {
-      background-color: transparent;
-      border-top: 1px solid $gds-color-gray-30;
-      border-radius: unset;
-    }
-    .topic-post:nth-child(2) {
-      position: relative;
-      &::after {
-        border-bottom: 30px solid $gds-color-gray-20;
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        content: '';
-        display: block;
-        height: 0; 
-        left: 25px;
-        position: absolute;
-        top: -20px;
-        width: 0; 
-      }
-    }
-  }
-
-  nav.post-controls button.create {
-    color: $gds-color-white;
-  }
-    
-  .container li.active a {
-    background-color: $gds-color-blue-50;
-    border-radius: 2px;
-  }
-  
-  .category-name {
-    border: 1px solid $gds-color-gray-50;
-    border-radius: 2px;
-    color: $gds-color-gray-60;
-    font-weight: normal;
-  }
-  
-  .latest.single img {
-    height: 40px;
-    width: 40px;
-  }
-  
-  .topic-list .link-top-line .raw-topic-link {
-    color: $gds-color-gray-80;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-
-  .topic-list .num.posts-map.posts a {
-    color: $gds-color-gray-60;
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-
-  .topic-list td {
-    padding: 2rem 0;
-  }
-
-  .actions {
-    min-width: 220px;
-  }
-
-  .topic-map,
-  .topic-footer-main-buttons,
-  .topic-notifications-button,
-  .topic-timeline,
-  .suggested-topics-message,
-  a.badge-wrapper:nth-child(2),
-  td.num.views, 
-  td.num.activity,
-  th.views.num,
-  th.activity.num {
-    display: none;
-  }
-
-  .topic-status-info,
-  .topic-body {
-    border: none;
+#topic-title h1 {
+  padding-bottom: 2rem;
+  a {
+    color: $gds-color-gray-70;
+    font-size: 2rem;
   }
 }
+
+.container {
+  padding: 2rem 2rem 0 2rem;
+}
+
+.category-site-feedback {
+  background-color: $gds-color-white;
+  margin-top: 2rem;
+  padding: 15px;
+}
+
+button.reply {
+  background-color: $gds-color-blue-30;
+  border-radius: 2px;
+  color: $gds-color-white;
+}
+
+.topic-meta-data a {
+  color: $gds-color-black;
+  padding-top: 2rem;
+}
+
+.names a {
+  font-weight: $gds-font-weight-semibold;;
+}
+
+.topic-post {
+  background-color: $gds-color-gray-20;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  padding-top: 1.5rem;
+  max-width: 50rem;
+}
+
+.topic-avatar {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: none;
+}
+
+.post-stream {
+  > div:first-child {
+    background-color: transparent;
+    border-top: 1px solid $gds-color-gray-30;
+    border-radius: unset;
+  }
+  .topic-post:nth-child(2) {
+    position: relative;
+    &::after {
+      border-bottom: 30px solid $gds-color-gray-20;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      content: '';
+      display: block;
+      height: 0; 
+      left: 25px;
+      position: absolute;
+      top: -20px;
+      width: 0; 
+    }
+  }
+}
+
+nav.post-controls button.create {
+  color: $gds-color-white;
+}
+  
+.container li.active a {
+  border-radius: 2px;
+}
+
+.latest.single img {
+  height: 40px;
+  width: 40px;
+}
+
+.topic-list .link-top-line .raw-topic-link {
+  color: $gds-color-gray-80;
+  font-size: 1.1rem;
+  font-weight: $gds-font-weight-semibold;;
+}
+
+.topic-list .num.posts-map.posts a {
+  color: $gds-color-gray-60;
+  font-size: 1.1rem;
+  font-weight: $gds-font-weight-semibold;;
+}
+
+.topic-list td {
+  padding: 2rem 0;
+}
+
+.actions {
+  min-width: 220px;
+}
+
+.topic-map,
+.topic-footer-main-buttons,
+.topic-notifications-button,
+.topic-timeline,
+.suggested-topics-message,
+a.badge-wrapper:nth-child(2),
+td.num.views, 
+td.num.activity,
+th.views.num,
+th.activity.num {
+  display: none;
+}
+
+.topic-status-info,
+.topic-body {
+  border: none;
+}
+
+.topic-list {
+  thead {
+    display: none;
+  }
+  .raw-topic-link {
+    font-weight: $gds-font-weight-semibold;
+  }
+  .posts-map.post {
+    display: none;
+  }
+  .age.activity {
+    display: none;
+  }
+  .views {
+    display: none;
+  }
+  .posts {
+    width: 90px;
+  }
+  a.posts-map.badge-posts.heatmap-::after {
+    content: " replies";
+  }
+}
+
+.topic-poster img {
+  margin-top: -40px;
+  background: $gds-color-white;
+  padding: 10px;
+  border-radius: 50px;
+  border: solid 1px $gds-color-blue-50;
+}
+
 

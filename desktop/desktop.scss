@@ -1,13 +1,7 @@
 // Using desktop.scss for any scss that requires variables stored in Discourse. Primarily an image assets
 
-/* TODO:
-- Josh Young
-- Set the thumb tack for only elements which have had a response. I did not see 
-a class added that indicated this in the markup
-*/
-
 .Hero--welcome {
-  background: url($header-blue-background);
+  background: url($welcome_background);
   background-size: cover;
   background-position: bottom;
   margin-bottom: 33px;
@@ -20,31 +14,28 @@ a class added that indicated this in the markup
 
 .startHere-header {
   h2 {
-    background: url($start_here_underline) no-repeat bottom left;
+    background: url($headline_swash) no-repeat bottom left;
   }
 }
-.startHere {
-  /* 
-  TODO: 
-  Right now this is displayed on all rows. 
-  This needs to be only set on rows which have a response.
-  */
+
+.pinned {
   td.last-post {
-    background: url($tack_triangle) no-repeat top right; 
+    background: url($pin_triangle) no-repeat top right; 
   }
 }
+
 .popular-header {
   h2 {
-    background-image: url($start_here_underline);
+    background-image: url($headline_swash);
   }
 }
 
 .tag-show-heading a:first-child {
-  background: url($start_here_underline) no-repeat bottom center;
+  background: url($headline_swash) no-repeat bottom center;
 }
 
 .gds-Card-text {
   a {
-    background: url($start_here_underline) no-repeat bottom center;
+    background: url($headline_swash) no-repeat bottom center;
   }
 }
