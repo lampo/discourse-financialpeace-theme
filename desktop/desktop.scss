@@ -17,10 +17,14 @@
     background: url($headline_swash) no-repeat bottom left;
   }
 }
-
-.pinned {
-  td.last-post {
-    background: url($pin_triangle) no-repeat top right; 
+.startHere {
+  /* 
+  TODO: 
+  Right now this is displayed on all rows. 
+  This needs to be only set on rows which have a response.
+  */
+  tr.pinned td.last-post {
+    background: url($tack_triangle) no-repeat top right; 
   }
 }
 

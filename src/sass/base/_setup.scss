@@ -61,3 +61,26 @@ a {
   font-size: 96px;
   font-weight: 400;
 }
+
+.financial-peace {
+  body {
+    background: $gds-color-gray-10;
+  }
+
+  tbody {
+    border-top: none;
+  }
+
+  .wrap > div:not(.container):nth-child(2),
+  .wrap > section {
+    @include backgroundChange();
+  }
+  section.container {
+    h2 {
+      margin-bottom: 10px;
+    }
+    p {
+      padding: 5px;
+    }
+  }
+}

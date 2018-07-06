@@ -3216,6 +3216,13 @@ $gds-media-query-legacy-desk: "only screen and (min-width: 48em)";
 }
 
 
+@mixin backgroundChange {
+  background: $gds-color-white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 15px #ccc;
+}
+
 
 html {
   background-color: $gds-color-background-default;
@@ -3266,6 +3273,29 @@ a {
   font-family: Wilderness;
   font-size: 96px;
   font-weight: 400;
+}
+
+.financial-peace {
+  body {
+    background: $gds-color-gray-10;
+  }
+
+  tbody {
+    border-top: none;
+  }
+
+  .wrap > div:not(.container):nth-child(2),
+  .wrap > section {
+    @include backgroundChange();
+  }
+  section.container {
+    h2 {
+      margin-bottom: 10px;
+    }
+    p {
+      padding: 5px;
+    }
+  }
 }
 
 .admin-content {
@@ -3371,6 +3401,15 @@ a {
     background: $gds-color-blue-40;
     color: $gds-color-white;
   }
+}
+
+.category-name {
+  border: 1px solid $gds-color-gray-50;
+  border-radius: 2px;
+  color: $gds-color-gray-60;
+  font-weight: normal;
+  padding: 0.5rem;
+  text-decoration: none;
 }
 
 td.num.views, td.num.activity{
@@ -4049,4 +4088,57 @@ th.activity.num {
   border: solid 1px $gds-color-blue-50;
 }
 
+
+/* This fpu-global-nav code is just temporary code until we get to P2 */
+.financial-peace {
+  .fpu-global-nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    li {
+      display: none;
+    }
+    &::before {
+      content: '|||';
+      width: 20px;
+      height: 20px;
+      color: #ccc;
+      letter-spacing: 2px;
+      display: block;
+      font-weight: bold;
+      font-size: 24px;
+      transform: rotate(90deg);
+    }
+    &:hover li {
+      display: block;
+      padding: 10px;
+    }
+  }
+
+  .d-header-icons {
+    li:nth-child(2) {
+      display: none;
+    }
+    .icon img.avatar {
+      width: 1.6rem;
+      height: 1.4rem;
+    }
+  }
+
+  .d-header-icons .unread-private-messages, .d-header-icons .ring {
+    top: 4px;
+    right: 6px;
+  }
+
+  .unread-private-messages {
+    background: $gds-color-amber-50;
+  }
+
+  .d-header-icons .badge-notification {
+    min-width: initial;
+    border-radius: 50%;
+  }
+}
 

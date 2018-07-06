@@ -3,6 +3,32 @@
     document.body.className += " " + "financial-peace";
   });
 </script>
+<script type="text/discourse-plugin" version="0.8.13">
+api.decorateWidget('header:before', helper => {
+  const showExtraInfo = helper.attrs.minimized;
+  if(!showExtraInfo) {
+    return helper.h('ul.fpu-global-nav', [
+      helper.h('li', [
+        helper.h('a', {
+          href:'/admin', 
+          text:'Admin'
+        }),
+      ]),
+      helper.h('li', [
+        helper.h('a', {
+          href:'/groups', 
+          text:'Groups'
+        }),
+      ])
+    ]);
+  }
+});
+
+$(document).ready(function() {
+  $('.header-dropdown-toggle').find('img')[0]
+    .setAttribute('src', '/uploads/default/original/1X/045dfe08aee0e4b9bd7f4f98ca47ab692d2449fe.svg');
+});
+</script>
 <script type='text/x-handlebars' data-template-name='/connectors/above-footer/add-landing-page-footer'>
   <div class="homepage-footer">
     <footer class="gds-Hero gds-Hero--alternate Hero--welcome">
@@ -397,20 +423,20 @@
     }
 
     for (var i = 0; i < arraylength; i++) {
-        var topic = resp.topic_list.topics[i];
-        var d = new Date(topic.last_posted_at);
-        var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
-        var item = {
-          created_at: topic.created_at,
-          excerpt: topic.excerpt,
-          id: topic.id,
-          lastPostDate: updated,
-          last_poster_username: topic.last_poster_username,
-          pinned: pinClass(topic.pinned),
-          title: topic.title,
-          slug: topic.slug,
-          tags: linkTags(topic.tags)
-        }
+      var topic = resp.topic_list.topics[i];
+      var d = new Date(topic.last_posted_at);
+      var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
+      var item = {
+        created_at: topic.created_at,
+        excerpt: topic.excerpt,
+        id: topic.id,
+        lastPostDate: updated,
+        last_poster_username: topic.last_poster_username,
+        pinned: pinClass(topic.pinned),
+        title: topic.title,
+        slug: topic.slug,
+        tags: linkTags(topic.tags)
+      }
       list.push(item);
     }
 

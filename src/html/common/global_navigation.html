@@ -1,0 +1,26 @@
+<script type="text/discourse-plugin" version="0.8.13">
+api.decorateWidget('header:before', helper => {
+  const showExtraInfo = helper.attrs.minimized;
+  if(!showExtraInfo) {
+    return helper.h('ul.fpu-global-nav', [
+      helper.h('li', [
+        helper.h('a', {
+          href:'/admin', 
+          text:'Admin'
+        }),
+      ]),
+      helper.h('li', [
+        helper.h('a', {
+          href:'/groups', 
+          text:'Groups'
+        }),
+      ])
+    ]);
+  }
+});
+
+$(document).ready(function() {
+  $('.header-dropdown-toggle').find('img')[0]
+    .setAttribute('src', '/uploads/default/original/1X/045dfe08aee0e4b9bd7f4f98ca47ab692d2449fe.svg');
+});
+</script>
