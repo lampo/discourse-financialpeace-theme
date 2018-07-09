@@ -262,18 +262,5 @@
 <script type="text/discourse-plugin" version="0.8.13">
 $(document).ready(function() {
   $('#daily-check-in').attr("href", settings.daily_check_in);
-  if ($('#current-user').length) {
-      $('#current-user').find('img')[0]
-          .setAttribute('src', '/assets/icons/bell.svg');
-  }
-  $('#js_top_nav_hamburger').click(function(e) {
-    $('#js_fpu_global_nav > ul').toggleClass('open-top-nav');
-    e.stopPropagation();
-  });
-  $(document).on("click", function(e) {
-    if ($(e.target).is("#js_fpu_global_nav > ul") === false) {
-      $('#js_fpu_global_nav > ul').removeClass('open-top-nav');
-    }
-  });
 });
 </script>

@@ -10,9 +10,9 @@
     "questions_background": "assets/questions-background.jpg",
     "new_here_background_mobile": "assets/new-here-background-mobile.jpg",
     "new_here_background": "assets/new-here-background.jpg",
-    "section_background-mobile": "assets/section-background-mobile.jpg",
+    "section_background_mobile": "assets/section-background-mobile.jpg",
     "section_background": "assets/section-background.jpg",
-    "welcome_background-mobile": "assets/welcome-background-mobile.jpg",
+    "welcome_background_mobile": "assets/welcome-background-mobile.jpg",
     "welcome_background": "assets/welcome-background.jpg",
     "icon_about": "assets/icons/about.svg",
     "icon_bell": "assets/icons/bell.svg",
@@ -21,7 +21,7 @@
     "icon_group": "assets/icons/group.svg",
     "icon_tags": "assets/icons/tags.svg",
     "icon_topics": "assets/icons/topics.svg",
-    "icon_hamburger": "assets/icons/Bars.svg"
+    "icon_hamburger": "assets/icons/hamburger.svg"
 },
   "color_schemes": {
     "Financial Peace GDS": {

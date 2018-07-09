@@ -47,12 +47,12 @@
   }
 
   .d-header-icons {
-    li:nth-child(2) {
+    #toggle-hamburger-menu {
       display: none;
     }
     .icon img.avatar {
-      width: 1.6rem;
-      height: 1.4rem;
+      // width: 1.6rem;
+      // height: 1.4rem;
     }
   }
 
