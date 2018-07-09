@@ -23,11 +23,6 @@ api.decorateWidget('header:before', helper => {
     ]);
   }
 });
-
-$(document).ready(function() {
-  $('.header-dropdown-toggle').find('img')[0]
-    .setAttribute('src', '/uploads/default/original/1X/045dfe08aee0e4b9bd7f4f98ca47ab692d2449fe.svg');
-});
 </script>
 <script type='text/x-handlebars' data-template-name='/connectors/above-footer/add-landing-page-footer'>
   <div class="homepage-footer">
@@ -313,9 +308,13 @@ $(document).ready(function() {
   </div>
 </script>
 <script type="text/discourse-plugin" version="0.8.13">
-  $(document).ready(function() {
+$(document).ready(function() {
     $('#daily-check-in').attr("href", settings.daily_check_in);
-  });
+    if ($('#current-user').length) {
+        $('#current-user').find('img')[0]
+            .setAttribute('src', '/assets/icons/bell.svg');
+    }
+});
 </script>
 <script type="text/template" data-template="question-card-template">
   <li class='gds-FeatureGroup-feature'>
@@ -441,7 +440,7 @@ $(document).ready(function() {
     }
 
     $('#StartHereResults').append(list.map(function(item) {
-        return template.map(render(item)).join('');
+      return template.map(render(item)).join('');
     }));
   }
 
