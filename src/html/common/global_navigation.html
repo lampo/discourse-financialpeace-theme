@@ -2,18 +2,62 @@
 api.decorateWidget('header:before', helper => {
   const showExtraInfo = helper.attrs.minimized;
   if(!showExtraInfo) {
-    return helper.h('ul.fpu-global-nav', [
-      helper.h('li', [
-        helper.h('a', {
-          href:'/admin', 
-          text:'Admin'
-        }),
-      ]),
-      helper.h('li', [
-        helper.h('a', {
-          href:'/groups', 
-          text:'Groups'
-        }),
+    return helper.h('div#js_top_nav_hamburger.top-nav-hamburger', [ ]);
+  }
+});
+api.decorateWidget('header:before', helper => {
+  const showExtraInfo = helper.attrs.minimized;
+  if(!showExtraInfo) {
+    return helper.h('nav#js_fpu_global_nav.fpu-global-nav', [
+      helper.h('ul', [
+        helper.h('li', [
+          helper.h('a', {
+            href:'/', 
+            text:'Lessons'
+          }),
+        ]),
+        helper.h('li', [
+          helper.h('a', {
+            href:'/', 
+            text:'Resources'
+          }),
+        ]),
+        helper.h('li', [
+          helper.h('a', {
+            href:'/', 
+            text:'Budget'
+          }),
+        ]),
+        helper.h('li.active', [
+          helper.h('a', {
+            href:'/', 
+            text:'Connect'
+          }),
+        ]),
+        helper.h('li', [
+          helper.h('a', {
+            href:'/', 
+            text:'Ask a Coach'
+          }),
+        ]),
+        helper.h('li', [
+          helper.h('a', {
+            href:'/', 
+            text:'My Group'
+          }),
+        ]),
+        helper.h('li', [
+          helper.h('a', {
+            href:'/admin', 
+            text:'Admin'
+          }),
+        ]),
+        helper.h('li', [
+          helper.h('a', {
+            href:'/groups', 
+            text:'Groups'
+          }),
+        ])
       ])
     ]);
   }

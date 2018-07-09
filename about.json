@@ -20,7 +20,8 @@
     "icon_categories": "assets/icons/categories.svg",
     "icon_group": "assets/icons/group.svg",
     "icon_tags": "assets/icons/tags.svg",
-    "icon_topics": "assets/icons/topics.svg"
+    "icon_topics": "assets/icons/topics.svg",
+    "icon_hamburger": "assets/icons/Bars.svg"
 },
   "color_schemes": {
     "Financial Peace GDS": {
