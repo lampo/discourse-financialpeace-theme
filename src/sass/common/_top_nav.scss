@@ -1,28 +1,48 @@
-/* This fpu-global-nav code is just temporary code until we get to P2 */
 .financial-peace {
+  .top-nav-hamburger {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    &:hover {
+      color: $gds-color-blue-40;
+      cursor: pointer;
+    }
+  }
   .fpu-global-nav {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 10px;
-    height: 10px;
+    top: 72px; 
+    left: 0;
+    ul {
+      box-shadow: inset 0px 1px 6px #ccc;
+      margin: 0;
+      padding: 70px 0;
+      background: white;
+      list-style-type: none;
+      width: 240px;
+      margin-left: -240px;
+      transition: margin 0.4s;
+      &.open-top-nav {
+        margin-left: 0;
+      }
+    }
     li {
-      display: none;
+      &.active {
+        border-left: 6px solid $gds-color-amber-60;
+        a {
+          color: $gds-color-blue-40;
+        }
+      }
     }
-    &::before {
-      content: '|||';
-      width: 20px;
-      height: 20px;
-      color: #ccc;
-      letter-spacing: 2px;
+    a {
       display: block;
-      font-weight: bold;
-      font-size: 24px;
-      transform: rotate(90deg);
-    }
-    &:hover li {
-      display: block;
-      padding: 10px;
+      padding: 15px 0;
+      padding-left: 40px;
+      color: $gds-color-gray-40;
+      &:hover {
+        color: $gds-color-blue-40;
+      }
     }
   }
 
