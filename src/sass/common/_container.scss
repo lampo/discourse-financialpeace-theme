@@ -17,3 +17,12 @@
     color: $gds-color-white;
   }
 }
+
+.category-name {
+  border: 1px solid $gds-color-gray-50;
+  border-radius: 2px;
+  color: $gds-color-gray-60;
+  font-weight: normal;
+  padding: 0.5rem;
+  text-decoration: none;
+}

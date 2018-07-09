@@ -24,25 +24,25 @@
     }
 
     for (var i = 0; i < arraylength; i++) {
-        var topic = resp.topic_list.topics[i];
-        var d = new Date(topic.last_posted_at);
-        var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
-        var item = {
-          created_at: topic.created_at,
-          excerpt: topic.excerpt,
-          id: topic.id,
-          lastPostDate: updated,
-          last_poster_username: topic.last_poster_username,
-          pinned: pinClass(topic.pinned),
-          title: topic.title,
-          slug: topic.slug,
-          tags: linkTags(topic.tags)
-        }
+      var topic = resp.topic_list.topics[i];
+      var d = new Date(topic.last_posted_at);
+      var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
+      var item = {
+        created_at: topic.created_at,
+        excerpt: topic.excerpt,
+        id: topic.id,
+        lastPostDate: updated,
+        last_poster_username: topic.last_poster_username,
+        pinned: pinClass(topic.pinned),
+        title: topic.title,
+        slug: topic.slug,
+        tags: linkTags(topic.tags)
+      }
       list.push(item);
     }
 
     $('#StartHereResults').append(list.map(function(item) {
-        return template.map(render(item)).join('');
+      return template.map(render(item)).join('');
     }));
   }
 

@@ -1,0 +1,52 @@
+/* This fpu-global-nav code is just temporary code until we get to P2 */
+.financial-peace {
+  .fpu-global-nav {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    li {
+      display: none;
+    }
+    &::before {
+      content: '|||';
+      width: 20px;
+      height: 20px;
+      color: #ccc;
+      letter-spacing: 2px;
+      display: block;
+      font-weight: bold;
+      font-size: 24px;
+      transform: rotate(90deg);
+    }
+    &:hover li {
+      display: block;
+      padding: 10px;
+    }
+  }
+
+  .d-header-icons {
+    li:nth-child(2) {
+      display: none;
+    }
+    .icon img.avatar {
+      width: 1.6rem;
+      height: 1.4rem;
+    }
+  }
+
+  .d-header-icons .unread-private-messages, .d-header-icons .ring {
+    top: 4px;
+    right: 6px;
+  }
+
+  .unread-private-messages {
+    background: $gds-color-amber-50;
+  }
+
+  .d-header-icons .badge-notification {
+    min-width: initial;
+    border-radius: 50%;
+  }
+}

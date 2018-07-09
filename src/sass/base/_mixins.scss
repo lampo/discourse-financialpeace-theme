@@ -1,1 +1,8 @@
 @import 'mixins/fluid_type';
+
+@mixin backgroundChange {
+  background: $gds-color-white;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 15px #ccc;
+}
