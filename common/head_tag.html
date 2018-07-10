@@ -4,85 +4,56 @@
   });
 </script>
 <script type="text/discourse-plugin" version="0.8.13">
-  api.decorateWidget('header:before', helper => {
-    const showExtraInfo = helper.attrs.minimized;
-    if(!showExtraInfo) {
-      return helper.h('div#js_top_nav_hamburger.top-nav-hamburger', [ ]);
-    }
-  });
+api.decorateWidget('header:before', helper => {
 
-  api.decorateWidget('header:before', helper => {
-    const showExtraInfo = helper.attrs.minimized;
-    if(!showExtraInfo) {
-      return helper.h('nav#js_fpu_global_nav.fpu-global-nav', [
-        helper.h('ul', [
-          helper.h('li', [
-            helper.h('a', {
-              href:'/', 
-              text:'Lessons'
-            }),
-          ]),
-          helper.h('li', [
-            helper.h('a', {
-              href:'/', 
-              text:'Resources'
-            }),
-          ]),
-          helper.h('li', [
-            helper.h('a', {
-              href:'/', 
-              text:'Budget'
-            }),
-          ]),
-          helper.h('li.active', [
-            helper.h('a', {
-              href:'/', 
-              text:'Connect'
-            }),
-          ]),
-          helper.h('li', [
-            helper.h('a', {
-              href:'/', 
-              text:'Ask a Coach'
-            }),
-          ]),
-          helper.h('li', [
-            helper.h('a', {
-              href:'/', 
-              text:'My Group'
-            }),
-          ]),
-          helper.h('li', [
-            helper.h('a', {
-              href:'/admin', 
-              text:'Admin'
-            }),
-          ]),
-          helper.h('li', [
-            helper.h('a', {
-              href:'/groups', 
-              text:'Groups'
-            }),
-          ])
-        ])
-      ]);
+  var fpu_link = function(link, text = '', community) {
+    if (text === '') { text = link; }
+    link = 'https://www.financialpeace.com/' + link;
+    if (community) { link = 'https://community.financialpeace.com/' + link }
+    return [
+      helper.h('a', {
+        href: link, 
+        text: text
+      }),
+    ]
+  };
+  const showExtraInfo = helper.attrs.minimized;
+  if(!showExtraInfo) {
+    var menu_li = [
+      helper.h('li', 
+        fpu_link('lessons')
+      ),
+      helper.h('li', 
+        fpu_link('resources')
+      ),
+      helper.h('li', 
+        fpu_link('budget', 'everydollar')
+      ),
+      helper.h('li.active', [
+        fpu_link('connect')
+      ]),
+      helper.h('li', [
+        fpu_link('ask-a-couch/new', 'Ask a Coach')
+      ]),
+      helper.h('li', [
+        fpu_link('join-a-group', 'classes')
+      ]),
+    ];
+    var admin_li = helper.h('li', [
+        fpu_link('admin', '', true)
+    ]);
+    if (Discourse.User.current().admin) {
+      menu_li.push(admin_li);
     }
-  });
-  
-$(document).ready(function() {
- // $('#current-user').find('img')[0]
- //   .setAttribute('src', '/assets/icons/bell.svg');
-
-  $('#js_top_nav_hamburger').click(function(e) {
-    $('#js_fpu_global_nav > ul').toggleClass('open-top-nav');
-    e.stopPropagation();
-  });
-
-  $(document).on("click", function(e) {
-    if ($(e.target).is("#js_fpu_global_nav > ul") === false) {
-      $('#js_fpu_global_nav > ul').removeClass('open-top-nav');
-    }
-  });
+    return helper.h('div', [ 
+      helper.h('div#js_top_nav_hamburger.top-nav-hamburger', [ ]),
+      helper.h('nav#js_fpu_global_nav.fpu-global-nav', [
+        helper.h('ul', 
+          menu_li
+        )
+      ])
+    ]);
+  }
 });
 </script>
 <script type='text/x-handlebars' data-template-name='/connectors/above-footer/add-landing-page-footer'>
@@ -113,7 +84,7 @@ $(document).ready(function() {
       <div class="triangle-topleft"></div>
       <div class="triangle-bottomright"></div>
       <div class='inner'>
-        <a class="tech-support" href="">Need Tech Support?</a>
+        <a class="tech-support" href="https://www.financialpeace.com/contact-us">Need Tech Support?</a>
         <div class="gds-Hero-container gds-Hero-container--center">
           <h1>
             <div class="gds-Hero-title">Welcome.</div>
@@ -371,6 +342,22 @@ $(document).ready(function() {
 <script type="text/discourse-plugin" version="0.8.13">
 $(document).ready(function() {
   $('#daily-check-in').attr("href", settings.daily_check_in);
+  if ($('#current-user').length) {
+    var image_bell = 'https://cdn.ramseysolutions.net/church/fpu/images/icon-bell.svg';
+    $('#current-user').find('img')[0].setAttribute('src', image_bell);
+  }
+  setTimeout(function() {
+    $('#js_fpu_global_nav > ul').css('transition', 'margin 0.4s').delay(1000);
+  }, 2000);
+  $('#js_top_nav_hamburger').click(function(e) {
+    $('#js_fpu_global_nav > ul').toggleClass('open-top-nav');
+    e.stopPropagation();
+  });
+  $(document).on("click", function(e) {
+    if ($(e.target).is("#js_fpu_global_nav > ul") === false) {
+      $('#js_fpu_global_nav > ul').removeClass('open-top-nav');
+    }
+  });
 });
 </script>
 <script type="text/template" data-template="question-card-template">
@@ -384,7 +371,7 @@ $(document).ready(function() {
       <h3 class='gds-Heading gds-Heading--tertiary gds-Card-title'></h3>
       <div class='gds-Text gds-Card-text'>
         <a href="/u/${username}" data-user-card="${username}">${name}</a>
-        <p>${blurb}</p> 
+        <p>${title}</p> 
       </div>
       <a href='/t/${slug}/${id}' class='gds-Button'>Comment</a>
     </div>
@@ -419,7 +406,8 @@ $(document).ready(function() {
                 name: post.name,
                 username: post.username,
                 //TODO: Set This to break at the end of a word:
-                blurb: post.blurb.substring(0, 70),
+                title: topic.title.substring(0, 70),
+                blurb: post.blurb,
                 id: post.topic_id,
                 slug: topic.slug,
                 lastPoster: topic.lastPoster,

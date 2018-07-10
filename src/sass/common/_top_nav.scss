@@ -22,7 +22,6 @@
       list-style-type: none;
       width: 240px;
       margin-left: -240px;
-      transition: margin 0.4s;
       &.open-top-nav {
         margin-left: 0;
       }
@@ -39,6 +38,7 @@
       display: block;
       padding: 15px 0;
       padding-left: 40px;
+      text-transform: uppercase;
       color: $gds-color-gray-40;
       &:hover {
         color: $gds-color-blue-40;

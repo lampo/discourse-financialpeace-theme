@@ -21,7 +21,8 @@
   top: 30px;
   right: 10px;
   font-weight: normal;
-  text-decoration: underline
+  text-decoration: underline;
+  color: $gds-color-white;
 }
 
 .triangle-topleft {
@@ -57,6 +58,9 @@
   }
   .gds-Hero-title {
     font-size: 4rem;
+  }
+  .homepage-footer .gds-Hero-title {
+    font-size: 8rem;
   }
   .gds-Hero-subtitle {
     font-weight: normal;
