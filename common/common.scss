@@ -4003,10 +4003,10 @@ title.raw-link.raw-topic-link a{
 }
 
 .title-wrapper {
-  .topic-status,
-  .edit-topic {
-    display: none
-  }
+.topic-status,
+.edit-topic {
+  display: none
+}
 }
 
 .topic-meta-data .post-info a {
@@ -4032,7 +4032,7 @@ button.reply {
 }
 
 .names a {
-  font-weight: $gds-font-weight-semibold;;
+  font-weight: $gds-font-weight-semibold;
 }
 
 .topic-post {
@@ -4051,6 +4051,23 @@ button.reply {
   border: none;
 }
 
+.category-name {
+  padding: 0rem 0.3rem;
+}
+
+nav.post-controls {
+  button, button.create {
+    color: $gds-color-gray-70;
+  }
+}
+
+.post-stream .topic-post:not(:first-child) nav.post-controls {
+  display: none;
+}
+
+.container li.active a {
+  border-radius: 2px;
+}
 .post-stream {
   > div:first-child {
     background-color: transparent;
@@ -4074,14 +4091,8 @@ button.reply {
   }
 }
 
-nav.post-controls {
-  button, button.create {
-    color: $gds-color-gray-70;
-  }
-}
-
-.post-stream .topic-post:not(:first-child) nav.post-controls {
-  display: none;
+nav.post-controls button.create {
+  color: $gds-color-white;
 }
   
 .container li.active a {
@@ -4092,17 +4103,15 @@ nav.post-controls {
   height: 40px;
   width: 40px;
 }
-
-.topic-list .link-top-line .raw-topic-link {
-  color: $gds-color-gray-80;
-  font-size: 1.1rem;
-  font-weight: $gds-font-weight-semibold;;
+.avatar {
+  height: 40px;
+  width: 40px;
 }
 
 .topic-list .num.posts-map.posts a {
-  color: $gds-color-gray-60;
+  color: $gds-color-gray-50;
   font-size: 1.1rem;
-  font-weight: $gds-font-weight-semibold;;
+  font-weight: $gds-font-weight-semibold;
 }
 
 .topic-list td {
@@ -4137,6 +4146,13 @@ th.activity.num {
   }
   .raw-topic-link {
     font-weight: $gds-font-weight-semibold;
+    font-size: 1.1rem;
+    a:link {
+      color: $gds-color-black;
+    }
+    a:visited {
+      color: $gds-color-gray-60;
+    }
   }
   .posts-map.post {
     display: none;

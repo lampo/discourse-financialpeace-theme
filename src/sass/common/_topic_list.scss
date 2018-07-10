@@ -4,6 +4,13 @@
   }
   .raw-topic-link {
     font-weight: $gds-font-weight-semibold;
+    font-size: 1.1rem;
+    a:link {
+      color: $gds-color-black;
+    }
+    a:visited {
+      color: $gds-color-gray-60;
+    }
   }
   .posts-map.post {
     display: none;
