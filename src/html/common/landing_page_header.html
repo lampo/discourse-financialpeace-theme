@@ -4,7 +4,7 @@
       <div class="triangle-topleft"></div>
       <div class="triangle-bottomright"></div>
       <div class='inner'>
-        <a class="tech-support" href="">Need Tech Support?</a>
+        <a class="tech-support" href="https://www.financialpeace.com/contact-us">Need Tech Support?</a>
         <div class="gds-Hero-container gds-Hero-container--center">
           <h1>
             <div class="gds-Hero-title">Welcome.</div>
@@ -262,5 +262,21 @@
 <script type="text/discourse-plugin" version="0.8.13">
 $(document).ready(function() {
   $('#daily-check-in').attr("href", settings.daily_check_in);
+  if ($('#current-user').length) {
+    var image_bell = 'https://cdn.ramseysolutions.net/church/fpu/images/icon-bell.svg';
+    $('#current-user').find('img')[0].setAttribute('src', image_bell);
+  }
+  setTimeout(function() {
+    $('#js_fpu_global_nav > ul').css('transition', 'margin 0.4s').delay(1000);
+  }, 2000);
+  $('#js_top_nav_hamburger').click(function(e) {
+    $('#js_fpu_global_nav > ul').toggleClass('open-top-nav');
+    e.stopPropagation();
+  });
+  $(document).on("click", function(e) {
+    if ($(e.target).is("#js_fpu_global_nav > ul") === false) {
+      $('#js_fpu_global_nav > ul').removeClass('open-top-nav');
+    }
+  });
 });
 </script>

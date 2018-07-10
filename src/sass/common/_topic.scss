@@ -10,6 +10,18 @@
   padding: 2rem 2rem 0 2rem;
 }
 
+.title-wrapper {
+  .topic-status,
+  .edit-topic {
+    display: none
+  }
+}
+
+.topic-meta-data .post-info a {
+  color: $gds-color-gray-70;
+  font-weight: 600;
+}
+
 .category-site-feedback {
   background-color: $gds-color-white;
   margin-top: 2rem;
@@ -70,8 +82,14 @@ button.reply {
   }
 }
 
-nav.post-controls button.create {
-  color: $gds-color-white;
+nav.post-controls {
+  button, button.create {
+    color: $gds-color-gray-70;
+  }
+}
+
+.post-stream .topic-post:not(:first-child) nav.post-controls {
+  display: none;
 }
   
 .container li.active a {
