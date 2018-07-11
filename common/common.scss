@@ -3363,52 +3363,61 @@ a {
   }
 
   .category-list {
-    border: none;
+    max-width: 230px;
+    @media(min-width: 350px) {
+      max-width: 100%;
+    }
+    th.category, th.topics {
+      display: none;
+    }
+    td:first-of-type {
+      padding-left: 1rem;
+      padding-right: 0;
+    }
   }
+
   .category-list .topics .value {
     color: $gds-color-black;
     &:after {
       content: 'Topics';
       padding-left: 10px;
     }
-  }
-  .topic-statuses .topic-status {
-    display: none;
-  }
 
-  .list-tags .discourse-tags a {
-    font-size: 18px;
-    color: $gds-color-white;
-    padding: 8px 10px;
-    display: inline-block;
-    text-transform: capitalize;
-    background: $gds-color-blue-50;
-    border-radius: 2px;
-  }
+    .category-list td {
+      vertical-align: middle;
+    }
 
-  .wrap > .category-get-started {
-    background:  $gds-color-white;
-    border-radius: 6px;
-    box-shadow: 1px 1px 15px #ccc;
-  }
+    td.topics {
+      @include gds-respond-to(palm-only) {
+        display: none;
+      }
+      display: inline;
+    }
 
-  /* TODO: There may be a way to do this in the admin console: */
-  .columns {
-    display: none;
-  }
+    .wrap > .category-get-started {
+      background:  $gds-color-white;
+      border-radius: 6px;
+      box-shadow: 1px 1px 15px #ccc;
+    }
 
-  .categories-and-latest div.column:last-child {
-    display: none;
-  }
+    /* TODO: There may be a way to do this in the admin console: */
+    .columns {
+      display: none;
+    }
 
-  .badge-wrapper {
-    border: 1px solid $gds-color-gray-50;
-    border-radius: 2px;
-    padding: 5px;
-    
-    .category-name {
-      color: $gds-color-gray-60;
-      font-weight: normal;
+    .categories-and-latest div.column:last-child {
+      display: none;
+    }
+
+    .badge-wrapper {
+      border: 1px solid $gds-color-gray-50;
+      border-radius: 2px;
+      padding: 5px;
+      
+      .category-name {
+        color: $gds-color-gray-60;
+        font-weight: normal;
+      }
     }
   }
 }
