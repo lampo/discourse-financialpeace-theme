@@ -2,34 +2,42 @@
   .dropdown-toggle {
     display: none;
   }
-}
-.financial-peace {
-  .tag-show-heading {
-    i, .discourse-tag {
-      display: none;
-    }
-  }
   .list-controls {
     padding: 0;
   }
 
-  .tag-sort-options {
+}
+.tag-show-heading {
+  i, .discourse-tag {
     display: none;
   }
-  .tag-box {
-    float: left;
-    width: auto;
-    margin-right: 20px;
-    a {
-      background: $gds-color-blue-30;
+}
+.tag-sort-options {
+  display: none;
+}
+
+.tag-box {
+  float: left;
+  width: auto;
+  margin-right: 20px;
+  a.discourse-tag.simple {
+    background: $gds-color-blue-50;
+    color: $gds-color-white;
+    display: block;
+    padding: 10px;
+    border-radius: 3px;
+    &:visited {
       color: $gds-color-white;
-      display: block;
-      padding: 10px;
-      border-radius: 3px;
     }
-    .tag-count {
-      display: none;
+    &:hover {
+      color: $gds-color-white;
     }
+    &:active {
+      color: $gds-color-white;
+    }
+  }
+  .tag-count {
+    display: none;
   }
 }
 

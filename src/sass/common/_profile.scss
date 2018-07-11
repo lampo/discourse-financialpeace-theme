@@ -1,168 +1,166 @@
-.financial-peace {
-  /* Josh Young */
-  /* TODO: 
-  - Order CSS declarations alphabetically.
-  - Switch to gazelle:
-    - colors
-    - fonts 
-    - breakpoints
-  - Add more data to populate and style other elements.
-  */
+/* Josh Young */
+/* TODO: 
+- Order CSS declarations alphabetically.
+- Switch to gazelle:
+  - colors
+  - fonts 
+  - breakpoints
+- Add more data to populate and style other elements.
+*/
 
-  /* Desktop - mobile first */
-  .user-profile-avatar {
-    margin-top: 11px;
-    margin-left: 5px;
-  }
-  .user-table .wrapper section {
-    padding: 30px 20px;
-    border-radius: 3px;
-    box-shadow: 1px 1px 15px $gds-color-gray-10;
-    background: $gds-color-white;
-  }
+/* Desktop - mobile first */
+.user-profile-avatar {
+  margin-top: 11px;
+  margin-left: 5px;
+}
+.user-table .wrapper section {
+  padding: 30px 20px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 15px $gds-color-gray-10;
+  background: $gds-color-white;
+}
 
-  .user-main .about {
-    background: $gds-color-white;
-    border-radius: 3px;
-    box-shadow: 1px 1px 15px $gds-color-gray-10;
-  }
+.user-main .about {
+  background: $gds-color-white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 15px $gds-color-gray-10;
+}
 
-  .controls ul li:first-child a {
-    background: $gds-color-blue-50;
-    color: $gds-color-white;
-    padding: 15px 10px !important;
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-top: 10px;
+.controls ul li:first-child a {
+  background: $gds-color-blue-50;
+  color: $gds-color-white;
+  padding: 15px 10px !important;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.controls ul li:last-child {
+  display: none !important;
+}
+.stats-section {
+  border-bottom: 1px solid $gds-color-gray-10;
+}
+.stats-title {
+  text-transform: capitalize;
+}
+.stats-section {
+  > * {
+    padding: 0 10px;
   }
-  .controls ul li:last-child {
-    display: none !important;
+}
+.stats-title {
+  font-size: $gds-font-size-xs;
+}
+.top-sub-section {
+  border-bottom: 1px solid $gds-color-gray-10;
+  > * {
+    padding: 0 10px;
   }
-  .stats-section {
-    border-bottom: 1px solid $gds-color-gray-10;
-  }
-  .stats-title {
+  h3 {
+    font-size: $gds-font-size-xs;
     text-transform: capitalize;
   }
-  .stats-section {
-    > * {
-      padding: 0 10px;
+  li {
+    border-left: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.badges-section {
+  > * {
+    padding: 0 10px;
+  }
+}
+
+.main-nav.nav-pills {
+  li a {
+    border-radius: 3px;
+    margin: 2px;
+    margin-right: 10px;
+    background: $gds-color-gray-10;
+  }
+}
+
+.user-table .wrapper section {
+  &.user-navigation {
+    box-shadow: none;
+    ul.nav-stacked {
+      background: $gds-color-gray-10;
+      border-radius: 7px;
+      padding: 20px;
+      min-height: 250px;
+      a {
+        color: $gds-color-black;
+        padding: 0;
+        padding-bottom: 10px;
+        font-size: 1rem;
+      }
     }
   }
-  .stats-title {
-    font-size: $gds-font-size-xs;
+  &.user-right {
+    box-shadow: none;
+  }
+}
+.user-archive button {
+  background: $gds-color-gray-10;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.user-stream {
+  .avatar-link {
+    margin-right: 100px;
+    float: right;
+  }
+  .time {
+    margin-right: -100px;
+  }
+}
+.stream-topic-details {
+  .stream-topic-title a {
+    color: $gds-color-black;
+    font-weight: 900;
+  }
+}
+.topic-list {
+  td {
+    padding: 40px 0;
+  }
+}
+
+@media(min-width: 35em) {
+  .top-section {
+    display: flex;
+    &.stats-section {
+      display: block;
+    }
+    > * {
+      float: none !important;
+    }
+  }
+  .stats-section {
+    margin-bottom: 45px;
   }
   .top-sub-section {
-    border-bottom: 1px solid $gds-color-gray-10;
-    > * {
-      padding: 0 10px;
-    }
+    margin: 0 10px 30px 10px;
+  }
+}
+
+@media(min-width: 75em) {
+  .top-sub-section {
     h3 {
-      font-size: $gds-font-size-xs;
-      text-transform: capitalize;
+      font-size: $gds-font-size-l;
     }
-    li {
-      border-left: none;
-      padding-left: 0;
-      padding-right: 0;
+  }
+  .stats-section {
+    h3 {
+      font-size: $gds-font-size-l;
     }
   }
   .badges-section {
-    > * {
-      padding: 0 10px;
+    h3 {
+      font-size: $gds-font-size-l;
     }
   }
-
-  .main-nav.nav-pills {
-    li a {
-      border-radius: 3px;
-      margin: 2px;
-      margin-right: 10px;
-      background: $gds-color-gray-10;
-    }
-  }
-
-  .user-table .wrapper section {
-    &.user-navigation {
-      box-shadow: none;
-      ul.nav-stacked {
-        background: $gds-color-gray-10;
-        border-radius: 7px;
-        padding: 20px;
-        min-height: 250px;
-        a {
-          color: $gds-color-black;
-          padding: 0;
-          padding-bottom: 10px;
-          font-size: 1rem;
-        }
-      }
-    }
-    &.user-right {
-      box-shadow: none;
-    }
-  }
-  .user-archive button {
-    background: $gds-color-gray-10;
-    width: 100%;
-    border-radius: 3px;
-  }
-
-  .user-stream {
-    .avatar-link {
-      margin-right: 100px;
-      float: right;
-    }
-    .time {
-      margin-right: -100px;
-    }
-  }
-  .stream-topic-details {
-    .stream-topic-title a {
-      color: $gds-color-black;
-      font-weight: 900;
-    }
-  }
-  .topic-list {
-    td {
-      padding: 40px 0;
-    }
-  }
-
-  @media(min-width: 35em) {
-    .top-section {
-      display: flex;
-      &.stats-section {
-        display: block;
-      }
-      > * {
-        float: none !important;
-      }
-    }
-    .stats-section {
-      margin-bottom: 45px;
-    }
-    .top-sub-section {
-      margin: 0 10px 30px 10px;
-    }
-  }
-
-  @media(min-width: 75em) {
-    .top-sub-section {
-      h3 {
-        font-size: $gds-font-size-l;
-      }
-    }
-    .stats-section {
-      h3 {
-        font-size: $gds-font-size-l;
-      }
-    }
-    .badges-section {
-      h3 {
-        font-size: $gds-font-size-l;
-      }
-    }
-  }
-  /* end - Desktop mobile first */
 }
+/* end - Desktop mobile first */

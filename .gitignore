@@ -7,6 +7,7 @@ sassdoc/
 # ignore built assets
 design-tokens/dist/*
 coverage/
+tmp/
 
 # ignore files
 .DS_Store

@@ -1,0 +1,16 @@
+<script type="text/template" data-template="topics-header-template">
+  <div id="TopicsHeader" class="mainTopics-wrapper contained-row">
+    <div class="section-header">
+      <h2 class="swash">Topics</h2>
+    </div>
+  </div>
+</script>
+
+<script>
+  insertTopicsHeader();
+
+  function insertTopicsHeader() {
+    var topicsHeader = $('script[data-template="topics-header-template"]').text();
+    $('#main-outlet .list-controls').append(topicsHeader);
+  }
+</script>
