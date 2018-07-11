@@ -7,7 +7,7 @@
 }
 
 .container {
-  padding: 2rem 2rem 0 2rem;
+  padding: 0.4rem 2rem 0 2rem;
 }
 
 .title-wrapper {
@@ -41,6 +41,7 @@ button.reply {
 
 .names a {
   font-weight: $gds-font-weight-semibold;
+  font-size: 18px;
 }
 
 .topic-post {
@@ -58,6 +59,9 @@ button.reply {
   padding-right: 1rem;
   border: none;
 }
+  .topics {
+    border-top: 1px solid $gds-color-gray-30;
+  }
 
 .category-name {
   padding: 0rem 0.3rem;
@@ -82,6 +86,9 @@ nav.post-controls {
     border-top: 1px solid $gds-color-gray-30;
     border-radius: unset;
   }
+  > .topic-post:not(:first-child) {
+    margin-left: 106px;
+  }
   .topic-post:nth-child(2) {
     position: relative;
     &::after {
@@ -99,8 +106,23 @@ nav.post-controls {
   }
 }
 
-nav.post-controls button.create {
-  color: $gds-color-white;
+nav.post-controls {
+  .actions {
+    margin-right: -120px;
+  }
+  button, button.create {
+    color: $gds-color-gray-70;
+  }
+}
+
+.post-stream .topic-post:not(:first-child):not(:last-child) nav.post-controls {
+  display: none;
+}
+
+.post-stream .topic-post:last-child nav.post-controls .actions {
+  float: left;
+  margin-left: -80px;
+  margin-right: 0;
 }
   
 .container li.active a {
@@ -128,6 +150,11 @@ nav.post-controls button.create {
 
 .actions {
   min-width: 220px;
+}
+
+#suggested-topics .suggested-topics-title {
+  padding-bottom: 33px;
+  color: $gds-color-gray-70;
 }
 
 .topic-map,
