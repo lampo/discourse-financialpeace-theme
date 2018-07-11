@@ -3339,6 +3339,20 @@ a {
     }
   }
 
+  .topic-category {
+    .discourse-tags {
+      display: none;
+      @include gds-respond-to(lap-wide-and-up) {
+        display: block;
+      }
+    }
+    .discourse-tag {
+      padding: 8px 10px;
+      font-size: 18px;
+      background: $gds-color-gray-20;
+    }
+  }
+
   .topic-category .badge-wrapper {
     padding: 0;
     &.bullet {
@@ -3360,6 +3374,10 @@ a {
         padding: 8px 12px;
       }
     }
+  }
+
+  .topic-category a {
+    margin: 2px;
   }
 
   .category-list {
@@ -3419,6 +3437,9 @@ a {
         font-weight: normal;
       }
     }
+  }
+  .badge-wrapper.bullet span.badge-category {
+    padding-left: 10px;
   }
 }
 
@@ -3994,14 +4015,19 @@ title.raw-link.raw-topic-link a{
   padding-bottom: 2rem;
   a {
     color: $gds-color-gray-70;
-    font-size: 2rem;
+    @include gds-respond-to(lap-wide-and-up) {
+      font-size: 2rem;
+    }
   }
 }
 
 .container {
-  padding: 0.4rem 2rem 0 2rem;
+  @include gds-respond-to(lap-wide-and-up) {
+    padding: 0.4rem 2rem 0 2rem;
+  }
 }
 
+/* Here: */
 .title-wrapper {
 .topic-status,
 .edit-topic {
@@ -4009,9 +4035,14 @@ title.raw-link.raw-topic-link a{
 }
 }
 
+.topic-statuses {
+  display: none;
+}
+
 .topic-meta-data .post-info a {
   color: $gds-color-gray-70;
   font-weight: 600;
+  margin-right: 10px;
 }
 
 .category-site-feedback {
@@ -4075,11 +4106,15 @@ nav.post-controls {
 .post-stream {
   > div:first-child {
     background-color: transparent;
-    border-top: 1px solid $gds-color-gray-30;
+    @include gds-respond-to(lap-wide-and-up) {
+      border-top: 1px solid $gds-color-gray-30;
+    }
     border-radius: unset;
   }
   > .topic-post:not(:first-child) {
-    margin-left: 106px;
+    @include gds-respond-to(lap-wide-and-up) {
+      margin-left: 106px;
+    }
   }
   .topic-post:nth-child(2) {
     position: relative;
@@ -4099,8 +4134,10 @@ nav.post-controls {
 }
 
 nav.post-controls {
-  .actions {
-    margin-right: -120px;
+  @include gds-respond-to(lap-wide-and-up) {
+    .actions {
+      margin-right: -120px;
+    }
   }
   button, button.create {
     color: $gds-color-gray-70;
@@ -4191,10 +4228,14 @@ th.activity.num {
     display: none;
   }
   .posts {
-    width: 90px;
+    @include gds-respond-to(lap-wide-and-up) {
+      width: 90px;
+    }
   }
   a.posts-map.badge-posts.heatmap-::after {
-    content: " replies";
+    @include gds-respond-to(lap-wide-and-up) {
+      content: " replies";
+    }
   }
 }
 
@@ -4205,7 +4246,6 @@ th.activity.num {
   border-radius: 50px;
   border: solid 1px $gds-color-blue-50;
 }
-
 
 .financial-peace {
   .top-nav-hamburger {

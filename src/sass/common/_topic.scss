@@ -2,14 +2,19 @@
   padding-bottom: 2rem;
   a {
     color: $gds-color-gray-70;
-    font-size: 2rem;
+    @include gds-respond-to(lap-wide-and-up) {
+      font-size: 2rem;
+    }
   }
 }
 
 .container {
-  padding: 0.4rem 2rem 0 2rem;
+  @include gds-respond-to(lap-wide-and-up) {
+    padding: 0.4rem 2rem 0 2rem;
+  }
 }
 
+/* Here: */
 .title-wrapper {
 .topic-status,
 .edit-topic {
@@ -17,9 +22,14 @@
 }
 }
 
+.topic-statuses {
+  display: none;
+}
+
 .topic-meta-data .post-info a {
   color: $gds-color-gray-70;
   font-weight: 600;
+  margin-right: 10px;
 }
 
 .category-site-feedback {
@@ -83,11 +93,15 @@ nav.post-controls {
 .post-stream {
   > div:first-child {
     background-color: transparent;
-    border-top: 1px solid $gds-color-gray-30;
+    @include gds-respond-to(lap-wide-and-up) {
+      border-top: 1px solid $gds-color-gray-30;
+    }
     border-radius: unset;
   }
   > .topic-post:not(:first-child) {
-    margin-left: 106px;
+    @include gds-respond-to(lap-wide-and-up) {
+      margin-left: 106px;
+    }
   }
   .topic-post:nth-child(2) {
     position: relative;
@@ -107,8 +121,10 @@ nav.post-controls {
 }
 
 nav.post-controls {
-  .actions {
-    margin-right: -120px;
+  @include gds-respond-to(lap-wide-and-up) {
+    .actions {
+      margin-right: -120px;
+    }
   }
   button, button.create {
     color: $gds-color-gray-70;
