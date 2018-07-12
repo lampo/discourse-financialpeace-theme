@@ -17,11 +17,13 @@
     color: $gds-color-white;
   }
 }
-
-.category-name {
-  border: 1px solid $gds-color-gray-50;
-  border-radius: 2px;
-  color: $gds-color-gray-60;
-  padding: 0.5rem;
-  text-decoration: none;
+.badge-wrapper.bullet{
+  .category-name {
+    border: 1px solid $gds-color-gray-50;
+    border-radius: 2px;
+    color: $gds-color-gray-60;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-weight: normal;
+  }
 }
