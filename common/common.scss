@@ -3291,16 +3291,23 @@ h3 {
   margin: 0 auto;
   max-width: 1200px;
   overflow: hidden;
-  padding: 0 20px;
+  padding: 0;
+  @include gds-respond-to(lap-and-up) {
+    padding: 0 20px;
+  }
 }
 
 .wrapper {
   background-color: $gds-color-white;
   border-radius: 7px;
   box-shadow: 1px 1px 11px $gds-color-gray-30;
-  padding: 40px;
   margin: 5px;
+  min-width: 280px;
+  padding: 15px;
   width: 100%;
+  @include gds-respond-to(lap-and-up) {
+    padding: 40px;
+  }
 }
 
 .section-header{
@@ -3658,36 +3665,45 @@ header .contents {
 }
 
 .popular-wrapper {
-  min-width: 320px;
   @include gds-respond-to(lap-wide-and-up) {
     width: 320px;
   }
 }
 
+.popular-header {
+  h2 {
+    padding-bottom: 14px;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+  }
+}
+
 .popular-items {
-  overflow: hidden;
-  width: 100%;
-  width: 320px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0 auto;
+  max-width: 486px;
+  min-width: 280px;
+
   .popular-item {
     align-items: center;
     background: $gds-color-gray-10;
     border: 1px solid $gds-color-gray-20;
     border-radius: 7px;
     display: flex;
-    float: left;
-    margin-bottom: 10px;
-    padding: 16px;
-    height: 120px;
+    height: 125px;
+    margin: 4px;
+    padding: 0;
     text-align: center;
-    width: 120px;
-    &:nth-child(odd) {
-      margin-right: 10px;
+    width: 125px;
+    @include gds-respond-to(lap-and-up) {
+      padding: 12px;
     }
-    &:nth-child(5),
-    &:nth-child(6) {
-      margin-bottom: 0;
-    }
+
     &:hover {
       border: 1px solid $gds-color-amber-40;
       svg {
@@ -3695,6 +3711,7 @@ header .contents {
       }
     }
   }
+
   .popular-link {
     display: block;
     width: 100%;
@@ -3898,8 +3915,8 @@ header .contents {
   padding-top: 1rem;
   width:100%;
   .avatar {
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
   }
 }
 
@@ -3937,7 +3954,6 @@ header .contents {
   @include gds-respond-to(lap-wide-and-up) {
     flex: 2 2;
     justify-content: center;
-    margin-right: 20px;
   }
 }
 
@@ -3971,7 +3987,6 @@ header .contents {
     }
   }
 }
-
 
 .tags-page.financial-peace {
   .dropdown-toggle {
@@ -4116,12 +4131,11 @@ header .contents {
   }
 }
 
-/* Here: */
 .title-wrapper {
-.topic-status,
-.edit-topic {
-  display: none
-}
+  .topic-status,
+  .edit-topic {
+    display: none
+  }
 }
 
 .topic-meta-data .post-info a {
@@ -4184,8 +4198,8 @@ nav.post-controls {
   }
 }
 
-.post-stream .topic-post:not(:first-child) nav.post-controls {
-  display: none;
+.post-stream .topic-post .nav.post-controls .actions {
+  float: right;
 }
 
 .container li.active a {
@@ -4221,27 +4235,22 @@ nav.post-controls {
   }
 }
 
-nav.post-controls {
-  @include gds-respond-to(lap-wide-and-up) {
-    .actions {
-      margin-right: -120px;
+.post-stream {
+  .topic-post:first-child {
+    @include gds-respond-to(lap-wide-and-up) {
+      .actions:first-child {
+        margin-right: -120px;
+      }
     }
   }
+}
+
+nav.post-controls {
   button, button.create {
     color: $gds-color-gray-70;
   }
 }
 
-.post-stream .topic-post:not(:first-child):not(:last-child) nav.post-controls {
-  display: none;
-}
-
-.post-stream .topic-post:last-child nav.post-controls .actions {
-  float: left;
-  margin-left: -80px;
-  margin-right: 0;
-}
-  
 .container li.active a {
   border-radius: 2px;
 }
@@ -4350,7 +4359,7 @@ th.activity.num {
 .topic-poster img {
   margin-top: -40px;
   background: $gds-color-white;
-  padding: 10px;
+  padding: 4px;
   border-radius: 50px;
 }
 
