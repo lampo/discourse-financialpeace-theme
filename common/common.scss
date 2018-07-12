@@ -3566,9 +3566,12 @@ title.raw-link.raw-topic-link a{
 }
 
 .contained-row {
-  max-width: 1200px;
+  max-width: 90%;
   overflow: hidden;
   margin: 0 auto 20px auto;
+  @include gds-respond-to(lap-wide-and-up) {
+    max-width: 1200px;
+  }
 }
 
 .gds-Hero-container {
@@ -3598,6 +3601,25 @@ title.raw-link.raw-topic-link a{
   border-radius: 10px;
 }
 
+header .contents {
+  .title {
+    width: 150px;
+    margin: 0 auto;
+    float: none;
+    @include gds-respond-to(lap-wide-and-up) {
+      float: left;
+      margin-left: 80px;
+    }
+  }
+
+  .panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+}
+
 .select-kit.dropdown-select-box .select-kit-row .texts .name {
   font-weight: $gds-font-weight-semibold;;
 }
@@ -3607,16 +3629,26 @@ title.raw-link.raw-topic-link a{
   }
 }
 
+@media(min-width: 1300px) {
+  .financial-peace .popular-wrapper {
+      flex: 1 1 40%;
+  }
+}
 .financial-peace {
   .popular-wrapper {
-    float: left;
-    width: 100%;
+    flex: 1 1 auto;
+    @include gds-respond-to(lap-wide-and-up) {
+      flex: 1 1 50%;
+    }
   }
   .popular {
     border-radius: 7px;
     box-shadow: 1px 1px 11px $gds-color-gray-30;
     background: $gds-color-white;
-    padding: 40px 0;
+    padding: 40px 30px;
+    @include gds-respond-to(lap-and-up) {
+      padding: 40px 10px;
+    }
   }
 
   .popular-header {
@@ -3631,29 +3663,26 @@ title.raw-link.raw-topic-link a{
   }
 
   .popular-items {
-    overflow: hidden;
-    width: 100%;
-    width: 320px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 486px;
     margin: 0 auto;
     .popular-item {
       border: 1px solid #E8ECED;
-      float: left;
       background: $gds-color-gray-10;
       padding: 16px;
+      margin: 4px;
       border-radius: 7px;
       display: flex;
       align-items: center;
       height: 120px;
       width: 120px;
       text-align: center;
-      margin-bottom: 10px;
-      &:nth-child(odd) {
-        margin-right: 10px;
-      }
-      &:nth-child(5),
-      &:nth-child(6) {
-        margin-bottom: 0;
-      }
+      //margin-bottom: 10px;
+      //margin-right: 6px;
       &:hover {
         border: 1px solid $gds-color-amber-40;
         svg {
@@ -3672,9 +3701,6 @@ title.raw-link.raw-topic-link a{
   }
 
   @media(min-width: 1000px) {
-    .popular-wrapper {
-      max-width: 400px;
-    }
     .popular-header h2 {
       margin-left: 40px;
       text-align: left;
@@ -3866,7 +3892,6 @@ title.raw-link.raw-topic-link a{
   background-color: $gds-color-blue-30;
   background-position: bottom;
   border-radius: 15px;
-  padding: 20px;
   .gds-Heading--secondary {
     color: $gds-color-white;
     margin-bottom: 2rem;
@@ -3882,16 +3907,27 @@ title.raw-link.raw-topic-link a{
   }
   .questions-wrapper,
   .homepage-footer {
-    max-width: 72rem;
+    max-width: 90%;
     margin: 0 auto;
+    @include gds-respond-to(lap-wide-and-up) {
+      max-width: 1200px;
+    }
+  }
+
+  .start-here-and-popular-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include gds-respond-to(lap-wide-and-up) {
+      flex-direction: row;
+    }
   }
   .startHere-wrapper {
-    float: left;
-    width: 100%;
-  }
-  @media(min-width: 1000px) {
-    .startHere-wrapper {
-      max-width: 800px;
+    flex: 1 1 auto;
+    float: none;
+    @include gds-respond-to(lap-wide-and-up) {
+      margin-right: 10px;
+      flex: 1 1 50%;
     }
   }
   .startHere {
@@ -3899,7 +3935,6 @@ title.raw-link.raw-topic-link a{
     border-radius: 7px;
     box-shadow: 1px 1px 11px $gds-color-gray-30;
     padding: 40px;
-    margin-right: 20px;
     padding-bottom: 0;
   }
   .startHere-header {
@@ -3926,6 +3961,11 @@ title.raw-link.raw-topic-link a{
   }
   footer {
     border-radius: 6px;
+  }
+}
+@media(min-width: 1300px) {
+  .financial-peace .startHere-wrapper {
+      flex: 1 1 60%;
   }
 }
 
@@ -3958,8 +3998,10 @@ title.raw-link.raw-topic-link a{
 .gds-Card-text {
   p {
     margin-top: 30px;
-    max-width: 200px;
     font-size: 20px;
+    @include gds-respond-to(lap-wide-and-up) {
+      max-width: 200px;
+    }
   }
   a {
     color: $gds-color-gray-50;
@@ -3967,6 +4009,13 @@ title.raw-link.raw-topic-link a{
     font-weight: 200;
     padding-bottom: 15px;
     margin-bottom: 10px;
+  }
+}
+
+#main-outlet.wrap {
+  max-width: 90%;
+  @include gds-respond-to(lap-wide-and-up) {
+    max-width: 1200px;
   }
 }
 
@@ -4163,8 +4212,8 @@ nav.post-controls {
   width: 40px;
 }
 .avatar {
-  height: 40px;
-  width: 40px;
+  height: 55px;
+  width: 55px;
 }
 
 .topic-list .num.posts-map.posts a {
@@ -4244,7 +4293,6 @@ th.activity.num {
   background: $gds-color-white;
   padding: 10px;
   border-radius: 50px;
-  border: solid 1px $gds-color-blue-50;
 }
 
 .financial-peace {
@@ -4254,6 +4302,7 @@ th.activity.num {
     left: 20px;
     width: 30px;
     height: 30px;
+    z-index: 2;
     &:hover {
       color: $gds-color-blue-40;
       cursor: pointer;

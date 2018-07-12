@@ -1,13 +1,23 @@
+@media(min-width: 1300px) {
+  .financial-peace .popular-wrapper {
+      flex: 1 1 40%;
+  }
+}
 .financial-peace {
   .popular-wrapper {
-    float: left;
-    width: 100%;
+    flex: 1 1 auto;
+    @include gds-respond-to(lap-wide-and-up) {
+      flex: 1 1 50%;
+    }
   }
   .popular {
     border-radius: 7px;
     box-shadow: 1px 1px 11px $gds-color-gray-30;
     background: $gds-color-white;
-    padding: 40px 0;
+    padding: 40px 30px;
+    @include gds-respond-to(lap-and-up) {
+      padding: 40px 10px;
+    }
   }
 
   .popular-header {
@@ -22,29 +32,26 @@
   }
 
   .popular-items {
-    overflow: hidden;
-    width: 100%;
-    width: 320px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 486px;
     margin: 0 auto;
     .popular-item {
       border: 1px solid #E8ECED;
-      float: left;
       background: $gds-color-gray-10;
       padding: 16px;
+      margin: 4px;
       border-radius: 7px;
       display: flex;
       align-items: center;
       height: 120px;
       width: 120px;
       text-align: center;
-      margin-bottom: 10px;
-      &:nth-child(odd) {
-        margin-right: 10px;
-      }
-      &:nth-child(5),
-      &:nth-child(6) {
-        margin-bottom: 0;
-      }
+      //margin-bottom: 10px;
+      //margin-right: 6px;
       &:hover {
         border: 1px solid $gds-color-amber-40;
         svg {
@@ -63,9 +70,6 @@
   }
 
   @media(min-width: 1000px) {
-    .popular-wrapper {
-      max-width: 400px;
-    }
     .popular-header h2 {
       margin-left: 40px;
       text-align: left;
