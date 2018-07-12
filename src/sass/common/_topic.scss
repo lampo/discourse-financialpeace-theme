@@ -14,12 +14,11 @@
   }
 }
 
-/* Here: */
 .title-wrapper {
-.topic-status,
-.edit-topic {
-  display: none
-}
+  .topic-status,
+  .edit-topic {
+    display: none
+  }
 }
 
 .topic-meta-data .post-info a {
@@ -82,8 +81,8 @@ nav.post-controls {
   }
 }
 
-.post-stream .topic-post:not(:first-child) nav.post-controls {
-  display: none;
+.post-stream .topic-post .nav.post-controls .actions {
+  float: right;
 }
 
 .container li.active a {
@@ -119,27 +118,22 @@ nav.post-controls {
   }
 }
 
-nav.post-controls {
-  @include gds-respond-to(lap-wide-and-up) {
-    .actions {
-      margin-right: -120px;
+.post-stream {
+  .topic-post:first-child {
+    @include gds-respond-to(lap-wide-and-up) {
+      .actions:first-child {
+        margin-right: -120px;
+      }
     }
   }
+}
+
+nav.post-controls {
   button, button.create {
     color: $gds-color-gray-70;
   }
 }
 
-.post-stream .topic-post:not(:first-child):not(:last-child) nav.post-controls {
-  display: none;
-}
-
-.post-stream .topic-post:last-child nav.post-controls .actions {
-  float: left;
-  margin-left: -80px;
-  margin-right: 0;
-}
-  
 .container li.active a {
   border-radius: 2px;
 }
@@ -148,6 +142,10 @@ nav.post-controls {
   height: 40px;
   width: 40px;
 }
+.questions-wrapper .avatar {
+  height: 80px;
+  width: 80px;
+} 
 
 .topic-list .num.posts-map.posts a {
   color: $gds-color-gray-50;

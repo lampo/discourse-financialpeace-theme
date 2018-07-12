@@ -1,34 +1,49 @@
-.popular-wrapper {
-  min-width: 320px;
-  @include gds-respond-to(lap-wide-and-up) {
-    width: 320px;
+.financial-peace {
+  .popular-wrapper {
+    flex: 1 1 auto;
+    @include gds-respond-to(lap-wide-and-up) {
+      flex: 1 1 40%;
+    }
   }
-}
+  .popular {
+    // border-radius: 7px;
+    // box-shadow: 1px 1px 11px $gds-color-gray-30;
+    // background: $gds-color-white;
+    padding: 40px 18px;
+    @include gds-respond-to(lap-and-up) {
+      padding: 40px 10px;
+    }
+  }
+
+  .popular-header {
+    h2 {
+      padding-bottom: 14px;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      text-align: center;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+    }
+  }
 
 .popular-items {
-  overflow: hidden;
-  width: 100%;
-  width: 320px;
+  max-width: 486px;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+
   .popular-item {
     align-items: center;
     background: $gds-color-gray-10;
     border: 1px solid $gds-color-gray-20;
     border-radius: 7px;
+    margin: 4px;
+    justify-content: center;
     display: flex;
-    float: left;
-    margin-bottom: 10px;
     padding: 16px;
     height: 120px;
     text-align: center;
     width: 120px;
-    &:nth-child(odd) {
-      margin-right: 10px;
-    }
-    &:nth-child(5),
-    &:nth-child(6) {
-      margin-bottom: 0;
-    }
     &:hover {
       border: 1px solid $gds-color-amber-40;
       svg {
@@ -45,4 +60,5 @@
       margin-top: 16px;
     }
   }
+}
 }
