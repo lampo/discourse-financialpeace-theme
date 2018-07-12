@@ -3428,7 +3428,6 @@ h3 {
   .category-list {
     td {
       padding: 2rem 0 2rem 1rem;
-      vertical-align: middle;
     }
     max-width: 230px;
     @media(min-width: 350px) {
@@ -3524,11 +3523,6 @@ th.views.num, th.activity.num {
   display: none;
 }
 
-.latest.single img{
-  height: 40px;
-  width: 40px;
-}
-
 #create-topic {
   background-color: $gds-color-blue-50;
   border-radius: 2px;
@@ -3584,13 +3578,22 @@ title.raw-link.raw-topic-link a{
   }
 }
 
-.tech-support {
+a.tech-support {
   position: absolute;
   top: 30px;
   right: 10px;
   font-weight: normal;
   text-decoration: underline;
   color: $gds-color-white;
+  &:visited {
+    color: $gds-color-white;
+  }
+  &:hover {
+    color: $gds-color-white;
+  }
+  &:active {
+    color: $gds-color-white;
+  }
 }
 
 .triangle-topleft {
@@ -3894,6 +3897,10 @@ header .contents {
   margin-top: 25px;
   padding-top: 1rem;
   width:100%;
+  .avatar {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 .gds-FeatureGroup-list{
@@ -3955,6 +3962,13 @@ header .contents {
   .topic-list tr {
     border-top: 1px solid $gds-color-gray-30;
     border-bottom: none;
+  }
+  .poster-avatar{
+    float: left;
+    padding: 0 20px;
+    @include gds-respond-to(lap-wide-and-up) {
+      float: right;
+    }
   }
 }
 
@@ -4110,10 +4124,6 @@ header .contents {
 }
 }
 
-.topic-statuses {
-  display: none;
-}
-
 .topic-meta-data .post-info a {
   color: $gds-color-gray-70;
   font-weight: 600;
@@ -4236,13 +4246,9 @@ nav.post-controls {
   border-radius: 2px;
 }
 
-.latest.single img {
+.avatar {
   height: 40px;
   width: 40px;
-}
-.avatar {
-  height: 55px;
-  width: 55px;
 }
 
 .topic-list .num.posts-map.posts a {
