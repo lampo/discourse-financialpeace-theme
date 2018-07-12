@@ -3469,7 +3469,10 @@ a {
 .container {
   &.list-container {
     background: $gds-color-white;
-    padding: 3rem;
+    padding: none;
+    @include gds-respond-to(lap-and-up) {
+      padding: 3rem;
+    }
   }
 }
 
