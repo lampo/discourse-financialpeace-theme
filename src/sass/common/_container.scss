@@ -20,13 +20,23 @@
     color: $gds-color-white;
   }
 }
-.badge-wrapper.bullet{
+
+.badge-wrapper.bullet {
   .category-name {
-    border: 1px solid $gds-color-gray-50;
-    border-radius: 2px;
     color: $gds-color-gray-60;
-    padding: 0.5rem;
+    padding-top: 10px;
     text-decoration: none;
     font-weight: normal;
   }
+
+  span.badge-category {
+    padding: none;
+  }
 }
+
+.financial-peace {
+  .badge-wrapper.bullet span.badge-category {
+    padding: none;
+  }
+}
+
