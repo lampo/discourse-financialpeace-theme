@@ -2,7 +2,7 @@
   flex: 1 1 auto;
   float: none;
   @include gds-respond-to(lap-wide-and-up) {
-    flex: 1 1 60%;
+    flex: 2 2;
     justify-content: center;
   }
 }
@@ -35,30 +35,5 @@
     @include gds-respond-to(lap-wide-and-up) {
       float: right;
     }
-  }
-}
-
-.gds-Heading--secondary {
-  font-size: 2rem;
-}
-
-.gds-Card-body {
-  padding-top: 0;
-}
-
-.gds-Card-text {
-  p {
-    margin-top: 30px;
-    font-size: 20px;
-    @include gds-respond-to(lap-wide-and-up) {
-      max-width: 264px;
-    }
-  }
-  > a {
-    color: $gds-color-gray-50;
-    font-size: 20px;
-    font-weight: 200;
-    padding-bottom: 15px;
-    margin-bottom: 10px;
   }
 }

@@ -86,16 +86,23 @@ h3 {
   margin: 0 auto;
   max-width: 1200px;
   overflow: hidden;
-  padding: 0 20px;
+  padding: 0;
+  @include gds-respond-to(lap-and-up) {
+    padding: 0 20px;
+  }
 }
 
 .wrapper {
   background-color: $gds-color-white;
   border-radius: 7px;
   box-shadow: 1px 1px 11px $gds-color-gray-30;
-  padding: 40px;
   margin: 5px;
+  min-width: 280px;
+  padding: 15px;
   width: 100%;
+  @include gds-respond-to(lap-and-up) {
+    padding: 40px;
+  }
 }
 
 .section-header{
