@@ -22,13 +22,22 @@
   }
 }
 
-.tech-support {
+a.tech-support {
   position: absolute;
   top: 30px;
   right: 10px;
   font-weight: normal;
   text-decoration: underline;
   color: $gds-color-white;
+  &:visited {
+    color: $gds-color-white;
+  }
+  &:hover {
+    color: $gds-color-white;
+  }
+  &:active {
+    color: $gds-color-white;
+  }
 }
 
 .triangle-topleft {

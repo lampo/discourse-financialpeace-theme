@@ -22,10 +22,6 @@
 }
 }
 
-.topic-statuses {
-  display: none;
-}
-
 .topic-meta-data .post-info a {
   color: $gds-color-gray-70;
   font-weight: 600;
@@ -148,13 +144,9 @@ nav.post-controls {
   border-radius: 2px;
 }
 
-.latest.single img {
+.avatar {
   height: 40px;
   width: 40px;
-}
-.avatar {
-  height: 55px;
-  width: 55px;
 }
 
 .topic-list .num.posts-map.posts a {
