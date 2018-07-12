@@ -73,9 +73,13 @@ button.reply {
     border-top: 1px solid $gds-color-gray-30;
   }
 
-.category-name {
-  padding: 0rem 0.3rem;
-}
+  .topic-list {
+    .category-name {
+      padding: 0rem 0.3rem;
+      font-weight: normal;
+
+    }
+  }
 
 nav.post-controls {
   button, button.create {

@@ -3339,6 +3339,18 @@ a {
     }
   }
 
+  .column {
+    display: none;
+  }
+
+  .categories-and-latest div.column:last-child {
+    display: none;
+  }
+
+  .column.categories {
+    display: inline-block;
+  }
+
   .topic-category {
     .discourse-tags {
       display: none;
@@ -3380,7 +3392,15 @@ a {
     margin: 2px;
   }
 
+  .category {
+    padding: 1rem 0 1rem 0.5rem;
+  }
+
   .category-list {
+    td {
+      padding: 2rem 0 2rem 1rem;
+      vertical-align: middle;
+    }
     max-width: 230px;
     @media(min-width: 350px) {
       max-width: 100%;
@@ -3392,6 +3412,19 @@ a {
       padding-left: 1rem;
       padding-right: 0;
     }
+    td.topics {
+      @include gds-respond-to(palm-only) {
+        display: none;
+      }
+    }
+  }
+
+  .category-list {
+    .category-name {
+      color: $gds-color-gray-60;
+      font-weight: semibold;
+      font-size: 24px;
+    }
   }
 
   .category-list .topics .value {
@@ -3401,17 +3434,6 @@ a {
       padding-left: 10px;
     }
 
-    .category-list td {
-      vertical-align: middle;
-    }
-
-    td.topics {
-      @include gds-respond-to(palm-only) {
-        display: none;
-      }
-      display: inline;
-    }
-
     .wrap > .category-get-started {
       background:  $gds-color-white;
       border-radius: 6px;
@@ -3419,23 +3441,11 @@ a {
     }
 
     /* TODO: There may be a way to do this in the admin console: */
-    .columns {
-      display: none;
-    }
-
-    .categories-and-latest div.column:last-child {
-      display: none;
-    }
 
     .badge-wrapper {
       border: 1px solid $gds-color-gray-50;
       border-radius: 2px;
       padding: 5px;
-      
-      .category-name {
-        color: $gds-color-gray-60;
-        font-weight: normal;
-      }
     }
   }
   .badge-wrapper.bullet span.badge-category {
@@ -3481,7 +3491,6 @@ a {
   border: 1px solid $gds-color-gray-50;
   border-radius: 2px;
   color: $gds-color-gray-60;
-  font-weight: normal;
   padding: 0.5rem;
   text-decoration: none;
 }
@@ -4135,9 +4144,13 @@ button.reply {
     border-top: 1px solid $gds-color-gray-30;
   }
 
-.category-name {
-  padding: 0rem 0.3rem;
-}
+  .topic-list {
+    .category-name {
+      padding: 0rem 0.3rem;
+      font-weight: normal;
+
+    }
+  }
 
 nav.post-controls {
   button, button.create {
