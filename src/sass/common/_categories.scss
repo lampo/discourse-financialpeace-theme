@@ -18,9 +18,7 @@
       padding: 10px;
     }
   }
-  .category-name {
-    border: none;
-  }
+
   .category-list {
     th.category, th.topics {
       display: none;
@@ -112,6 +110,7 @@
       color: $gds-color-gray-60;
       font-weight: semibold;
       font-size: 24px;
+      border: none;
     }
   }
 

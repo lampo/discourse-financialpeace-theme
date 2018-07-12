@@ -3330,9 +3330,7 @@ a {
       padding: 10px;
     }
   }
-  .category-name {
-    border: none;
-  }
+
   .category-list {
     th.category, th.topics {
       display: none;
@@ -3424,6 +3422,7 @@ a {
       color: $gds-color-gray-60;
       font-weight: semibold;
       font-size: 24px;
+      border: none;
     }
   }
 
@@ -3470,7 +3469,10 @@ a {
 .container {
   &.list-container {
     background: $gds-color-white;
-    padding: 3rem;
+    padding: none;
+    @include gds-respond-to(lap-and-up) {
+      padding: 3rem;
+    }
   }
 }
 
@@ -3486,13 +3488,15 @@ a {
     color: $gds-color-white;
   }
 }
-
-.category-name {
-  border: 1px solid $gds-color-gray-50;
-  border-radius: 2px;
-  color: $gds-color-gray-60;
-  padding: 0.5rem;
-  text-decoration: none;
+.badge-wrapper.bullet{
+  .category-name {
+    border: 1px solid $gds-color-gray-50;
+    border-radius: 2px;
+    color: $gds-color-gray-60;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-weight: normal;
+  }
 }
 
 td.num.views, td.num.activity{
@@ -4146,9 +4150,8 @@ button.reply {
 
   .topic-list {
     .category-name {
-      padding: 0rem 0.3rem;
+      padding: 0.5rem;
       font-weight: normal;
-
     }
   }
 
