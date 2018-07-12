@@ -6,16 +6,27 @@
   }
   .questions-wrapper,
   .homepage-footer {
-    max-width: 72rem;
+    max-width: 90%;
     margin: 0 auto;
+    @include gds-respond-to(lap-wide-and-up) {
+      max-width: 1200px;
+    }
+  }
+
+  .start-here-and-popular-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include gds-respond-to(lap-wide-and-up) {
+      flex-direction: row;
+    }
   }
   .startHere-wrapper {
-    float: left;
-    width: 100%;
-  }
-  @media(min-width: 1000px) {
-    .startHere-wrapper {
-      max-width: 800px;
+    flex: 1 1 auto;
+    float: none;
+    @include gds-respond-to(lap-wide-and-up) {
+      margin-right: 10px;
+      flex: 1 1 50%;
     }
   }
   .startHere {
@@ -23,7 +34,6 @@
     border-radius: 7px;
     box-shadow: 1px 1px 11px $gds-color-gray-30;
     padding: 40px;
-    margin-right: 20px;
     padding-bottom: 0;
   }
   .startHere-header {
@@ -50,6 +60,11 @@
   }
   footer {
     border-radius: 6px;
+  }
+}
+@media(min-width: 1300px) {
+  .financial-peace .startHere-wrapper {
+      flex: 1 1 60%;
   }
 }
 
@@ -82,8 +97,10 @@
 .gds-Card-text {
   p {
     margin-top: 30px;
-    max-width: 200px;
     font-size: 20px;
+    @include gds-respond-to(lap-wide-and-up) {
+      max-width: 200px;
+    }
   }
   a {
     color: $gds-color-gray-50;
@@ -91,5 +108,12 @@
     font-weight: 200;
     padding-bottom: 15px;
     margin-bottom: 10px;
+  }
+}
+
+#main-outlet.wrap {
+  max-width: 90%;
+  @include gds-respond-to(lap-wide-and-up) {
+    max-width: 1200px;
   }
 }

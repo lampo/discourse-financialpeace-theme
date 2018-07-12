@@ -46,9 +46,12 @@
 }
 
 .contained-row {
-  max-width: 1200px;
+  max-width: 90%;
   overflow: hidden;
   margin: 0 auto 20px auto;
+  @include gds-respond-to(lap-wide-and-up) {
+    max-width: 1200px;
+  }
 }
 
 .gds-Hero-container {
@@ -76,4 +79,23 @@
 }
 .gds-FeatureGroup-feature {
   border-radius: 10px;
+}
+
+header .contents {
+  .title {
+    width: 150px;
+    margin: 0 auto;
+    float: none;
+    @include gds-respond-to(lap-wide-and-up) {
+      float: left;
+      margin-left: 80px;
+    }
+  }
+
+  .panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
 }
