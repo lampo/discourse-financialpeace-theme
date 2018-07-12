@@ -21,7 +21,8 @@
     "icon_group": "assets/icons/group.svg",
     "icon_tags": "assets/icons/tags.svg",
     "icon_topics": "assets/icons/topics.svg",
-    "icon_hamburger": "assets/icons/hamburger.svg"
+    "icon_hamburger": "assets/icons/hamburger.svg",
+    "wilderness": "assets/fonts/Wilderness-Regular.woff2"
 },
   "color_schemes": {
     "Financial Peace GDS": {

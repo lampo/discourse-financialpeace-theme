@@ -193,3 +193,27 @@ th.activity.num {
 .topic-body {
   border: none;
 }
+
+.topic-post-tags {
+  a {
+    color: $gds-color-gray-40;
+    padding-right: 0.3rem;
+    &:hover {
+      color: $gds-color-blue-50;
+    }
+    &:active {
+      color: $gds-color-blue-50;
+    }
+    &:visited {
+      color: $gds-color-gray-40;
+    } 
+    &::after {
+      content: ', ';
+    }
+  }
+  :last-child {
+    &::after {
+      content: '';
+    }
+  }
+}

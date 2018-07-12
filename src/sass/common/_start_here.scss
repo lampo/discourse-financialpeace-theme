@@ -1,119 +1,34 @@
-.financial-peace {
-  header .inner {
-    margin: 0 auto;
-    position: relative;
-    max-width: 1200px;
-  }
-  .questions-wrapper,
-  .homepage-footer {
-    max-width: 90%;
-    margin: 0 auto;
-    @include gds-respond-to(lap-wide-and-up) {
-      max-width: 1200px;
-    }
-  }
-
-  .start-here-and-popular-wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    @include gds-respond-to(lap-wide-and-up) {
-      flex-direction: row;
-    }
-  }
-  .startHere-wrapper {
-    flex: 1 1 auto;
-    float: none;
-    @include gds-respond-to(lap-wide-and-up) {
-      margin-right: 10px;
-      flex: 1 1 50%;
-    }
-  }
-  .startHere {
-    background-color: $gds-color-white;
-    border-radius: 7px;
-    box-shadow: 1px 1px 11px $gds-color-gray-30;
-    padding: 40px;
-    padding-bottom: 0;
-  }
-  .startHere-header {
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      padding-bottom: 15px;
-    }
-  }
-  .startHere {
-    td {
-      padding: 34px 0;
-    }
-    .d-icon-thumb-tack {
-      display: none;
-    }
-    .editor {
-      display: none;
-    }
-    .topic-list tr {
-      border-top: 1px solid $gds-color-gray-30;
-      border-bottom: none;
-    }
-  }
-  footer {
-    border-radius: 6px;
-  }
-}
-@media(min-width: 1300px) {
-  .financial-peace .startHere-wrapper {
-      flex: 1 1 60%;
-  }
-}
-
-.topic-post-tags {
-  a {
-    color: $gds-color-gray-40;
-    padding-right: 0.3rem;
-    &:hover {
-      color: $gds-color-blue-50;
-    }
-    &::after {
-      content: ', ';
-    }
-  }
-  :last-child {
-    &::after {
-      content: '';
-    }
-  }
-}
-
-.gds-Heading--secondary {
-  font-size: 2rem;
-}
-
-.gds-Card-body {
-  padding-top: 0;
-}
-
-.gds-Card-text {
-  p {
-    margin-top: 30px;
-    font-size: 20px;
-    @include gds-respond-to(lap-wide-and-up) {
-      max-width: 200px;
-    }
-  }
-  a {
-    color: $gds-color-gray-50;
-    font-size: 20px;
-    font-weight: 200;
-    padding-bottom: 15px;
-    margin-bottom: 10px;
-  }
-}
-
-#main-outlet.wrap {
-  max-width: 90%;
+.startHere-wrapper {
+  flex: 1 1 auto;
+  float: none;
   @include gds-respond-to(lap-wide-and-up) {
-    max-width: 1200px;
+    flex: 2 2;
+    justify-content: center;
+    margin-right: 20px;
   }
 }
+
+.startHere-header {
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+  }
+}
+
+.startHere {
+  td {
+    padding: 34px 0;
+  }
+  .d-icon-thumb-tack {
+    display: none;
+  }
+  .editor {
+    display: none;
+  }
+  .topic-list tr {
+    border-top: 1px solid $gds-color-gray-30;
+    border-bottom: none;
+  }
+}
+

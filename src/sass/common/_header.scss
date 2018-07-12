@@ -13,6 +13,12 @@
     margin-top: 4rem;
     min-width: 320px;
     position: relative;
+
+    .inner {
+      margin: 0 auto;
+      max-width: 1200px;
+      position: relative;
+    } 
   }
 }
 
@@ -45,40 +51,17 @@
   width: 0;
 }
 
-.contained-row {
-  max-width: 90%;
-  overflow: hidden;
-  margin: 0 auto 20px auto;
-  @include gds-respond-to(lap-wide-and-up) {
-    max-width: 1200px;
-  }
-}
-
 .gds-Hero-container {
   max-width: 500px;
-  @include gds-respond-to(legacy-desk) {
-      @include gds-rhythm-padding(6 4);
-  }
-  .gds-Hero-title {
-    font-size: 4rem;
-  }
-  .homepage-footer .gds-Hero-title {
-    font-size: 8rem;
-  }
-  .gds-Hero-subtitle {
-    font-weight: normal;
-    margin: 1.5rem 0 ;
-  }
 }
 
-.gds-FeatureGroup-feature, 
-.gds-FeatureGroup-feature:first-child {
-  background: $gds-color-white;
-  padding-top: 1rem;
-  margin-top: 20px;
+.gds-Hero-title {
+  font-size: 4rem;
 }
-.gds-FeatureGroup-feature {
-  border-radius: 10px;
+
+.gds-Hero-subtitle {
+  font-weight: normal;
+  margin: 1.5rem 0 ;
 }
 
 header .contents {

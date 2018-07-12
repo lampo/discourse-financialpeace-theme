@@ -8,7 +8,6 @@
 @import "gazelle-design-system/sass/components/feature_group";
 @import "gazelle-design-system/sass/components/card";
 @import "gazelle-design-system/sass/design-tokens";
-@import "fonts/wilderness";
 @import "mixins";
 
 html {
@@ -40,26 +39,21 @@ h1 {
   @include gds-typeset(xl);
 }
 
+h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  padding-bottom: 14px;
+}
+
 h3 {
   @include gds-typeset(m, true);
 }
 
-.d-header {
-  position: fixed;
-}
-
-a {
-  text-decoration: none;
-
-  &:visited {
-    color: $gds-color-gray-60;
-  }
-}
-
 .call-out {
   font-family: Wilderness;
-  font-size: 96px;
+  font-size: 10rem;
   font-weight: 400;
+  line-height: 6rem;
 }
 
 .financial-peace {
@@ -82,5 +76,50 @@ a {
     p {
       padding: 5px;
     }
+  }
+}
+
+.contained-row {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+.wrapper {
+  background-color: $gds-color-white;
+  border-radius: 7px;
+  box-shadow: 1px 1px 11px $gds-color-gray-30;
+  padding: 40px;
+  margin: 5px;
+  width: 100%;
+}
+
+.section-header{
+  text-align: center;
+  @include gds-respond-to(lap-wide-and-up) {
+    text-align: left;
+  }
+}
+%gds-link {
+  cursor: pointer;
+  text-decoration: none;
+  color: $gds-color-text-link;
+}
+
+
+.gds-Button, 
+.gds-Button--alternate {
+  &:visited {
+    color: $gds-color-white;
+  }
+  &:hover {
+    color: $gds-color-white;
+  }
+  &:active {
+    color: $gds-color-white;
   }
 }

@@ -1,3 +1,38 @@
+
+<script type="text/template" data-template="start-here-template">
+  <tr class="topic-list-item category-uncategorized ${pinned} ember-view">
+      <td class="main-link clearfix" colspan="2">
+        <span class="link-top-line">
+          <div class="topic-statuses">
+            <a href="/t/${slug}/${id}" title="${title}" class="topic-status">
+              <i class="fa fa-thumb-tack d-icon d-icon-thumb-tack"></i>
+            </a>
+          </div>
+          <a href="/t/${slug}/${id}" class="title raw-link raw-topic-link">${title}</a>
+          <div class="topic-post-tags">${tags}</div>
+        </span>
+    </td>
+    <td class="poster">
+        <div class='poster-avatar'>
+            <a href="/users/${last_poster_username}" data-user-card="${last_poster_username}">
+              <img alt="" width="50" height="50" src="${avatar}" class="avatar">
+            </a>
+        </div>
+      </td>
+      <td class="last-post">
+          <div class='poster-info'>
+            <a href="${lastPostUrl}">${lastPostDate} </a>
+            <span class='editor'><a href="/users/${last_poster_username}" data-auto-route="true" data-user-card="${last_poster_username}">${last_poster_username}</a></span>
+        </div>
+    </td>
+    <td class="num age activity" title="First post: ${created_at}">
+        <a class="post-activity" href="/t/${slug}/${id}">
+            <span class="relative-date" data-time="${created_at}" data-format="tiny">${created_at}</span>
+        </a>
+    </td>
+  </tr>
+</script>
+
 <script>
   startHere();
   
@@ -22,9 +57,9 @@
     } else {
         var arraylength = resp.topic_list.topics.length;
     }
-
     for (var i = 0; i < arraylength; i++) {
       var topic = resp.topic_list.topics[i];
+      var user = findElement(resp.users, "id", topic.posters[topic.posters.length-1].user_id);
       var d = new Date(topic.last_posted_at);
       var updated = moment(d, "ddd MMMM DD YYYY hh:mm:ss").fromNow();
       var item = {
@@ -36,7 +71,8 @@
         pinned: pinClass(topic.pinned),
         title: topic.title,
         slug: topic.slug,
-        tags: linkTags(topic.tags)
+        tags: linkTags(topic.tags),
+        avatar: user.avatar_template.replace("{size}", "50")
       }
       list.push(item);
     }
@@ -54,33 +90,3 @@
     }
   }
 </script>
-
-<script type="text/template" data-template="start-here-template">
-  <tr class="topic-list-item category-uncategorized ${pinned} ember-view">
-      <td class="main-link clearfix" colspan="2">
-        <span class="link-top-line">
-          <div class="topic-statuses">
-            <a href="/t/${slug}/${id}" title="${title}" class="topic-status">
-              <i class="fa fa-thumb-tack d-icon d-icon-thumb-tack"></i>
-            </a>
-          </div>
-          <a href="/t/${slug}/${id}" class="title raw-link raw-topic-link">${title}</a>
-          <div class="topic-post-tags">${tags}</div>
-        </span>
-    </td>
-    <td class="last-post">
-        <div class='poster-avatar'>
-            <a href="/users/${last_poster_username}" data-user-card="${last_poster_username}">${avatar}</a>
-        </div>
-        <div class='poster-info'>
-            <a href="${lastPostUrl}">${lastPostDate} </a>
-            <span class='editor'><a href="/users/${last_poster_username}" data-auto-route="true" data-user-card="${last_poster_username}">${last_poster_username}</a></span>
-        </div>
-    </td>
-    <td class="num age activity" title="First post: ${created_at}">
-        <a class="post-activity" href="/t/${slug}/${id}">
-            <span class="relative-date" data-time="${created_at}" data-format="tiny">${created_at}</span>
-        </a>
-    </td>
-  </tr>
-</script>  

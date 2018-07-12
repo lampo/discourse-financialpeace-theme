@@ -1,10 +1,53 @@
 .questions-wrapper {
-  background-color: $gds-color-blue-30;
   background-position: bottom;
   border-radius: 15px;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.questions {
   .gds-Heading--secondary {
     color: $gds-color-white;
+    line-height: 1.2;
     margin-bottom: 2rem;
     text-align: center;
+  }
+}
+
+.gds-FeatureGroup-feature, 
+.gds-FeatureGroup-feature:first-child {
+  background: $gds-color-white;
+  border-radius: 7px;
+  margin-top: 25px;
+  padding-top: 1rem;
+  width:100%;
+}
+
+.gds-FeatureGroup-list{
+  align-items: stretch;
+}
+
+.gds-Heading--secondary {
+  font-size: 2rem;
+}
+
+.gds-Card-body {
+  max-width: none;
+}
+
+.gds-Card-text {
+  max-width: none;
+  text-align: center;
+  p {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+  a {
+    color: $gds-color-gray-50;
+    font-size: 20px;
+    font-weight: 200;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
   }
 }

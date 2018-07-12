@@ -1,0 +1,45 @@
+// This files is for any common.scss that requires variables stored in Discourse like image assets.
+@font-face {
+  font-family: Wilderness;
+  src: url($wilderness) format('woff2');
+}
+
+.Hero--welcome {
+  background: url($welcome_background);
+  background-size: cover;
+  background-position: bottom;
+  margin-bottom: 33px;
+}
+
+.newHere {
+  background: url($new_here_background);
+  background-size: cover;
+}
+
+.questions {
+  background: url($questions_background);
+  background-size: cover;
+  border-radius: 7px;
+}
+
+.swash {
+  background: url($headline_swash) no-repeat bottom center;
+  @include gds-respond-to(lap-wide-and-up) {
+    background-position-x: left;
+  }
+}
+
+.startHere {
+  tr.pinned td.last-post {
+    background: url($pin_triangle) no-repeat top right; 
+  }
+}
+
+.tag-show-heading a:first-child,
+.gds-Card-text a {
+    background: url($headline_swash) no-repeat bottom center;
+}
+
+.top-nav-hamburger {
+  background: url($icon_hamburger) no-repeat;
+}
