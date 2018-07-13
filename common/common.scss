@@ -3361,21 +3361,23 @@ section.container {
   border: none;
 }
 
-.financial-peace {
-  &.navigation-categories {
-    .nav.nav-pills {
-      display: none;
-    }
-    button {
-      border-radius: 4px;
-      padding: 10px;
-    }
+.navigation-categories {
+  .nav.nav-pills {
+    display: none;
+  }
+  button {
+    border-radius: 4px;
+    padding: 10px;
   }
 
   .category-list {
     th.category, th.topics {
       display: none;
     }
+  }
+
+  .list-controls {
+    padding: 2rem 1rem 0;
   }
 
   .column {
@@ -3431,17 +3433,23 @@ section.container {
     margin: 2px;
   }
 
-  .category {
-    padding: 1rem 0 1rem 0.5rem;
+  .column.categories {
+    .category {
+      padding: 2rem 0 2rem 1rem;
+    }
+  }
+
+  table {
+    font-size: 18px;
   }
 
   .category-list {
-    td {
-      padding: 2rem 0 2rem 1rem;
-    }
     max-width: 230px;
     @media(min-width: 350px) {
       max-width: 100%;
+    }
+    td {
+      padding: 2rem 0 2rem 1rem;
     }
     th.category, th.topics {
       display: none;
@@ -3454,41 +3462,37 @@ section.container {
       @include gds-respond-to(palm-only) {
         display: none;
       }
+      vertical-align: middle;
     }
-  }
-
-  .category-list {
     .category-name {
       color: $gds-color-gray-60;
       font-weight: semibold;
       font-size: 24px;
       border: none;
     }
-  }
-
-  .category-list .topics .value {
-    color: $gds-color-black;
-    &:after {
-      content: 'Topics';
-      padding-left: 10px;
-    }
-
-    .wrap > .category-get-started {
-      background:  $gds-color-white;
-      border-radius: 6px;
-      box-shadow: 1px 1px 15px #ccc;
-    }
-
-    /* TODO: There may be a way to do this in the admin console: */
-
-    .badge-wrapper {
-      border: 1px solid $gds-color-gray-50;
-      border-radius: 2px;
-      padding: 5px;
+    .topics .value {
+      color: $gds-color-black;
+      font-size: 18px;
+      &:after {
+        content: 'Topics';
+        padding-left: 10px;
+      }
     }
   }
-  .badge-wrapper.bullet span.badge-category {
-    padding-left: 10px;
+
+
+  .wrap > .category-get-started {
+    background:  $gds-color-white;
+    border-radius: 6px;
+    box-shadow: 1px 1px 15px $gds-color-gray-30;
+  }
+
+  /* TODO: There may be a way to do this in the admin console: */
+
+  .badge-wrapper {
+    border: 1px solid $gds-color-gray-50;
+    border-radius: 2px;
+    padding: 5px;
   }
 }
 
@@ -3514,16 +3518,26 @@ section.container {
     color: $gds-color-white;
   }
 }
-.badge-wrapper.bullet{
+
+.badge-wrapper.bullet {
   .category-name {
-    border: 1px solid $gds-color-gray-50;
-    border-radius: 2px;
     color: $gds-color-gray-60;
-    padding: 0.5rem;
+    padding-top: 10px;
     text-decoration: none;
     font-weight: normal;
   }
+
+  span.badge-category {
+    padding: none;
+  }
 }
+
+.financial-peace {
+  .badge-wrapper.bullet span.badge-category {
+    padding: none;
+  }
+}
+
 
 td.num.views, td.num.activity{
   display: none;
@@ -3763,6 +3777,12 @@ header .contents {
   box-shadow: 1px 1px 15px $gds-color-gray-10;
 }
 
+@include gds-respond-to(palm-only) {
+  .preferences-nav {
+    min-width: 300px;
+  }
+}
+
 .controls ul li:first-child a {
   background: $gds-color-blue-50;
   color: $gds-color-white;
@@ -3773,6 +3793,9 @@ header .contents {
 }
 .controls ul li:last-child {
   display: none !important;
+}
+.form-vertical .control-label {
+  font-weight: semibold;
 }
 .stats-section {
   border-bottom: 1px solid $gds-color-gray-10;
@@ -3787,6 +3810,10 @@ header .contents {
 }
 .stats-title {
   font-size: $gds-font-size-xs;
+}
+h3.stats-title {
+  font-size: 24px;
+  font-weight: semibold;
 }
 .top-sub-section {
   border-bottom: 1px solid $gds-color-gray-10;
@@ -3815,6 +3842,14 @@ header .contents {
     margin: 2px;
     margin-right: 10px;
     background: $gds-color-gray-10;
+  }
+
+  li a.active, li a:hover {
+    border-radius: 3px;
+    margin: 2px;
+    margin-right: 10px;
+    color: $gds-color-gray-80;
+    background: $gds-color-gray-30;
   }
 }
 
@@ -3856,7 +3891,7 @@ header .contents {
 .stream-topic-details {
   .stream-topic-title a {
     color: $gds-color-black;
-    font-weight: 900;
+    font-weight: 600;
   }
 }
 .topic-list {
@@ -3886,17 +3921,17 @@ header .contents {
 @media(min-width: 75em) {
   .top-sub-section {
     h3 {
-      font-size: $gds-font-size-l;
+      font-size: $gds-font-size-m;
     }
   }
   .stats-section {
     h3 {
-      font-size: $gds-font-size-l;
+      font-size: $gds-font-size-m;
     }
   }
   .badges-section {
     h3 {
-      font-size: $gds-font-size-l;
+      font-size: $gds-font-size-m;
     }
   }
 }
@@ -4208,6 +4243,8 @@ button.reply {
 
   .topic-list {
     .category-name {
+      border: 1px solid $gds-color-gray-50;
+      border-radius: 2px;
       padding: 0.5rem;
       font-weight: normal;
     }
@@ -4339,6 +4376,15 @@ th.activity.num {
     &::after {
       content: '';
     }
+  }
+}
+
+#list-area {
+  margin-bottom: 0;
+  h3 {
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: normal;
   }
 }
 

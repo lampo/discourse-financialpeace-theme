@@ -70,6 +70,8 @@ button.reply {
 
   .topic-list {
     .category-name {
+      border: 1px solid $gds-color-gray-50;
+      border-radius: 2px;
       padding: 0.5rem;
       font-weight: normal;
     }
@@ -201,5 +203,14 @@ th.activity.num {
     &::after {
       content: '';
     }
+  }
+}
+
+#list-area {
+  margin-bottom: 0;
+  h3 {
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: normal;
   }
 }

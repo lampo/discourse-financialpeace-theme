@@ -8,21 +8,23 @@
   border: none;
 }
 
-.financial-peace {
-  &.navigation-categories {
-    .nav.nav-pills {
-      display: none;
-    }
-    button {
-      border-radius: 4px;
-      padding: 10px;
-    }
+.navigation-categories {
+  .nav.nav-pills {
+    display: none;
+  }
+  button {
+    border-radius: 4px;
+    padding: 10px;
   }
 
   .category-list {
     th.category, th.topics {
       display: none;
     }
+  }
+
+  .list-controls {
+    padding: 2rem 1rem 0;
   }
 
   .column {
@@ -78,17 +80,23 @@
     margin: 2px;
   }
 
-  .category {
-    padding: 1rem 0 1rem 0.5rem;
+  .column.categories {
+    .category {
+      padding: 2rem 0 2rem 1rem;
+    }
+  }
+
+  table {
+    font-size: 18px;
   }
 
   .category-list {
-    td {
-      padding: 2rem 0 2rem 1rem;
-    }
     max-width: 230px;
     @media(min-width: 350px) {
       max-width: 100%;
+    }
+    td {
+      padding: 2rem 0 2rem 1rem;
     }
     th.category, th.topics {
       display: none;
@@ -101,40 +109,36 @@
       @include gds-respond-to(palm-only) {
         display: none;
       }
+      vertical-align: middle;
     }
-  }
-
-  .category-list {
     .category-name {
       color: $gds-color-gray-60;
       font-weight: semibold;
       font-size: 24px;
       border: none;
     }
-  }
-
-  .category-list .topics .value {
-    color: $gds-color-black;
-    &:after {
-      content: 'Topics';
-      padding-left: 10px;
-    }
-
-    .wrap > .category-get-started {
-      background:  $gds-color-white;
-      border-radius: 6px;
-      box-shadow: 1px 1px 15px #ccc;
-    }
-
-    /* TODO: There may be a way to do this in the admin console: */
-
-    .badge-wrapper {
-      border: 1px solid $gds-color-gray-50;
-      border-radius: 2px;
-      padding: 5px;
+    .topics .value {
+      color: $gds-color-black;
+      font-size: 18px;
+      &:after {
+        content: 'Topics';
+        padding-left: 10px;
+      }
     }
   }
-  .badge-wrapper.bullet span.badge-category {
-    padding-left: 10px;
+
+
+  .wrap > .category-get-started {
+    background:  $gds-color-white;
+    border-radius: 6px;
+    box-shadow: 1px 1px 15px $gds-color-gray-30;
+  }
+
+  /* TODO: There may be a way to do this in the admin console: */
+
+  .badge-wrapper {
+    border: 1px solid $gds-color-gray-50;
+    border-radius: 2px;
+    padding: 5px;
   }
 }
