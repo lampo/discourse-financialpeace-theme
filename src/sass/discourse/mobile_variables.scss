@@ -1,1 +1,12 @@
 // This files is for any mobile.scss that requires variables stored in Discourse like image assets.
+
+.newHere {
+  background: url($new_here_background_mobile);
+  background-size: cover;
+}
+
+.questions {
+  background: url($questions_background_mobile);
+  background-size: cover;
+  border-radius: 7px;
+}
