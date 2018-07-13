@@ -29,8 +29,8 @@
 </script>
 
 <script>
-  startHere();
-  
+  $('document').ready(startHere());
+
   function startHere() {
     if ($("#StartHereResults").length > 0) return;
     $.get("/c/get-started.json", startHereDataSuccess);

@@ -11,7 +11,11 @@
   i, .discourse-tag {
     display: none;
   }
+  a:first-child {
+    padding-bottom: 8px;
+  }  
 }
+
 .tag-sort-options {
   display: none;
 }
@@ -41,8 +45,3 @@
   }
 }
 
-.tag-show-heading {
-  a:first-child {
-    padding-bottom: 8px;
-  }
-}

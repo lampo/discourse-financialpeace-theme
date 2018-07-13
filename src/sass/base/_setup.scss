@@ -110,6 +110,11 @@ h3 {
   @include gds-respond-to(lap-wide-and-up) {
     text-align: left;
   }
+  .swash {
+    @include gds-respond-to(lap-wide-and-up) {
+      background-position-x: left;
+    }
+  }
 }
 %gds-link {
   cursor: pointer;

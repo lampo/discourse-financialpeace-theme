@@ -24,9 +24,6 @@
 
 .swash {
   background: url($headline_swash) no-repeat bottom center;
-  @include gds-respond-to(lap-wide-and-up) {
-    background-position-x: left;
-  }
 }
 
 .startHere {
@@ -35,8 +32,7 @@
   }
 }
 
-.tag-show-heading a:first-child,
-.gds-Card-text a {
+.tag-show-heading a:first-child {
     background: url($headline_swash) no-repeat bottom center;
 }
 
