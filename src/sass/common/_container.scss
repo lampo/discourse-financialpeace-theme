@@ -1,7 +1,7 @@
 .container {
   &.list-container {
     background: $gds-color-white;
-    padding: none;
+    padding: 0;
     @include gds-respond-to(lap-and-up) {
       padding: 3rem;
     }
