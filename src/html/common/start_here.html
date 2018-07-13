@@ -1,6 +1,6 @@
 
 <script type="text/template" data-template="start-here-template">
-  <tr class="topic-list-item category-uncategorized ${pinned} ember-view">
+  <tr class="start-here-item topic-list-item category-uncategorized ${pinned} ember-view">
       <td class="main-link clearfix" colspan="2">
         <div class="link-top-line">
           <div class="poster-avatar">
@@ -29,11 +29,10 @@
 </script>
 
 <script>
-  $('document').ready(startHere());
+  $(document).ready(startHere);
 
   function startHere() {
-
-    if ($("#StartHereResults").length > 0) return;
+    if ($(".start-here-item").length > 0) return;
     $.get("/c/get-started.json", startHereDataSuccess);
   };
 
