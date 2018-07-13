@@ -423,7 +423,7 @@ $(document).ready(function() {
             }
           cards.push(card);
         }
-        $('#question-cards').append(cards.map(function(card) {
+        $('#question-cards').prepend(cards.map(function(card) {
             return template.map(render(card)).join('');
           }));
     }
@@ -482,6 +482,7 @@ $(document).ready(function() {
   $('document').ready(startHere());
 
   function startHere() {
+
     if ($("#StartHereResults").length > 0) return;
     $.get("/c/get-started.json", startHereDataSuccess);
   };
@@ -494,6 +495,7 @@ $(document).ready(function() {
   };
 
   function startHereDataSuccess(resp, status, ele) {
+
     var template = $('script[data-template="start-here-template"]').text().split(/\$\{(.+?)\}/g);
     var list = new Array();
 
@@ -522,7 +524,7 @@ $(document).ready(function() {
       list.push(item);
     }
 
-    $('#StartHereResults').append(list.map(function(item) {
+    $('#StartHereResults').prepend(list.map(function(item) {
       return template.map(render(item)).join('');
     }));
   }

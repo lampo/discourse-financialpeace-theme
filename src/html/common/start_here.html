@@ -32,6 +32,7 @@
   $('document').ready(startHere());
 
   function startHere() {
+
     if ($("#StartHereResults").length > 0) return;
     $.get("/c/get-started.json", startHereDataSuccess);
   };
@@ -44,6 +45,7 @@
   };
 
   function startHereDataSuccess(resp, status, ele) {
+
     var template = $('script[data-template="start-here-template"]').text().split(/\$\{(.+?)\}/g);
     var list = new Array();
 
@@ -72,7 +74,7 @@
       list.push(item);
     }
 
-    $('#StartHereResults').append(list.map(function(item) {
+    $('#StartHereResults').prepend(list.map(function(item) {
       return template.map(render(item)).join('');
     }));
   }

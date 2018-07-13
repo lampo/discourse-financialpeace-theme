@@ -54,7 +54,7 @@
             }
           cards.push(card);
         }
-        $('#question-cards').append(cards.map(function(card) {
+        $('#question-cards').prepend(cards.map(function(card) {
             return template.map(render(card)).join('');
           }));
     }
