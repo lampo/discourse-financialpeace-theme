@@ -1,22 +1,22 @@
-.startHere-wrapper {
-  flex: 1 1 auto;
-  float: none;
-  @include gds-respond-to(lap-wide-and-up) {
-    flex: 2 2;
-    justify-content: center;
-  }
-}
-
-.startHere-header {
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-  }
-}
-
 .startHere {
-  td {
+  &-wrapper {
+    flex: 1 1 auto;
+    float: none;
+    @include gds-respond-to(lap-wide-and-up) {
+      flex: 2 2;
+      justify-content: center;
+      margin-right: 25px;
+    }
+  }
+  
+  &-header {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+    }
+  }
+    td {
     padding: 34px 0;
   }
   .d-icon-thumb-tack {

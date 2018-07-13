@@ -3291,7 +3291,7 @@ h3 {
   margin: 0 auto;
   max-width: 1200px;
   overflow: hidden;
-  padding: 0;
+  padding: 10px;
   @include gds-respond-to(lap-and-up) {
     padding: 0 20px;
   }
@@ -3301,7 +3301,8 @@ h3 {
   background-color: $gds-color-white;
   border-radius: 7px;
   box-shadow: 1px 1px 11px $gds-color-gray-30;
-  margin: 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
   min-width: 280px;
   padding: 15px;
   width: 100%;
@@ -3547,7 +3548,7 @@ title.raw-link.raw-topic-link a{
 
 
 .newHere {
-  margin-top: 4rem;
+  margin-top: 25px;
   min-width: 320px;
   position: relative;
   border-radius: 7px;
@@ -3892,15 +3893,17 @@ header .contents {
 }
 /* end - Desktop mobile first */
 
-.questions-wrapper {
-  background-position: bottom;
-  border-radius: 15px;
-  margin: 20px auto;
-  max-width: 1200px;
-  padding: 0 20px;
-}
-
 .questions {
+  &-wrapper {
+    background-position: bottom;
+    margin: 5px auto 20px;
+    max-width: 1200px;
+    padding: 10px;
+    @include gds-respond-to(lap-and-up) {
+      padding: 10px 20px;
+    }
+  }
+
   .gds-Heading--secondary {
     color: $gds-color-white;
     line-height: 1.2;
@@ -3909,21 +3912,28 @@ header .contents {
   }
 }
 
-.gds-FeatureGroup-feature, 
-.gds-FeatureGroup-feature:first-child {
-  background: $gds-color-white;
-  border-radius: 7px;
-  margin-top: 25px;
-  padding-top: 1rem;
-  width:100%;
-  .avatar {
-    height: 80px;
-    width: 80px;
+.gds-FeatureGroup {
+  &-list{
+    align-items: stretch;
+    justify-content: center;
   }
-}
 
-.gds-FeatureGroup-list{
-  align-items: stretch;
+  &-feature, 
+  &-feature:first-child {
+    background: $gds-color-white;
+    border-radius: 7px;
+    margin-top: 45px;
+    max-width: 400px;
+    padding-top: 1rem;
+    width:100%;
+    @include gds-respond-to(lap-wide-and-up) {
+      margin-top: 25px;
+    }
+    .avatar {
+      height: 80px;
+      width: 80px;
+    }
+  }
 }
 
 .gds-Heading--secondary {
@@ -3950,25 +3960,25 @@ header .contents {
   }
 }
 
-.startHere-wrapper {
-  flex: 1 1 auto;
-  float: none;
-  @include gds-respond-to(lap-wide-and-up) {
-    flex: 2 2;
-    justify-content: center;
-  }
-}
-
-.startHere-header {
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-  }
-}
-
 .startHere {
-  td {
+  &-wrapper {
+    flex: 1 1 auto;
+    float: none;
+    @include gds-respond-to(lap-wide-and-up) {
+      flex: 2 2;
+      justify-content: center;
+      margin-right: 25px;
+    }
+  }
+  
+  &-header {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+    }
+  }
+    td {
     padding: 34px 0;
   }
   .d-icon-thumb-tack {
