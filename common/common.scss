@@ -3499,7 +3499,7 @@ section.container {
 .container {
   &.list-container {
     background: $gds-color-white;
-    padding: none;
+    padding: 0;
     @include gds-respond-to(lap-and-up) {
       padding: 3rem;
     }
@@ -3974,7 +3974,7 @@ h3.stats-title {
       margin-top: 25px;
     }
     .avatar {
-      height: 80px;
+      height: auto;
       width: 80px;
     }
   }
@@ -4314,7 +4314,7 @@ nav.post-controls {
 }
 
 .avatar {
-  height: 40px;
+  height: auto;
   width: 40px;
 }
 
