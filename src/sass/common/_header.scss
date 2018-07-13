@@ -62,10 +62,17 @@ a.tech-support {
 
 .gds-Hero-container {
   max-width: 500px;
+  padding: 4rem 2rem 3rem;
+  @include gds-respond-to(lap-wide-and-up) {
+    padding: 4rem 3rem;
+  }
 }
 
 .gds-Hero-title {
-  font-size: 4rem;
+  font-size: 3rem;
+  @include gds-respond-to(lap-wide-and-up) {
+    font-size: 4rem;
+  }
 }
 
 .gds-Hero-subtitle {

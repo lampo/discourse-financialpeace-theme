@@ -10,8 +10,15 @@
 @import "gazelle-design-system/sass/design-tokens";
 @import "mixins";
 
+.financial-peace {
+  .wrap > div:not(.container):nth-child(2),
+  .wrap > section {
+    @include backgroundChange();
+  }
+}
+
 html {
-  background-color: $gds-color-background-default;
+  background: $gds-color-gray-10;
   scroll-behavior: smooth;
   @include gds-typeset(xs);
 }
@@ -25,18 +32,16 @@ tbody {
   border-top: none;
 }
 
-
-h1,
-h2,
-h4,
-h5,
-h6 {
+h1, h2, h4, h5, h6 {
   font-family: $gds-font-family-bold;
   font-weight: $gds-font-weight-semibold;
 }
 
 h1 {
-  @include gds-typeset(xl);
+  @include gds-typeset(l);
+  @include gds-respond-to(lap-and-up) {
+    @include gds-typeset(xl);
+  }
 }
 
 h2 {
@@ -46,36 +51,20 @@ h2 {
 }
 
 h3 {
-  @include gds-typeset(m, true);
+  @include gds-typeset(s);
+  @include gds-respond-to(lap-and-up) {
+    @include gds-typeset(m, true);
+  }
 }
 
 .call-out {
   font-family: Wilderness;
-  font-size: 10rem;
+  font-size: 7rem;
   font-weight: 400;
-  line-height: 6rem;
-}
-
-.financial-peace {
-  body {
-    background: $gds-color-gray-10;
-  }
-
-  tbody {
-    border-top: none;
-  }
-
-  .wrap > div:not(.container):nth-child(2),
-  .wrap > section {
-    @include backgroundChange();
-  }
-  section.container {
-    h2 {
-      margin-bottom: 10px;
-    }
-    p {
-      padding: 5px;
-    }
+  line-height: 4.5rem;
+  @include gds-respond-to(lap-wide-and-up) {
+    font-size: 10rem;
+    line-height: 6rem;
   }
 }
 
@@ -86,7 +75,7 @@ h3 {
   margin: 0 auto;
   max-width: 1200px;
   overflow: hidden;
-  padding: 10px;
+  padding: 0 10px;
   @include gds-respond-to(lap-and-up) {
     padding: 0 20px;
   }
@@ -98,15 +87,25 @@ h3 {
   box-shadow: 1px 1px 11px $gds-color-gray-30;
   margin-bottom: 20px;
   margin-top: 5px;
-  min-width: 280px;
+  min-width: 270px;
   padding: 15px;
   width: 100%;
-  @include gds-respond-to(lap-and-up) {
-    padding: 40px;
+  @include gds-respond-to(lap-wide-and-up) {
+    padding: 25px 40px;
+  }
+}
+
+section.container {
+  h2 {
+    margin-bottom: 10px;
+  }
+  p {
+    padding: 5px;
   }
 }
 
 .section-header{
+  margin-top: 15px;
   text-align: center;
   @include gds-respond-to(lap-wide-and-up) {
     text-align: left;
@@ -117,12 +116,10 @@ h3 {
     }
   }
 }
-%gds-link {
-  cursor: pointer;
-  text-decoration: none;
-  color: $gds-color-text-link;
-}
 
+%gds-link {
+  text-decoration: none;
+}
 
 .gds-Button, 
 .gds-Button--alternate {

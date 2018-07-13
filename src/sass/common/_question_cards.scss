@@ -3,16 +3,16 @@
     background-position: bottom;
     margin: 5px auto 20px;
     max-width: 1200px;
-    padding: 10px;
-    @include gds-respond-to(lap-and-up) {
-      padding: 10px 20px;
+    padding: 0 10px;
+    @include gds-respond-to(lap-wide-and-up) {
+      padding: 0px 20px;
     }
   }
 
   .gds-Heading--secondary {
     color: $gds-color-white;
     line-height: 1.2;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
   }
 }
