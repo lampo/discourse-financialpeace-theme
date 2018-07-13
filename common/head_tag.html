@@ -377,7 +377,7 @@ $(document).ready(function() {
     <div class='gds-Card-body'>
       <h3 class='gds-Heading gds-Heading--tertiary gds-Card-title'></h3>
       <div class='gds-Text gds-Card-text'>
-        <a href="/u/${username}" data-user-card="${username}">${name}</a>
+        <a href="/u/${username}" data-user-card="${username}" class="swash">${name}</a>
         <p><a href='/t/${slug}/${id}'>${title}</a></p>
       </div>
       <a href='/t/${slug}/${id}' class='gds-Button'>Comment</a>
@@ -386,7 +386,7 @@ $(document).ready(function() {
 </script>
 
 <script type="text/javascript">
-    createCards();
+    $('document').ready(createCards());
 
     function createCards() {
         if ($("#question-cards").length > 0) return;
@@ -479,8 +479,8 @@ $(document).ready(function() {
 </script>
 
 <script>
-  startHere();
-  
+  $('document').ready(startHere());
+
   function startHere() {
     if ($("#StartHereResults").length > 0) return;
     $.get("/c/get-started.json", startHereDataSuccess);
