@@ -17,10 +17,10 @@
 </script>
 
 <script type="text/javascript">
-    $('document').ready(createCards());
+    $(document).ready(createCards);
 
     function createCards() {
-        if ($("#question-cards").length > 0) return;
+        if ($(".gds-FeatureGroup-feature").length > 0) return;
         var dataPath = "/search.json?expanded=true&q=after:" + getPastDate() + "&status:noreplies";
         $.get(dataPath, cardDataSuccess);
     };
