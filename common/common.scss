@@ -4036,11 +4036,22 @@ h3.stats-title {
     border-top: 1px solid $gds-color-gray-30;
     border-bottom: none;
   }
-  .poster-avatar{
-    float: left;
-    padding: 0 20px;
-    @include gds-respond-to(lap-wide-and-up) {
-      float: right;
+  .link-top-line {
+    margin-right: 15px;
+    position: relative;
+
+    .poster-avatar{
+      position: absolute;
+      @include gds-respond-to(lap-wide-and-up) {
+        right: 0;
+      }
+    }
+    .topic-statuses{
+      margin-left: 50px;
+      @include gds-respond-to(lap-wide-and-up) {
+        margin-left: 0;
+        margin-right: 50px;
+      }
     }
   }
 }
