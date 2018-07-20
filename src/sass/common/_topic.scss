@@ -23,7 +23,7 @@
 
 .topic-meta-data .post-info a {
   color: $gds-color-gray-70;
-  font-weight: 600;
+  font-weight: $gds-font-weight-semibold;
   margin-right: 10px;
 }
 
@@ -35,7 +35,7 @@
 
 button.reply {
   background-color: $gds-color-blue-30;
-  border-radius: 2px;
+  border-radius: 3px;
   color: $gds-color-white;
 }
 
@@ -52,7 +52,7 @@ button.reply {
 .topic-post {
   background-color: $gds-color-gray-20;
   border: none;
-  border-radius: 8px;
+  border-radius: 7px;
   margin-bottom: 1rem;
   padding-left: 1rem;
   padding-top: 1.5rem;
@@ -64,18 +64,10 @@ button.reply {
   padding-right: 1rem;
   border: none;
 }
-  .topics {
-    border-top: 1px solid $gds-color-gray-30;
-  }
 
-  .topic-list {
-    .category-name {
-      border: 1px solid $gds-color-gray-50;
-      border-radius: 2px;
-      padding: 0.5rem;
-      font-weight: normal;
-    }
-  }
+.topics {
+  border-top: 1px solid $gds-color-gray-30;
+}
 
 nav.post-controls {
   button, button.create {
@@ -88,7 +80,7 @@ nav.post-controls {
 }
 
 .container li.active a {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .post-stream {
   > div:first-child {
@@ -137,7 +129,7 @@ nav.post-controls {
 }
 
 .container li.active a {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .avatar {
@@ -211,6 +203,6 @@ th.activity.num {
   h3 {
     padding-left: 10px;
     font-size: 18px;
-    font-weight: normal;
+    font-weight: $gds-font-weight-normal;
   }
 }

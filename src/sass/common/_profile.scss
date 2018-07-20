@@ -14,16 +14,12 @@
   margin-left: 5px;
 }
 .user-table .wrapper section {
+  @include backgroundChange();
   padding: 30px 20px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 15px $gds-color-gray-10;
-  background: $gds-color-white;
 }
 
 .user-main .about {
-  background: $gds-color-white;
-  border-radius: 3px;
-  box-shadow: 1px 1px 15px $gds-color-gray-10;
+  @include backgroundChange();
 }
 
 @include gds-respond-to(palm-only) {
@@ -33,10 +29,8 @@
 }
 
 .controls ul li:first-child a {
-  background: $gds-color-blue-50;
-  color: $gds-color-white;
   padding: 15px 10px !important;
-  border-radius: 5px;
+  border-radius: 7px;
   margin-right: 10px;
   margin-top: 10px;
 }
@@ -44,7 +38,7 @@
   display: none !important;
 }
 .form-vertical .control-label {
-  font-weight: semibold;
+  font-weight: $gds-font-weight-semibold;
 }
 .stats-section {
   border-bottom: 1px solid $gds-color-gray-10;
@@ -62,7 +56,7 @@
 }
 h3.stats-title {
   font-size: 24px;
-  font-weight: semibold;
+  font-weight: $gds-font-weight-semibold;
 }
 .top-sub-section {
   border-bottom: 1px solid $gds-color-gray-10;
@@ -140,7 +134,7 @@ h3.stats-title {
 .stream-topic-details {
   .stream-topic-title a {
     color: $gds-color-black;
-    font-weight: 600;
+    font-weight: $gds-font-weight-semibold;
   }
 }
 .topic-list {

@@ -53,9 +53,6 @@ $gds-font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSyste
   .topic-list .posts-map {
     font-size: inherit;
   }
-  .category-list .category-name {
-    font-weight: 600;
-  }
 }
 
 .wrap > .container,
@@ -68,9 +65,6 @@ $gds-font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSyste
 }
 
 
-.badge-wrapper.bullet .category-name {
-  border: none;
-}
 #topic-progress-wrapper.docked {
   right: 40px !important;
 }

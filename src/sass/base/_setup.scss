@@ -10,13 +10,6 @@
 @import "gazelle-design-system/sass/design-tokens";
 @import "mixins";
 
-.financial-peace {
-  .wrap > div:not(.container):nth-child(2),
-  .wrap > section {
-    @include backgroundChange();
-  }
-}
-
 html {
   background: $gds-color-gray-10;
   scroll-behavior: smooth;
@@ -60,7 +53,7 @@ h3 {
 .call-out {
   font-family: Wilderness;
   font-size: 7rem;
-  font-weight: 400;
+  font-weight: $gds-font-weight-normal;
   line-height: 4.5rem;
   @include gds-respond-to(lap-wide-and-up) {
     font-size: 10rem;
@@ -82,13 +75,10 @@ h3 {
 }
 
 .wrapper {
-  background-color: $gds-color-white;
-  border-radius: 7px;
-  box-shadow: 1px 1px 11px $gds-color-gray-30;
+  @include backgroundChange();
   margin-bottom: 20px;
   margin-top: 5px;
   min-width: 270px;
-  padding: 15px;
   width: 100%;
   @include gds-respond-to(lap-wide-and-up) {
     padding: 25px 40px;
@@ -132,4 +122,9 @@ section.container {
   &:active {
     color: $gds-color-white;
   }
+}
+
+.select-kit.combo-box.tag-drop .select-kit-row, 
+.select-kit.combo-box.group-dropdown .select-kit-row {
+  font-weight: $gds-font-weight-semibold;;
 }

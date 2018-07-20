@@ -80,21 +80,3 @@ a.tech-support {
   margin: 1.5rem 0 ;
 }
 
-header .contents {
-  .title {
-    width: 150px;
-    margin: 0 auto;
-    float: none;
-    @include gds-respond-to(lap-wide-and-up) {
-      float: left;
-      margin-left: 80px;
-    }
-  }
-
-  .panel {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-}

@@ -3209,18 +3209,10 @@ $gds-media-query-legacy-desk: "only screen and (min-width: 48em)";
 
 @mixin backgroundChange {
   background: $gds-color-white;
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 1px 1px 15px #ccc;
+  border-radius: 7px;
+  box-shadow: 1px 1px 15px $gds-color-gray-40;
 }
 
-
-.financial-peace {
-  .wrap > div:not(.container):nth-child(2),
-  .wrap > section {
-    @include backgroundChange();
-  }
-}
 
 html {
   background: $gds-color-gray-10;
@@ -3265,7 +3257,7 @@ h3 {
 .call-out {
   font-family: Wilderness;
   font-size: 7rem;
-  font-weight: 400;
+  font-weight: $gds-font-weight-normal;
   line-height: 4.5rem;
   @include gds-respond-to(lap-wide-and-up) {
     font-size: 10rem;
@@ -3287,13 +3279,10 @@ h3 {
 }
 
 .wrapper {
-  background-color: $gds-color-white;
-  border-radius: 7px;
-  box-shadow: 1px 1px 11px $gds-color-gray-30;
+  @include backgroundChange();
   margin-bottom: 20px;
   margin-top: 5px;
   min-width: 270px;
-  padding: 15px;
   width: 100%;
   @include gds-respond-to(lap-wide-and-up) {
     padding: 25px 40px;
@@ -3339,6 +3328,11 @@ section.container {
   }
 }
 
+.select-kit.combo-box.tag-drop .select-kit-row, 
+.select-kit.combo-box.group-dropdown .select-kit-row {
+  font-weight: $gds-font-weight-semibold;;
+}
+
 .admin-content {
   padding: 2rem;
 }
@@ -3351,29 +3345,15 @@ section.container {
   display: none;
 }
 
-/* Josh Young */
-/* TODO:
-  - add gazelle styles.
-  - insure that the elements that are being hidden cannot be removed from the admin.
-*/
-
-.financial-peace .topic-category .badge-wrapper {
-  border: none;
-}
 
 .navigation-categories {
   .nav.nav-pills {
     display: none;
   }
-  button {
-    border-radius: 4px;
-    padding: 10px;
-  }
 
-  .category-list {
-    th.category, th.topics {
-      display: none;
-    }
+  button {
+    border-radius: 3px;
+    padding: 10px;
   }
 
   .list-controls {
@@ -3403,29 +3383,6 @@ section.container {
       padding: 8px 10px;
       font-size: 18px;
       background: $gds-color-gray-20;
-    }
-  }
-
-  .topic-category .badge-wrapper {
-    padding: 0;
-    &.bullet {
-      font-size: 18px;
-      background: $gds-color-gray-30;
-      &:after {
-        content: '';
-        display: block;
-        position: relative;
-        right: 6px;
-        top: 2px;
-        height: 0; 
-        border-top: 7px solid transparent;
-        border-bottom: 7px solid transparent;
-        border-left: 9px solid $gds-color-gray-80;
-        width: 0; 
-      }
-      .category-name {
-        padding: 8px 12px;
-      }
     }
   }
 
@@ -3464,12 +3421,6 @@ section.container {
       }
       vertical-align: middle;
     }
-    .category-name {
-      color: $gds-color-gray-60;
-      font-weight: semibold;
-      font-size: 24px;
-      border: none;
-    }
     .topics .value {
       color: $gds-color-black;
       font-size: 18px;
@@ -3480,25 +3431,38 @@ section.container {
     }
   }
 
-
   .wrap > .category-get-started {
-    background:  $gds-color-white;
-    border-radius: 6px;
-    box-shadow: 1px 1px 15px $gds-color-gray-30;
+    @include backgroundChange();
   }
 
-  /* TODO: There may be a way to do this in the admin console: */
+}
 
+.category-name{
+  font-weight: $gds-font-weight-semibold;
+}
+
+.list-container {
   .badge-wrapper {
     border: 1px solid $gds-color-gray-50;
-    border-radius: 2px;
+    border-radius: 3px;
     padding: 5px;
+    .category-name{
+      color: $gds-color-gray-60;
+    }
   }
 }
 
+.category-text-title .category-name {
+  font-size: 24px;
+  font-weight: $gds-font-weight-semibold;
+}
+
 .container {
+  background-color: $gds-color-white;
+  
   &.list-container {
     background: $gds-color-white;
+    margin-bottom: 10px;
     padding: 0;
     @include gds-respond-to(lap-and-up) {
       padding: 3rem;
@@ -3514,30 +3478,10 @@ section.container {
   background: $gds-color-white;
   padding: 3rem 3rem 0;
   .btn {
-    background: $gds-color-blue-40;
+    background: $gds-color-blue-50;
     color: $gds-color-white;
   }
 }
-
-.badge-wrapper.bullet {
-  .category-name {
-    color: $gds-color-gray-60;
-    padding-top: 10px;
-    text-decoration: none;
-    font-weight: normal;
-  }
-
-  span.badge-category {
-    padding: none;
-  }
-}
-
-.financial-peace {
-  .badge-wrapper.bullet span.badge-category {
-    padding: none;
-  }
-}
-
 
 td.num.views, td.num.activity{
   display: none;
@@ -3548,8 +3492,7 @@ th.views.num, th.activity.num {
 }
 
 #create-topic {
-  background-color: $gds-color-blue-50;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 title.raw-link.raw-topic-link a{
@@ -3662,31 +3605,13 @@ a.tech-support {
   margin: 1.5rem 0 ;
 }
 
-header .contents {
-  .title {
-    width: 150px;
-    margin: 0 auto;
-    float: none;
-    @include gds-respond-to(lap-wide-and-up) {
-      float: left;
-      margin-left: 80px;
-    }
-  }
-
-  .panel {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
-}
 
 .select-kit.dropdown-select-box .select-kit-row .texts .name {
   font-weight: $gds-font-weight-semibold;;
 }
 .nav-pills {
   li.active a {
-    border-radius: 2px;
+    border-radius: 3px;
   }
 }
 
@@ -3765,16 +3690,12 @@ header .contents {
   margin-left: 5px;
 }
 .user-table .wrapper section {
+  @include backgroundChange();
   padding: 30px 20px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 15px $gds-color-gray-10;
-  background: $gds-color-white;
 }
 
 .user-main .about {
-  background: $gds-color-white;
-  border-radius: 3px;
-  box-shadow: 1px 1px 15px $gds-color-gray-10;
+  @include backgroundChange();
 }
 
 @include gds-respond-to(palm-only) {
@@ -3784,10 +3705,8 @@ header .contents {
 }
 
 .controls ul li:first-child a {
-  background: $gds-color-blue-50;
-  color: $gds-color-white;
   padding: 15px 10px !important;
-  border-radius: 5px;
+  border-radius: 7px;
   margin-right: 10px;
   margin-top: 10px;
 }
@@ -3795,7 +3714,7 @@ header .contents {
   display: none !important;
 }
 .form-vertical .control-label {
-  font-weight: semibold;
+  font-weight: $gds-font-weight-semibold;
 }
 .stats-section {
   border-bottom: 1px solid $gds-color-gray-10;
@@ -3813,7 +3732,7 @@ header .contents {
 }
 h3.stats-title {
   font-size: 24px;
-  font-weight: semibold;
+  font-weight: $gds-font-weight-semibold;
 }
 .top-sub-section {
   border-bottom: 1px solid $gds-color-gray-10;
@@ -3891,7 +3810,7 @@ h3.stats-title {
 .stream-topic-details {
   .stream-topic-title a {
     color: $gds-color-black;
-    font-weight: 600;
+    font-weight: $gds-font-weight-semibold;
   }
 }
 .topic-list {
@@ -4207,7 +4126,7 @@ h3.stats-title {
 
 .topic-meta-data .post-info a {
   color: $gds-color-gray-70;
-  font-weight: 600;
+  font-weight: $gds-font-weight-semibold;
   margin-right: 10px;
 }
 
@@ -4219,7 +4138,7 @@ h3.stats-title {
 
 button.reply {
   background-color: $gds-color-blue-30;
-  border-radius: 2px;
+  border-radius: 3px;
   color: $gds-color-white;
 }
 
@@ -4236,7 +4155,7 @@ button.reply {
 .topic-post {
   background-color: $gds-color-gray-20;
   border: none;
-  border-radius: 8px;
+  border-radius: 7px;
   margin-bottom: 1rem;
   padding-left: 1rem;
   padding-top: 1.5rem;
@@ -4248,18 +4167,10 @@ button.reply {
   padding-right: 1rem;
   border: none;
 }
-  .topics {
-    border-top: 1px solid $gds-color-gray-30;
-  }
 
-  .topic-list {
-    .category-name {
-      border: 1px solid $gds-color-gray-50;
-      border-radius: 2px;
-      padding: 0.5rem;
-      font-weight: normal;
-    }
-  }
+.topics {
+  border-top: 1px solid $gds-color-gray-30;
+}
 
 nav.post-controls {
   button, button.create {
@@ -4272,7 +4183,7 @@ nav.post-controls {
 }
 
 .container li.active a {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 .post-stream {
   > div:first-child {
@@ -4321,7 +4232,7 @@ nav.post-controls {
 }
 
 .container li.active a {
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .avatar {
@@ -4395,7 +4306,7 @@ th.activity.num {
   h3 {
     padding-left: 10px;
     font-size: 18px;
-    font-weight: normal;
+    font-weight: $gds-font-weight-normal;
   }
 }
 
@@ -4449,15 +4360,18 @@ th.activity.num {
   margin-bottom: 20px;
 }
 
-.navigation-topics #main-outlet.wrap {
+#main-outlet {
+  @include backgroundChange();
+  margin-top: 82px;
   max-width: 1200px;
-  border-radius: 7px;
-  box-shadow: 1px 1px 11px $gds-color-gray-30;
-  padding: 0;
+  padding-top: 0;
 }
 
-.container {
-  background-color: $gds-color-white;
+.navigation-topics{
+  #main-outlet {
+    margin-top: 15px;
+    padding: 10px 0;
+  }
 }
 
 // This files is for any common.scss that requires variables stored in Discourse like image assets.

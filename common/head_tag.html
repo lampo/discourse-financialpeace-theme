@@ -8,8 +8,12 @@ api.decorateWidget('header:before', helper => {
 
   var fpu_link = function(link, text = '', community) {
     if (text === '') { text = link; }
-    link = 'https://www.financialpeace.com/' + link;
-    if (community) { link = 'https://community.financialpeace.com/' + link }
+    if (community) { 
+      link = 'https://community.financialpeace.com/' + link;
+    } else {
+      link = 'https://www.financialpeace.com/' + link;
+    }
+
     return [
       helper.h('a', {
         href: link, 
@@ -386,10 +390,10 @@ $(document).ready(function() {
 </script>
 
 <script type="text/javascript">
-    $('document').ready(createCards());
+    $(document).ready(createCards);
 
     function createCards() {
-        if ($("#question-cards").length > 0) return;
+        if ($(".gds-FeatureGroup-feature").length > 0) return;
         var dataPath = "/search.json?expanded=true&q=after:" + getPastDate() + "&status:noreplies";
         $.get(dataPath, cardDataSuccess);
     };
@@ -450,7 +454,7 @@ $(document).ready(function() {
 </script>
 
 <script type="text/template" data-template="start-here-template">
-  <tr class="topic-list-item category-uncategorized ${pinned} ember-view">
+  <tr class="start-here-item topic-list-item category-uncategorized ${pinned} ember-view">
       <td class="main-link clearfix" colspan="2">
         <div class="link-top-line">
           <div class="poster-avatar">
@@ -482,7 +486,7 @@ $(document).ready(function() {
   $(document).ready(startHere);
 
   function startHere() {
-    // if ($("#StartHereResults").length > 0) return;
+    if ($(".start-here-item").length > 0) return;
     $.get("/c/get-started.json", startHereDataSuccess);
   };
 

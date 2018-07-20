@@ -1,6 +1,9 @@
 .container {
+  background-color: $gds-color-white;
+  
   &.list-container {
     background: $gds-color-white;
+    margin-bottom: 10px;
     padding: 0;
     @include gds-respond-to(lap-and-up) {
       padding: 3rem;
@@ -16,27 +19,7 @@
   background: $gds-color-white;
   padding: 3rem 3rem 0;
   .btn {
-    background: $gds-color-blue-40;
+    background: $gds-color-blue-50;
     color: $gds-color-white;
   }
 }
-
-.badge-wrapper.bullet {
-  .category-name {
-    color: $gds-color-gray-60;
-    padding-top: 10px;
-    text-decoration: none;
-    font-weight: normal;
-  }
-
-  span.badge-category {
-    padding: none;
-  }
-}
-
-.financial-peace {
-  .badge-wrapper.bullet span.badge-category {
-    padding: none;
-  }
-}
-
