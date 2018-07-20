@@ -9,6 +9,7 @@
 }
 
 .container {
+  line-height: 2rem;
   @include gds-respond-to(lap-wide-and-up) {
     padding: 0.4rem 2rem 0 2rem;
   }
