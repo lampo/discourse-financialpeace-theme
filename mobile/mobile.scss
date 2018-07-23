@@ -64,7 +64,11 @@ $gds-font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSyste
   margin-left: 0;
 }
 
-
+.mobile-view {
+    .startHere {
+      padding: 0 0.5rem;
+    }
+  }
 #topic-progress-wrapper.docked {
   right: 40px !important;
 }
