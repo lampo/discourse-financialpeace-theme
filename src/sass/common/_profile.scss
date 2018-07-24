@@ -14,18 +14,62 @@
   margin-left: 5px;
 }
 .user-table .wrapper section {
-  @include backgroundChange();
   padding: 30px 20px;
+}
+.user-table > .wrapper {
+  box-shadow: none;
 }
 
 .user-main .about {
-  @include backgroundChange();
+  border: none;
+  box-shadow: none;
+  background: none;
+}
+
+.user-main .about .controls li {
+  margin: 0;
+}
+
+.controls > a.btn:link, a.btn:visited, a.btn:hover, a.btn:active {
+  background-color: $gds-color-blue-50;
+  color: $gds-color-white;
+  min-width: 100%
 }
 
 @include gds-respond-to(palm-only) {
   .preferences-nav {
     min-width: 300px;
   }
+}
+
+a.expander {
+  border: 1px solid $gds-color-gray-30;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.mobile-view .mobile-nav > li > a {
+  height: 3.3rem;
+  padding-top: 0.9rem;
+  i.fa-caret-down.d-icon {
+    top: 3%;
+    padding-top: 1rem;
+  }
+}
+
+i.fa-caret-down.d-icon {
+  height: 2.3rem;
+  width: 2.5rem;
+  background-color: $gds-color-blue-50;
+  &::before { 
+    color: $gds-color-white;
+  }
+}
+
+.mobile-view .mobile-nav a .fa {
+  border-radius: 0 2px 2px 0;
+  margin-right: 0px;
 }
 
 .controls ul li:first-child a {
@@ -127,9 +171,6 @@ h3.stats-title {
     margin-right: 100px;
     float: right;
   }
-  .time {
-    margin-right: -100px;
-  }
 }
 .stream-topic-details {
   .stream-topic-title a {
@@ -141,6 +182,11 @@ h3.stats-title {
   td {
     padding: 40px 0;
   }
+}
+
+.user-stream .avatar-link {
+  float: left;
+  margin: 0 20px 20px 0;
 }
 
 @media(min-width: 35em) {
