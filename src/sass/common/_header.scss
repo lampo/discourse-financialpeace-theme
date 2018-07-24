@@ -26,7 +26,7 @@ a.tech-support {
   position: absolute;
   top: 30px;
   right: 10px;
-  font-weight: normal;
+  font-weight: $gds-font-weight-normal;
   text-decoration: underline;
   color: $gds-color-white;
   &:visited {
@@ -76,7 +76,7 @@ a.tech-support {
 }
 
 .gds-Hero-subtitle {
-  font-weight: normal;
+  font-weight: $gds-font-weight-normal;
   margin: 1.5rem 0 ;
 }
 
