@@ -49,45 +49,49 @@
     }
   }
 
-  table {
-    font-size: 18px;
-  }
-
   .category-list {
-    max-width: 230px;
-    @media(min-width: 350px) {
-      max-width: 100%;
+    width: 100%;
+
+    .featured-topic {
+      font-size: 18px;
+    } 
+    th.category, th.topics {
+      display: none;
+    }
+    tbody tr {
+      border-bottom: 1px solid #e9eced;
+      border-top: 1px solid #e9eced;
     }
     td {
       padding: 2rem 0 2rem 1rem;
-    }
-    th.category, th.topics {
-      display: none;
     }
     td:first-of-type {
       padding-left: 1rem;
       padding-right: 0;
     }
     td.topics {
-      @include gds-respond-to(palm-only) {
-        display: none;
+      display: none;
+      @include gds-respond-to(lap-and-up) {
+        display: table-cell;
+        vertical-align: middle;
       }
-      vertical-align: middle;
+      .value {
+        color: $gds-color-black;
+        font-size: 18px;
+        &:after {
+          content: 'Topics';
+          padding-left: 10px;
+        }
+      }
     }
-    .topics .value {
-      color: $gds-color-black;
-      font-size: 18px;
-      &:after {
-        content: 'Topics';
-        padding-left: 10px;
-      }
+    td.latest {
+      display: none;
     }
   }
 
   .wrap > .category-get-started {
     @include backgroundChange();
   }
-
 }
 
 .category-name{
@@ -96,8 +100,6 @@
 
 .list-container {
   .badge-wrapper {
-    border: 1px solid $gds-color-gray-50;
-    border-radius: 3px;
     padding: 5px;
     .category-name{
       color: $gds-color-gray-60;

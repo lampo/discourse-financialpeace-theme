@@ -65,10 +65,6 @@ button.reply {
   border: none;
 }
 
-.topics {
-  border-top: 1px solid $gds-color-gray-30;
-}
-
 nav.post-controls {
   button, button.create {
     color: $gds-color-gray-70;
@@ -205,4 +201,21 @@ th.activity.num {
     font-size: 18px;
     font-weight: $gds-font-weight-normal;
   }
+}
+
+.topic-list .posters>a:nth-child(1n+4) {
+  display: none;
+}
+
+.d-header .title {
+  margin-left: 40px;
+}
+
+.date-section {
+  font-weight: $gds-font-weight-semibold;
+  padding-right: 10px;
+}
+
+.top-lists h2 {
+  font-size: 24px;
 }
