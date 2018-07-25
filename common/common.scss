@@ -3225,6 +3225,10 @@ body {
   font-family: $gds-font-family;
 }
 
+header {
+  margin-bottom: 15px;
+}
+
 tbody {
   border-top: none;
 }
@@ -3397,18 +3401,18 @@ section.container {
     }
   }
 
-  .category-list {
-    width: 100%;
+  table {
+    font-size: 18px;
+  }
 
-    .featured-topic {
-      font-size: 18px;
-    } 
-    th.category, th.topics {
+  .category-list {
+    max-width: 100%;
+    thead {
       display: none;
     }
-    tbody tr {
-      border-bottom: 1px solid #e9eced;
-      border-top: 1px solid #e9eced;
+    tr {
+      border-bottom: 1px solid $gds-color-gray-20;
+      border-top: 1px solid $gds-color-gray-20;
     }
     td {
       padding: 2rem 0 2rem 1rem;
@@ -3418,28 +3422,28 @@ section.container {
       padding-right: 0;
     }
     td.topics {
-      display: none;
-      @include gds-respond-to(lap-and-up) {
-        display: table-cell;
-        vertical-align: middle;
+      @include gds-respond-to(palm-only) {
+        display: none;
       }
-      .value {
-        color: $gds-color-black;
-        font-size: 18px;
-        &:after {
-          content: 'Topics';
-          padding-left: 10px;
-        }
-      }
+      vertical-align: middle;
     }
     td.latest {
       display: none;
+    }
+    .topics .value {
+      color: $gds-color-black;
+      font-size: 18px;
+      &:after {
+        content: 'Topics';
+        padding-left: 10px;
+      }
     }
   }
 
   .wrap > .category-get-started {
     @include backgroundChange();
   }
+
 }
 
 .category-name{
@@ -3448,9 +3452,17 @@ section.container {
 
 .list-container {
   .badge-wrapper {
+    border: 1px solid $gds-color-gray-50;
+    border-radius: 3px;
     padding: 5px;
     .category-name{
       color: $gds-color-gray-60;
+    }
+  }
+  .subcategories {
+    .badge-wrapper {
+      border: none;
+      border-radius: 0;
     }
   }
 }
@@ -3459,6 +3471,7 @@ section.container {
   font-size: 24px;
   font-weight: $gds-font-weight-semibold;
 }
+
 
 .container {
   background-color: $gds-color-white;
@@ -3538,7 +3551,7 @@ title.raw-link.raw-topic-link a{
 
 .Hero {
   &--welcome {
-    margin-top: 4rem;
+    margin-top: 3.8rem;
     min-width: 320px;
     position: relative;
 
