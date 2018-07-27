@@ -18,7 +18,7 @@
 .questions {
   background: url($questions_background);
   background-size: cover;
-  border-radius: 7px;
+  border-radius: $gds-border-radius-m;
 }
 
 .swash {

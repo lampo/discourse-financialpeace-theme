@@ -7,7 +7,7 @@
 }
 
 #main-outlet {
-  padding: 10px;
+  padding: 10px; 
 }
 
 .topic-post {
@@ -15,4 +15,12 @@
   &:first-of-type {
     padding: 0;
   }
+}
+
+.topic-meta-data .post-infos {
+  display: none;
+}
+
+#topic-progress-wrapper {
+  display: none;
 }

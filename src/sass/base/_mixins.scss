@@ -2,6 +2,6 @@
 
 @mixin backgroundChange {
   background: $gds-color-white;
-  border-radius: 7px;
+  border-radius: $gds-border-radius-m;
   box-shadow: 1px 1px 15px $gds-color-gray-40;
 }

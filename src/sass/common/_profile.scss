@@ -12,7 +12,7 @@
       box-shadow: none;
       ul.nav-stacked {
         background: $gds-color-gray-10;
-        border-radius: 7px;
+        border-radius: $gds-border-radius-m;
         padding: 20px;
         min-height: 250px;
         a {
@@ -48,7 +48,7 @@
     }
     li:first-child a {
       padding: 15px 10px !important;
-      border-radius: 7px;
+      border-radius: $gds-border-radius-m;
       margin-right: 10px;
       margin-top: 10px;
     }
@@ -91,7 +91,7 @@
 .user-archive button {
   background: $gds-color-gray-10;
   width: 100%;
-  border-radius: 3px;
+  border-radius: $gds-border-radius-s;
 }
 
 .stream-topic-details {

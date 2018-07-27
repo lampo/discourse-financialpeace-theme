@@ -1,8 +1,11 @@
 #main-outlet {
   @include backgroundChange();
-  margin-top: 82px;
+  margin: 90px 15px 0;
   max-width: 1100px;
   padding: 50px;
+  @include gds-respond-to(desk-and-up) {
+    margin: 90px auto 0;
+  }
 }
 
 .navigation-topics{
@@ -13,7 +16,7 @@
 
 .user-preferences-page {
   #main-outlet {
-    border-radius: 0;
+    border-radius: unset;
     box-shadow: none;
   }
 }

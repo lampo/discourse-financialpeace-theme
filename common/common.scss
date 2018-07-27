@@ -2298,23 +2298,6 @@ $brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-numbe
 }
 
 
-$gds-font-size-xs: 1rem;
-$gds-font-size-s: 1.125rem;
-$gds-font-size-m: 1.5rem;
-$gds-font-size-l: 2.5rem;
-$gds-font-size-xl: 4rem;
-$gds-font-size-base: 1rem;
-$gds-font-weight-normal: 300;
-$gds-font-weight-semibold: 600;
-$gds-font-weight-bold: 800;
-$gds-line-height-xs: 1.5rem;
-$gds-line-height-s: 1.5rem;
-$gds-line-height-m: 1.875rem;
-$gds-line-height-l: 2.5rem;
-$gds-line-height-xl: 4rem;
-$gds-line-height-base: 1.25rem;
-$gds-font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
- // Override variables
 html,
 body {
   @include gds-respond-to(legacy-palm) {
@@ -3187,6 +3170,26 @@ $gds-media-query-wall-only: "only screen and (min-width: 112.5em)";
 $gds-media-query-legacy-palm: "only screen and (max-width: 47.9375em)";
 $gds-media-query-legacy-desk: "only screen and (min-width: 48em)";
 
+$gds-font-family: "proxima-nova", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$gds-font-family-bold: "canada-type-gibson", system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+$gds-font-size-base: 1rem;
+$gds-font-size-xs: 1rem;
+$gds-font-size-s: 1.125rem;
+$gds-font-size-m: 1.5rem;
+$gds-font-size-l: 2.25rem;
+$gds-font-size-xl: 4rem;
+$gds-line-height-base: 1.25rem;
+$gds-line-height-xs: 1.5rem;
+$gds-line-height-s: 1.5rem;
+$gds-line-height-m: 1.9rem;
+$gds-line-height-l: 2.25rem;
+$gds-line-height-xl: 4rem;
+$gds-font-weight-normal: 300;
+$gds-font-weight-semibold: 600;
+$gds-font-weight-bold: 800;
+$gds-border-radius-s: 4px;
+$gds-border-radius-m: 8px;
+ // Override variables
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
   $u1: unit($min-vw);
   $u2: unit($max-vw);
@@ -3209,7 +3212,7 @@ $gds-media-query-legacy-desk: "only screen and (min-width: 48em)";
 
 @mixin backgroundChange {
   background: $gds-color-white;
-  border-radius: 7px;
+  border-radius: $gds-border-radius-m;
   box-shadow: 1px 1px 15px $gds-color-gray-40;
 }
 
@@ -3233,7 +3236,7 @@ tbody {
   border-top: none;
 }
 
-h1, h2, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $gds-font-family-bold;
   font-weight: $gds-font-weight-semibold;
 }
@@ -3247,14 +3250,20 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
-  padding-bottom: 14px;
+  line-height: 1.875rem;
+}
+.body-page h2 {
+  @include gds-typeset(m);
+  @include gds-respond-to(lap-and-up) {
+    font-size: 2rem;
+    line-height: 1.875rem;
+  }
 }
 
 h3 {
   @include gds-typeset(s);
   @include gds-respond-to(lap-and-up) {
-    @include gds-typeset(m, true);
+    @include gds-typeset(m);
   }
 }
 
@@ -3295,21 +3304,22 @@ h3 {
 }
 
 section.container {
-  h2 {
-    margin-bottom: 10px;
-  }
   p {
     padding: 5px;
   }
 }
 
 .section-header{
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
   margin-top: 15px;
   text-align: center;
   @include gds-respond-to(lap-wide-and-up) {
     text-align: left;
   }
   .swash {
+    padding-bottom: 0.6rem;
     @include gds-respond-to(lap-wide-and-up) {
       background-position-x: left;
     }
@@ -3350,15 +3360,9 @@ section.container {
   display: none;
 }
 
-
 .navigation-categories {
   .nav.nav-pills {
     display: none;
-  }
-
-  button {
-    border-radius: 3px;
-    padding: 10px;
   }
 
   .column {
@@ -3449,7 +3453,7 @@ section.container {
 .list-container {
   .badge-wrapper {
     border: 1px solid $gds-color-gray-50;
-    border-radius: 3px;
+    border-radius: $gds-border-radius-s;
     padding: 5px;
     .category-name{
       color: $gds-color-gray-60;
@@ -3458,11 +3462,18 @@ section.container {
   .subcategories {
     .badge-wrapper {
       border: none;
-      border-radius: 0;
+      border-radius: unset;
     }
   }
 }
 
+.combo-box{
+  .badge-wrapper {
+    border: none;
+    border-radius: unset;
+    padding: 0;
+  } 
+}
 .category-text-title .category-name {
   font-size: 24px;
   font-weight: $gds-font-weight-semibold;
@@ -3486,13 +3497,13 @@ section.container {
   background: $gds-color-white;
   .btn {
     background: $gds-color-blue-50;
-    border-radius: 3px;
+    border-radius: $gds-border-radius-s;
     color: $gds-color-white;
   }
 }
 
 .container li.active a {
-  border-radius: 3px;
+  border-radius: $gds-border-radius-s;
 }
 
 
@@ -3514,7 +3525,7 @@ title.raw-link.raw-topic-link a{
   margin-top: 25px;
   min-width: 290px;
   position: relative;
-  border-radius: 7px;
+  border-radius: $gds-border-radius-m;
 }
 
 .footer {
@@ -3617,9 +3628,12 @@ a.tech-support {
 
 #main-outlet {
   @include backgroundChange();
-  margin-top: 82px;
+  margin: 90px 15px 0;
   max-width: 1100px;
   padding: 50px;
+  @include gds-respond-to(desk-and-up) {
+    margin: 90px auto 0;
+  }
 }
 
 .navigation-topics{
@@ -3630,36 +3644,28 @@ a.tech-support {
 
 .user-preferences-page {
   #main-outlet {
-    border-radius: 0;
+    border-radius: unset;
     box-shadow: none;
   }
 }
 
 .select-kit.dropdown-select-box .select-kit-row .texts .name {
-  font-weight: $gds-font-weight-semibold;;
+  font-weight: $gds-font-weight-semibold;
 }
 .nav-pills {
   li.active a {
-    border-radius: 3px;
+    border-radius: $gds-border-radius-s;
   }
+}
+.select-kit .select-kit-header .selected-name {
+  font-size: 1.1rem;
 }
 
 .popular-wrapper {
-  padding: 10px;
+  padding: 10px 10px 25px;
   @include gds-respond-to(lap-wide-and-up) {
-    padding: 25px 35px;
+    padding: 25px 35px 35px;
     width: 320px;
-  }
-}
-
-.popular-header {
-  h2 {
-    padding-bottom: 14px;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    text-align: center;
-    background-position: bottom center;
-    background-repeat: no-repeat;
   }
 }
 
@@ -3675,15 +3681,17 @@ a.tech-support {
     align-items: center;
     background: $gds-color-gray-10;
     border: 1px solid $gds-color-gray-20;
-    border-radius: 7px;
+    border-radius: $gds-border-radius-m;
     display: flex;
-    height: 125px;
-    margin: 4px;
-    padding: 0;
+    height: 115px;
+    margin: 5px;
+    padding: 5px;
     text-align: center;
-    width: 125px;
+    width: 115px;
     @include gds-respond-to(lap-and-up) {
-      padding: 12px;
+      height: 120px;
+      padding: 10px;
+      width: 120px;
     }
 
     &:hover {
@@ -3699,8 +3707,8 @@ a.tech-support {
     width: 100%;
     .popular-description {
       color: $gds-color-black;
-      font-size: 1rem;
-      margin-top: 16px;
+      line-height: 1.1rem;
+      margin-top: 10px;
     }
   }
 }
@@ -3719,7 +3727,7 @@ a.tech-support {
       box-shadow: none;
       ul.nav-stacked {
         background: $gds-color-gray-10;
-        border-radius: 7px;
+        border-radius: $gds-border-radius-m;
         padding: 20px;
         min-height: 250px;
         a {
@@ -3755,7 +3763,7 @@ a.tech-support {
     }
     li:first-child a {
       padding: 15px 10px !important;
-      border-radius: 7px;
+      border-radius: $gds-border-radius-m;
       margin-right: 10px;
       margin-top: 10px;
     }
@@ -3798,7 +3806,7 @@ a.tech-support {
 .user-archive button {
   background: $gds-color-gray-10;
   width: 100%;
-  border-radius: 3px;
+  border-radius: $gds-border-radius-s;
 }
 
 .stream-topic-details {
@@ -3878,7 +3886,7 @@ a.tech-support {
   &-feature, 
   &-feature:first-child {
     background: $gds-color-white;
-    border-radius: 7px;
+    border-radius: $gds-border-radius-m;
     margin-top: 45px;
     max-width: 400px;
     padding-top: 1rem;
@@ -3927,15 +3935,6 @@ a.tech-support {
       margin-right: 25px;
     }
   }
-  
-  &-header {
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      padding-bottom: 15px;
-    }
-  }
-
   .d-icon-thumb-tack {
     display: none;
   }
@@ -3993,7 +3992,7 @@ a.tech-support {
     color: $gds-color-white;
     display: block;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: $gds-border-radius-s;
     &:visited {
       color: $gds-color-white;
     }
@@ -4061,31 +4060,31 @@ a.tech-support {
 
   .d-header {
     position: fixed;
+    height: 4rem;
   }
   
   .d-header-icons {
     #toggle-hamburger-menu {
       display: none;
     }
+    .badge-notification {
+      border-radius: 50%;
+      min-width: initial;
+    }
     .icon img.avatar {
       width: 1.6rem;
       height: 1.4rem;
     }
-  }
-
-  .d-header-icons .unread-private-messages, .d-header-icons .ring {
-    top: 4px;
-    right: 6px;
-  }
-
-  .unread-private-messages {
-    background: $gds-color-amber-50;
-  }
-
-  .d-header-icons .badge-notification {
-    min-width: initial;
-    border-radius: 50%;
-  }
+    .ring {
+      right: 6px;
+      top: 4px;
+    }
+    .unread-private-messages {
+      background: $gds-color-amber-50;
+      right: 6px;
+      top: 4px;
+    }
+  } 
 }
 
 .topic-list {
@@ -4097,7 +4096,6 @@ a.tech-support {
   }
   .raw-topic-link {
     font-weight: $gds-font-weight-semibold;
-    font-size: 1.1rem;
     a:link {
       color: $gds-color-black;
     }
@@ -4178,7 +4176,7 @@ a.tech-support {
 
 button.reply {
   background-color: $gds-color-blue-30;
-  border-radius: 3px;
+  border-radius: $gds-border-radius-s;
   color: $gds-color-white;
 }
 
@@ -4195,7 +4193,7 @@ button.reply {
 .topic-post {
   background-color: $gds-color-gray-20;
   border: none;
-  border-radius: 7px;
+  border-radius: $gds-border-radius-m;
   margin-bottom: 1rem;
   padding-left: 1rem;
   padding-top: 1.5rem;
@@ -4272,8 +4270,7 @@ nav.post-controls {
   min-width: 220px;
 }
 
-#suggested-topics .suggested-topics-title {
-  padding-bottom: 33px;
+.suggested-topics-title {
   color: $gds-color-gray-70;
 }
 
@@ -4337,8 +4334,9 @@ th.activity.num {
   padding-right: 10px;
 }
 
-.top-lists h2 {
-  font-size: 24px;
+.lightbox img {
+  width: 100%;
+  height: auto;
 }
 
 // This files is for any common.scss that requires variables stored in Discourse like image assets.
@@ -4361,7 +4359,7 @@ th.activity.num {
 .questions {
   background: url($questions_background);
   background-size: cover;
-  border-radius: 7px;
+  border-radius: $gds-border-radius-m;
 }
 
 .swash {

@@ -1,8 +1,11 @@
 .select-kit.dropdown-select-box .select-kit-row .texts .name {
-  font-weight: $gds-font-weight-semibold;;
+  font-weight: $gds-font-weight-semibold;
 }
 .nav-pills {
   li.active a {
-    border-radius: 3px;
+    border-radius: $gds-border-radius-s;
   }
+}
+.select-kit .select-kit-header .selected-name {
+  font-size: 1.1rem;
 }
