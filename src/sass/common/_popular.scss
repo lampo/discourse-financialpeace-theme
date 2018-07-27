@@ -1,19 +1,8 @@
 .popular-wrapper {
-  padding: 10px;
+  padding: 10px 10px 25px;
   @include gds-respond-to(lap-wide-and-up) {
-    padding: 25px 35px;
+    padding: 25px 35px 35px;
     width: 320px;
-  }
-}
-
-.popular-header {
-  h2 {
-    padding-bottom: 14px;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    text-align: center;
-    background-position: bottom center;
-    background-repeat: no-repeat;
   }
 }
 
@@ -29,15 +18,17 @@
     align-items: center;
     background: $gds-color-gray-10;
     border: 1px solid $gds-color-gray-20;
-    border-radius: 7px;
+    border-radius: $gds-border-radius-m;
     display: flex;
-    height: 125px;
-    margin: 4px;
-    padding: 0;
+    height: 115px;
+    margin: 5px;
+    padding: 5px;
     text-align: center;
-    width: 125px;
+    width: 115px;
     @include gds-respond-to(lap-and-up) {
-      padding: 12px;
+      height: 120px;
+      padding: 10px;
+      width: 120px;
     }
 
     &:hover {
@@ -53,8 +44,8 @@
     width: 100%;
     .popular-description {
       color: $gds-color-black;
-      font-size: 1rem;
-      margin-top: 16px;
+      line-height: 1.1rem;
+      margin-top: 10px;
     }
   }
 }

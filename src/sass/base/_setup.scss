@@ -1,6 +1,5 @@
 @import url("https://use.typekit.net/ndh0ilz.css");
 @import "gazelle-design-system/sass/tools";
-@import "variables"; // Override variables
 @import "gazelle-design-system/sass/base";
 @import "gazelle-design-system/sass/utilities";
 @import "gazelle-design-system/sass/components/button";
@@ -8,6 +7,7 @@
 @import "gazelle-design-system/sass/components/feature_group";
 @import "gazelle-design-system/sass/components/card";
 @import "gazelle-design-system/sass/design-tokens";
+@import "variables"; // Override variables
 @import "mixins";
 
 html {
@@ -29,7 +29,7 @@ tbody {
   border-top: none;
 }
 
-h1, h2, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: $gds-font-family-bold;
   font-weight: $gds-font-weight-semibold;
 }
@@ -43,14 +43,20 @@ h1 {
 
 h2 {
   font-size: 2rem;
-  margin-bottom: 30px;
-  padding-bottom: 14px;
+  line-height: 1.875rem;
+}
+.body-page h2 {
+  @include gds-typeset(m);
+  @include gds-respond-to(lap-and-up) {
+    font-size: 2rem;
+    line-height: 1.875rem;
+  }
 }
 
 h3 {
   @include gds-typeset(s);
   @include gds-respond-to(lap-and-up) {
-    @include gds-typeset(m, true);
+    @include gds-typeset(m);
   }
 }
 
@@ -91,21 +97,22 @@ h3 {
 }
 
 section.container {
-  h2 {
-    margin-bottom: 10px;
-  }
   p {
     padding: 5px;
   }
 }
 
 .section-header{
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  margin-bottom: 30px;
   margin-top: 15px;
   text-align: center;
   @include gds-respond-to(lap-wide-and-up) {
     text-align: left;
   }
   .swash {
+    padding-bottom: 0.6rem;
     @include gds-respond-to(lap-wide-and-up) {
       background-position-x: left;
     }

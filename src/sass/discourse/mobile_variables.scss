@@ -8,5 +8,5 @@
 .questions {
   background: url($questions_background_mobile);
   background-size: cover;
-  border-radius: 7px;
+  border-radius: $gds-border-radius-m;
 }

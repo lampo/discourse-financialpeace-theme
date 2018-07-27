@@ -1,12 +1,6 @@
-
 .navigation-categories {
   .nav.nav-pills {
     display: none;
-  }
-
-  button {
-    border-radius: 3px;
-    padding: 10px;
   }
 
   .column {
@@ -97,7 +91,7 @@
 .list-container {
   .badge-wrapper {
     border: 1px solid $gds-color-gray-50;
-    border-radius: 3px;
+    border-radius: $gds-border-radius-s;
     padding: 5px;
     .category-name{
       color: $gds-color-gray-60;
@@ -106,11 +100,18 @@
   .subcategories {
     .badge-wrapper {
       border: none;
-      border-radius: 0;
+      border-radius: unset;
     }
   }
 }
 
+.combo-box{
+  .badge-wrapper {
+    border: none;
+    border-radius: unset;
+    padding: 0;
+  } 
+}
 .category-text-title .category-name {
   font-size: 24px;
   font-weight: $gds-font-weight-semibold;

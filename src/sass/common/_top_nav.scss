@@ -49,29 +49,29 @@
 
   .d-header {
     position: fixed;
+    height: 4rem;
   }
   
   .d-header-icons {
     #toggle-hamburger-menu {
       display: none;
     }
+    .badge-notification {
+      border-radius: 50%;
+      min-width: initial;
+    }
     .icon img.avatar {
       width: 1.6rem;
       height: 1.4rem;
     }
-  }
-
-  .d-header-icons .unread-private-messages, .d-header-icons .ring {
-    top: 4px;
-    right: 6px;
-  }
-
-  .unread-private-messages {
-    background: $gds-color-amber-50;
-  }
-
-  .d-header-icons .badge-notification {
-    min-width: initial;
-    border-radius: 50%;
-  }
+    .ring {
+      right: 6px;
+      top: 4px;
+    }
+    .unread-private-messages {
+      background: $gds-color-amber-50;
+      right: 6px;
+      top: 4px;
+    }
+  } 
 }
