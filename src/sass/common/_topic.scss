@@ -8,13 +8,6 @@
   }
 }
 
-.container {
-  line-height: 2rem;
-  @include gds-respond-to(lap-wide-and-up) {
-    padding: 0.4rem 2rem 0 2rem;
-  }
-}
-
 .title-wrapper {
   .topic-status,
   .edit-topic {
@@ -60,6 +53,7 @@ button.reply {
   max-width: 50rem;
 }
 
+
 .topic-avatar {
   border: none;
 }
@@ -74,9 +68,6 @@ nav.post-controls {
   float: right;
 }
 
-.container li.active a {
-  border-radius: 3px;
-}
 .post-stream {
   > div:first-child {
     background-color: transparent;
@@ -123,23 +114,9 @@ nav.post-controls {
   }
 }
 
-.container li.active a {
-  border-radius: 3px;
-}
-
 .avatar {
   height: auto;
   width: 40px;
-}
-
-.topic-list .num.posts-map.posts a {
-  color: $gds-color-gray-50;
-  font-size: 1.1rem;
-  font-weight: $gds-font-weight-semibold;
-}
-
-.topic-list td {
-  padding: 2rem 0;
 }
 
 .actions {
@@ -200,10 +177,6 @@ th.activity.num {
     font-size: 18px;
     font-weight: $gds-font-weight-normal;
   }
-}
-
-.topic-list .posters>a:nth-child(1n+4) {
-  display: none;
 }
 
 .d-header .title {

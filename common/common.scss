@@ -3361,10 +3361,6 @@ section.container {
     padding: 10px;
   }
 
-  .list-controls {
-    padding: 2rem 1rem 0;
-  }
-
   .column {
     display: none;
   }
@@ -3475,14 +3471,10 @@ section.container {
 
 .container {
   background-color: $gds-color-white;
-  
+
   &.list-container {
     background: $gds-color-white;
     margin-bottom: 10px;
-    padding: 0;
-    @include gds-respond-to(lap-and-up) {
-      padding: 3rem;
-    }
   }
 }
 
@@ -3492,12 +3484,17 @@ section.container {
 
 .list-controls {
   background: $gds-color-white;
-  padding: 3rem 3rem 0;
   .btn {
     background: $gds-color-blue-50;
+    border-radius: 3px;
     color: $gds-color-white;
   }
 }
+
+.container li.active a {
+  border-radius: 3px;
+}
+
 
 td.num.views, td.num.activity{
   display: none;
@@ -3505,10 +3502,6 @@ td.num.views, td.num.activity{
 
 th.views.num, th.activity.num {
   display: none;
-}
-
-#create-topic {
-  border-radius: 3px;
 }
 
 title.raw-link.raw-topic-link a{
@@ -3622,6 +3615,26 @@ a.tech-support {
 }
 
 
+#main-outlet {
+  @include backgroundChange();
+  margin-top: 82px;
+  max-width: 1100px;
+  padding: 50px;
+}
+
+.navigation-topics{
+  #main-outlet {
+    margin-top: 15px;
+  }
+}
+
+.user-preferences-page {
+  #main-outlet {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
 .select-kit.dropdown-select-box .select-kit-row .texts .name {
   font-weight: $gds-font-weight-semibold;;
 }
@@ -3632,7 +3645,9 @@ a.tech-support {
 }
 
 .popular-wrapper {
+  padding: 10px;
   @include gds-respond-to(lap-wide-and-up) {
+    padding: 25px 35px;
     width: 320px;
   }
 }
@@ -3690,65 +3705,79 @@ a.tech-support {
   }
 }
 
-/* Josh Young */
-/* TODO: 
-- Order CSS declarations alphabetically.
-- Switch to gazelle:
-  - colors
-  - fonts 
-  - breakpoints
-- Add more data to populate and style other elements.
-*/
-
-/* Desktop - mobile first */
 .user-profile-avatar {
   margin-top: 11px;
   margin-left: 5px;
 }
-.user-table .wrapper section {
-  @include backgroundChange();
-  padding: 30px 20px;
-}
 
-.user-main .about {
-  @include backgroundChange();
-}
-
-@include gds-respond-to(palm-only) {
-  .preferences-nav {
-    min-width: 300px;
+.user-table .wrapper {
+  box-shadow: none;
+  padding: 0;
+  section {
+    padding: 5px;
+    &.user-navigation {
+      box-shadow: none;
+      ul.nav-stacked {
+        background: $gds-color-gray-10;
+        border-radius: 7px;
+        padding: 20px;
+        min-height: 250px;
+        a {
+          color: $gds-color-black;
+          padding: 0;
+          padding-bottom: 10px;
+          font-size: 1rem;
+        }
+      }
+    }
+    &.user-right {
+      box-shadow: none;
+    }
   }
 }
 
-.controls ul li:first-child a {
-  padding: 15px 10px !important;
-  border-radius: 7px;
-  margin-right: 10px;
-  margin-top: 10px;
+.user-stream .item, .user-stream .user-stream-item {
+  padding: 15px;
 }
-.controls ul li:last-child {
-  display: none !important;
+
+.container.viewing-self {
+  margin: 0;
 }
+
+.user-main .about {
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  .controls {
+    li {
+      margin: 0;
+    }
+    li:first-child a {
+      padding: 15px 10px !important;
+      border-radius: 7px;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    li:last-child {
+      display: none !important;
+    }
+  } 
+}
+
 .form-vertical .control-label {
   font-weight: $gds-font-weight-semibold;
 }
 .stats-section {
   border-bottom: 1px solid $gds-color-gray-10;
-}
-.stats-title {
-  text-transform: capitalize;
-}
-.stats-section {
   > * {
     padding: 0 10px;
   }
 }
 .stats-title {
   font-size: $gds-font-size-xs;
-}
-h3.stats-title {
-  font-size: 24px;
   font-weight: $gds-font-weight-semibold;
+  text-transform: capitalize;
 }
 .top-sub-section {
   border-bottom: 1px solid $gds-color-gray-10;
@@ -3765,74 +3794,23 @@ h3.stats-title {
     padding-right: 0;
   }
 }
-.badges-section {
-  > * {
-    padding: 0 10px;
-  }
-}
 
-.main-nav.nav-pills {
-  li a {
-    border-radius: 3px;
-    margin: 2px;
-    margin-right: 10px;
-    background: $gds-color-gray-10;
-  }
-
-  li a.active, li a:hover {
-    border-radius: 3px;
-    margin: 2px;
-    margin-right: 10px;
-    color: $gds-color-gray-80;
-    background: $gds-color-gray-30;
-  }
-}
-
-.user-table .wrapper section {
-  &.user-navigation {
-    box-shadow: none;
-    ul.nav-stacked {
-      background: $gds-color-gray-10;
-      border-radius: 7px;
-      padding: 20px;
-      min-height: 250px;
-      a {
-        color: $gds-color-black;
-        padding: 0;
-        padding-bottom: 10px;
-        font-size: 1rem;
-      }
-    }
-  }
-  &.user-right {
-    box-shadow: none;
-  }
-}
 .user-archive button {
   background: $gds-color-gray-10;
   width: 100%;
   border-radius: 3px;
 }
 
-.user-stream {
-  .avatar-link {
-    margin-right: 100px;
-    float: right;
-  }
-  .time {
-    margin-right: -100px;
-  }
-}
 .stream-topic-details {
   .stream-topic-title a {
     color: $gds-color-black;
     font-weight: $gds-font-weight-semibold;
   }
 }
-.topic-list {
-  td {
-    padding: 40px 0;
-  }
+
+.user-stream .avatar-link {
+  float: left;
+  margin: 0 20px 20px 0;
 }
 
 @media(min-width: 35em) {
@@ -3992,10 +3970,6 @@ h3.stats-title {
   .dropdown-toggle {
     display: none;
   }
-  .list-controls {
-    padding: 0;
-  }
-
 }
 .tag-show-heading {
   i, .discourse-tag {
@@ -4114,6 +4088,65 @@ h3.stats-title {
   }
 }
 
+.topic-list {
+  thead {
+    display: none;
+  }
+  td {
+    padding: 2rem 0;
+  }
+  .raw-topic-link {
+    font-weight: $gds-font-weight-semibold;
+    font-size: 1.1rem;
+    a:link {
+      color: $gds-color-black;
+    }
+    a:visited {
+      color: $gds-color-gray-60;
+    }
+  }
+  .posts {
+    @include gds-respond-to(lap-wide-and-up) {
+      width: 90px;
+    }
+  }
+  .num a.badge-posts {
+    font-weight: $gds-font-weight-semibold;
+  }
+  .posts-map{
+    font-size: inherit;
+     .badge-posts.heatmap-::after {
+      @include gds-respond-to(lap-wide-and-up) {
+        content: " replies";
+      }
+    }
+    .posts a {
+      color: $gds-color-gray-50;
+      font-size: 1.1rem;
+      font-weight: $gds-font-weight-semibold;
+    }     
+    .posters>a:nth-child(1n+4) {
+      display: none;
+    }
+  }
+  .age.activity,
+  .posts-map.post,
+  .views {
+    display: none;
+  }
+}
+
+.topic-poster img {
+  margin-top: -40px;
+  background: $gds-color-white;
+  padding: 4px;
+  border-radius: 50px;
+}
+
+.show-more.has-topics {
+  position: relative;
+}
+
 #topic-title h1 {
   padding-bottom: 2rem;
   a {
@@ -4121,12 +4154,6 @@ h3.stats-title {
     @include gds-respond-to(lap-wide-and-up) {
       font-size: 2rem;
     }
-  }
-}
-
-.container {
-  @include gds-respond-to(lap-wide-and-up) {
-    padding: 0.4rem 2rem 0 2rem;
   }
 }
 
@@ -4175,6 +4202,7 @@ button.reply {
   max-width: 50rem;
 }
 
+
 .topic-avatar {
   border: none;
 }
@@ -4189,9 +4217,6 @@ nav.post-controls {
   float: right;
 }
 
-.container li.active a {
-  border-radius: 3px;
-}
 .post-stream {
   > div:first-child {
     background-color: transparent;
@@ -4238,23 +4263,9 @@ nav.post-controls {
   }
 }
 
-.container li.active a {
-  border-radius: 3px;
-}
-
 .avatar {
   height: auto;
   width: 40px;
-}
-
-.topic-list .num.posts-map.posts a {
-  color: $gds-color-gray-50;
-  font-size: 1.1rem;
-  font-weight: $gds-font-weight-semibold;
-}
-
-.topic-list td {
-  padding: 2rem 0;
 }
 
 .actions {
@@ -4317,10 +4328,6 @@ th.activity.num {
   }
 }
 
-.topic-list .posters>a:nth-child(1n+4) {
-  display: none;
-}
-
 .d-header .title {
   margin-left: 40px;
 }
@@ -4332,70 +4339,6 @@ th.activity.num {
 
 .top-lists h2 {
   font-size: 24px;
-}
-
-.topic-list {
-  thead {
-    display: none;
-  }
-  .raw-topic-link {
-    font-weight: $gds-font-weight-semibold;
-    font-size: 1.1rem;
-    a:link {
-      color: $gds-color-black;
-    }
-    a:visited {
-      color: $gds-color-gray-60;
-    }
-  }
-  .posts-map.post {
-    display: none;
-  }
-  .age.activity {
-    display: none;
-  }
-  .views {
-    display: none;
-  }
-  .posts {
-    @include gds-respond-to(lap-wide-and-up) {
-      width: 90px;
-    }
-  }
-  a.posts-map.badge-posts.heatmap-::after {
-    @include gds-respond-to(lap-wide-and-up) {
-      content: " replies";
-    }
-  }
-}
-
-.topic-poster img {
-  margin-top: -40px;
-  background: $gds-color-white;
-  padding: 4px;
-  border-radius: 50px;
-}
-
-.show-more.has-topics {
-  position: relative;
-}
-
-#list-area {
-  margin-bottom: 20px;
-}
-
-#main-outlet {
-  @include backgroundChange();
-  margin-top: 82px;
-  max-width: 1200px;
-  padding-top: 0;
-}
-
-.navigation-topics{
-  #main-outlet {
-    margin-top: 15px;
-    padding: 10px 0;
-  }
 }
 
 // This files is for any common.scss that requires variables stored in Discourse like image assets.

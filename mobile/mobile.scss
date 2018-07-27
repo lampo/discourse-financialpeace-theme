@@ -63,6 +63,17 @@ $gds-font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSyste
   margin-left: 0;
 }
 
+#main-outlet {
+  padding: 10px;
+}
+
+.topic-post {
+  padding: 10px;
+  &:first-of-type {
+    padding: 0;
+  }
+}
+
 
 #topic-progress-wrapper.docked {
   right: 40px !important;
@@ -76,14 +87,7 @@ $gds-font-family: "proxima-nova", "canada-type-gibson", system-ui, BlinkMacSyste
 }
 
 .mobile-view .mobile-nav {
-  width: 100%;
-  text-align: center;
-  padding: 2px 0;
-  background: none;
-}
-
-.expander {
-  padding-bottom: 1rem;
+  width: 48%;
 }
 
 // This files is for any mobile.scss that requires variables stored in Discourse like image assets.

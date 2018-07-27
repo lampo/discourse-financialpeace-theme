@@ -5,3 +5,14 @@
 .financial-peace .category-list {
   margin-left: 0;
 }
+
+#main-outlet {
+  padding: 10px;
+}
+
+.topic-post {
+  padding: 10px;
+  &:first-of-type {
+    padding: 0;
+  }
+}
