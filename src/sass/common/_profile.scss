@@ -1,106 +1,76 @@
-/* Josh Young */
-/* TODO: 
-- Order CSS declarations alphabetically.
-- Switch to gazelle:
-  - colors
-  - fonts 
-  - breakpoints
-- Add more data to populate and style other elements.
-*/
-
-/* Desktop - mobile first */
 .user-profile-avatar {
   margin-top: 11px;
   margin-left: 5px;
 }
-.user-table .wrapper section {
-  padding: 30px 20px;
-}
-.user-table > .wrapper {
+
+.user-table .wrapper {
   box-shadow: none;
+  padding: 0;
+  section {
+    padding: 5px;
+    &.user-navigation {
+      box-shadow: none;
+      ul.nav-stacked {
+        background: $gds-color-gray-10;
+        border-radius: 7px;
+        padding: 20px;
+        min-height: 250px;
+        a {
+          color: $gds-color-black;
+          padding: 0;
+          padding-bottom: 10px;
+          font-size: 1rem;
+        }
+      }
+    }
+    &.user-right {
+      box-shadow: none;
+    }
+  }
 }
 
-.user-main .about {
-  border: none;
-  box-shadow: none;
-  background: none;
+.user-stream .item, .user-stream .user-stream-item {
+  padding: 15px;
 }
 
-.user-main .about .controls li {
+.container.viewing-self {
   margin: 0;
 }
 
-.controls > a.btn:link, a.btn:visited, a.btn:hover, a.btn:active {
-  background-color: $gds-color-blue-50;
-  color: $gds-color-white;
-  min-width: 100%
+.user-main .about {
+  background: none;
+  border: none;
+  box-shadow: none;
+
+  .controls {
+    li {
+      margin: 0;
+    }
+    li:first-child a {
+      padding: 15px 10px !important;
+      border-radius: 7px;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    li:last-child {
+      display: none !important;
+    }
+  } 
 }
 
-@include gds-respond-to(palm-only) {
-  .preferences-nav {
-    min-width: 300px;
-  }
-}
-
-a.expander {
-  border: 1px solid $gds-color-gray-30;
-  border-radius: 2px;
-  margin-bottom: 2rem;
-  padding: 0;
-}
-
-.mobile-view .mobile-nav > li > a {
-  height: 3.3rem;
-  padding-top: 0.9rem;
-  i.fa-caret-down.d-icon {
-    top: 3%;
-    padding-top: 1rem;
-  }
-}
-
-i.fa-caret-down.d-icon {
-  height: 2.3rem;
-  width: 2.5rem;
-  background-color: $gds-color-blue-50;
-  &::before { 
-    color: $gds-color-white;
-  }
-}
-
-.mobile-view .mobile-nav a .fa {
-  border-radius: 0 2px 2px 0;
-  margin-right: 0px;
-}
-
-.controls ul li:first-child a {
-  padding: 15px 10px !important;
-  border-radius: 7px;
-  margin-right: 10px;
-  margin-top: 10px;
-}
-.controls ul li:last-child {
-  display: none !important;
-}
 .form-vertical .control-label {
   font-weight: $gds-font-weight-semibold;
 }
 .stats-section {
   border-bottom: 1px solid $gds-color-gray-10;
-}
-.stats-title {
-  text-transform: capitalize;
-}
-.stats-section {
   > * {
     padding: 0 10px;
   }
 }
 .stats-title {
   font-size: $gds-font-size-xs;
-}
-h3.stats-title {
-  font-size: 24px;
   font-weight: $gds-font-weight-semibold;
+  text-transform: capitalize;
 }
 .top-sub-section {
   border-bottom: 1px solid $gds-color-gray-10;
@@ -117,70 +87,17 @@ h3.stats-title {
     padding-right: 0;
   }
 }
-.badges-section {
-  > * {
-    padding: 0 10px;
-  }
-}
 
-.main-nav.nav-pills {
-  li a {
-    border-radius: 3px;
-    margin: 2px;
-    margin-right: 10px;
-    background: $gds-color-gray-10;
-  }
-
-  li a.active, li a:hover {
-    border-radius: 3px;
-    margin: 2px;
-    margin-right: 10px;
-    color: $gds-color-gray-80;
-    background: $gds-color-gray-30;
-  }
-}
-
-.user-table .wrapper section {
-  &.user-navigation {
-    box-shadow: none;
-    ul.nav-stacked {
-      background: $gds-color-gray-10;
-      border-radius: 7px;
-      padding: 20px;
-      min-height: 250px;
-      a {
-        color: $gds-color-black;
-        padding: 0;
-        padding-bottom: 10px;
-        font-size: 1rem;
-      }
-    }
-  }
-  &.user-right {
-    box-shadow: none;
-  }
-}
 .user-archive button {
   background: $gds-color-gray-10;
   width: 100%;
   border-radius: 3px;
 }
 
-.user-stream {
-  .avatar-link {
-    margin-right: 100px;
-    float: right;
-  }
-}
 .stream-topic-details {
   .stream-topic-title a {
     color: $gds-color-black;
     font-weight: $gds-font-weight-semibold;
-  }
-}
-.topic-list {
-  td {
-    padding: 40px 0;
   }
 }
 

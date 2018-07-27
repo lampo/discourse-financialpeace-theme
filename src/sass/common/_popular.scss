@@ -1,5 +1,7 @@
 .popular-wrapper {
+  padding: 10px;
   @include gds-respond-to(lap-wide-and-up) {
+    padding: 25px 35px;
     width: 320px;
   }
 }

@@ -1,13 +1,9 @@
 .container {
   background-color: $gds-color-white;
-  
+
   &.list-container {
     background: $gds-color-white;
     margin-bottom: 10px;
-    padding: 0;
-    @include gds-respond-to(lap-and-up) {
-      padding: 3rem;
-    }
   }
 }
 
@@ -17,9 +13,14 @@
 
 .list-controls {
   background: $gds-color-white;
-  padding: 3rem 3rem 0;
   .btn {
     background: $gds-color-blue-50;
+    border-radius: 3px;
     color: $gds-color-white;
   }
 }
+
+.container li.active a {
+  border-radius: 3px;
+}
+
