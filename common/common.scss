@@ -3224,7 +3224,7 @@ html {
 body {
   background: $gds-color-gray-10;
   font-family: $gds-font-family;
-  @include gds-typeset(xs);
+  @include gds-typeset(s);
 }
 
 header {
