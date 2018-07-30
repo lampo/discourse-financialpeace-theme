@@ -11,14 +11,13 @@
 @import "mixins";
 
 html {
-  background: $gds-color-gray-10;
   scroll-behavior: smooth;
-  @include gds-typeset(xs);
 }
 
 body {
   background: $gds-color-gray-10;
   font-family: $gds-font-family;
+  @include gds-typeset(xs);
 }
 
 header {
