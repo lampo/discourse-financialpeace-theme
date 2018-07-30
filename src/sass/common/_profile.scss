@@ -42,6 +42,10 @@
   border: none;
   box-shadow: none;
 
+  .details .primary h1 {
+    font-weight: $gds-font-weight-semibold;;
+  }
+
   .controls {
     li {
       margin: 0;

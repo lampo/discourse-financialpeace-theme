@@ -3218,14 +3218,13 @@ $gds-border-radius-m: 8px;
 
 
 html {
-  background: $gds-color-gray-10;
   scroll-behavior: smooth;
-  @include gds-typeset(xs);
 }
 
 body {
   background: $gds-color-gray-10;
   font-family: $gds-font-family;
+  @include gds-typeset(xs);
 }
 
 header {
@@ -3757,6 +3756,10 @@ a.tech-support {
   border: none;
   box-shadow: none;
 
+  .details .primary h1 {
+    font-weight: $gds-font-weight-semibold;;
+  }
+
   .controls {
     li {
       margin: 0;
@@ -4011,12 +4014,12 @@ a.tech-support {
 
 .financial-peace {
   .top-nav-hamburger {
-    position: absolute;
-    top: 28px;
-    left: 20px;
-    width: 30px;
     height: 30px;
-    z-index: 2;
+    position: absolute;
+    left: 16px;
+    top: 24px;
+    width: 30px;
+    z-index: 1002;
     &:hover {
       color: $gds-color-blue-40;
       cursor: pointer;
@@ -4024,8 +4027,9 @@ a.tech-support {
   }
   .fpu-global-nav {
     position: absolute;
-    top: 72px; 
+    top: 60px; 
     left: 0;
+    z-index: 1001;
     ul {
       box-shadow: inset 0px 1px 6px #ccc;
       margin: 0;
@@ -4059,10 +4063,13 @@ a.tech-support {
   }
 
   .d-header {
-    position: fixed;
     height: 4rem;
-  }
-  
+    position: fixed;
+    .title {
+      margin-left: 40px;
+    }
+  } 
+
   .d-header-icons {
     #toggle-hamburger-menu {
       display: none;
@@ -4323,10 +4330,6 @@ th.activity.num {
     font-size: 18px;
     font-weight: $gds-font-weight-normal;
   }
-}
-
-.d-header .title {
-  margin-left: 40px;
 }
 
 .date-section {
