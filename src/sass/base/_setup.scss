@@ -35,9 +35,6 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   @include gds-typeset(l);
-  @include gds-respond-to(lap-and-up) {
-    @include gds-typeset(xl);
-  }
 }
 
 h2 {
@@ -116,26 +113,4 @@ section.container {
       background-position-x: left;
     }
   }
-}
-
-%gds-link {
-  text-decoration: none;
-}
-
-.gds-Button, 
-.gds-Button--alternate {
-  &:visited {
-    color: $gds-color-white;
-  }
-  &:hover {
-    color: $gds-color-white;
-  }
-  &:active {
-    color: $gds-color-white;
-  }
-}
-
-.select-kit.combo-box.tag-drop .select-kit-row, 
-.select-kit.combo-box.group-dropdown .select-kit-row {
-  font-weight: $gds-font-weight-semibold;;
 }
