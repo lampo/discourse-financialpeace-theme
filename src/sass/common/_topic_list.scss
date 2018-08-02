@@ -34,15 +34,16 @@
       font-size: 1.1rem;
       font-weight: $gds-font-weight-semibold;
     }     
-    .posters>a:nth-child(1n+4) {
-      display: none;
-    }
   }
   .age.activity,
   .posts-map.post,
   .views {
     display: none;
   }
+}
+
+.topic-list-item .posters>a:nth-child(1n+4) {
+  display: none;
 }
 
 .topic-poster img {

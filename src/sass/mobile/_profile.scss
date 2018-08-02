@@ -2,6 +2,34 @@
   margin: 0;
 }
 
-.mobile-view .mobile-nav {
-  width: 48%;
+.user-archive button {
+  width: 100%;
 }
+
+.mobile-view{
+   .mobile-nav {
+    background: $gds-color-white;
+    border: 1px solid $gds-color-blue-50;
+    color: $gds-color-black;
+    min-width: 48%;
+
+    &.messages-nav,
+    &.notifications-nav,
+    &.activity-nav,
+    &.preferences-nav {
+      top: -60px;
+    }
+
+    a .fa {
+      color: $gds-color-blue-50;
+    }
+  }
+}
+
+.admin-controls {
+  background: $gds-color-white;
+  .btn {
+    margin: 5px 0 5px 10px;
+  }
+}
+

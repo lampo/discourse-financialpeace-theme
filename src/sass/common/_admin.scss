@@ -5,3 +5,7 @@
 .version-check .version-number {
   font-size: 1em;
 }
+
+.admin-controls .nav.nav-pills>li a.active {
+  background: $gds-color-blue-50;
+}
