@@ -1,0 +1,8 @@
+.error-page {
+  .face {
+    @include gds-typeset(xl);
+  }
+  .reason {
+    @include gds-typeset(m);
+  }
+}

@@ -60,13 +60,9 @@
     #toggle-hamburger-menu {
       display: none;
     }
-    .badge-notification {
-      border-radius: 50%;
-      min-width: initial;
-    }
     .icon img.avatar {
-      width: 1.6rem;
-      height: 1.4rem;
+      height: auto;
+      width: 2rem;
     }
     .ring {
       right: 6px;
@@ -74,8 +70,9 @@
     }
     .unread-private-messages {
       background: $gds-color-amber-50;
-      right: 6px;
-      top: 4px;
+    }
+    .unread-notifications {
+      background-color: $gds-color-blue-50;
     }
   } 
 }
