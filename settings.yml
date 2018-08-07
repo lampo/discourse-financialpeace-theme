@@ -12,11 +12,15 @@ links:
 icons:
   type: list
   default: ''
-daily_check_in:
+daily_check_in_url:
   type: string
-  default: ''
+  default: '/new-topic'
   description: "Enter full url for the Daily Check-in link on Homepage."
+daily_check_in_text:
+  type: string
+  default: 'Ask a Question'
+  description: "Enter text for the Daily Check-in button on Homepage."
 introduce_yourself:
   type: string
-  default: ''
+  default: 'Introduce Yourself'
   description: "Enter full url for Introduce Yourself link on Homepage."
