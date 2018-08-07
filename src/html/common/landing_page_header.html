@@ -1,10 +1,28 @@
 <script type="text/discourse-plugin" version="0.8.13">
   $(document).ready(function() {
-    $('#daily-check-in').attr("href", settings.daily_check_in_url);
-    $('#daily-check-in').text(settings.daily_check_in_text);
+    if ($('#daily-check-in').length) {
+      $('#daily-check-in').attr("href", settings.daily_check_in_url);
+      $('#daily-check-in').text(settings.daily_check_in_text);
+    }
+
+    if ($('#current-user').length) {
+      var image_bell = 'https://cdn.ramseysolutions.net/church/fpu/images/icon-bell.svg';
+      $('#current-user').find('img')[0].setAttribute('src', image_bell);
+    }
+    setTimeout(function() {
+      $('#js_fpu_global_nav > ul').css('transition', 'margin 0.4s').delay(1000);
+    }, 2000);
+    $('#js_top_nav_hamburger').click(function(e) {
+      $('#js_fpu_global_nav > ul').toggleClass('open-top-nav');
+      e.stopPropagation();
+    });
+    $(document).on("click", function(e) {
+      if ($(e.target).is("#js_fpu_global_nav > ul") === false) {
+        $('#js_fpu_global_nav > ul').removeClass('open-top-nav');
+      }
+    });
   });
 </script>
-  
 
 <script type='text/x-handlebars' data-template-name='/connectors/below-site-header/add-landing-page-content'>
   <div class="homepage-wrapper">
@@ -265,26 +283,4 @@
       </div>
     </div>
   </div>
-</script>
-
-<script type="text/discourse-plugin" version="0.8.13">
-$(document).ready(function() {
-  $('#daily-check-in').attr("href", settings.daily_check_in);
-  if ($('#current-user').length) {
-    var image_bell = 'https://cdn.ramseysolutions.net/church/fpu/images/icon-bell.svg';
-    $('#current-user').find('img')[0].setAttribute('src', image_bell);
-  }
-  setTimeout(function() {
-    $('#js_fpu_global_nav > ul').css('transition', 'margin 0.4s').delay(1000);
-  }, 2000);
-  $('#js_top_nav_hamburger').click(function(e) {
-    $('#js_fpu_global_nav > ul').toggleClass('open-top-nav');
-    e.stopPropagation();
-  });
-  $(document).on("click", function(e) {
-    if ($(e.target).is("#js_fpu_global_nav > ul") === false) {
-      $('#js_fpu_global_nav > ul').removeClass('open-top-nav');
-    }
-  });
-});
 </script>
