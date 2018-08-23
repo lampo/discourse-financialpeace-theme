@@ -16,13 +16,13 @@ api.decorateWidget('header:before', helper => {
   if(!showExtraInfo) {
     var menu_li = [
       helper.h('li', 
-        fpu_link('lessons')
+        fpu_link('lessons', 'Learn')
       ),
       helper.h('li', 
         fpu_link('resources')
       ),
       helper.h('li', 
-        fpu_link('budget', 'everydollar')
+        fpu_link('budget', 'Everydollar')
       ),
       helper.h('li.active', [
         fpu_link('/', 'connect', false)
@@ -31,7 +31,7 @@ api.decorateWidget('header:before', helper => {
         fpu_link('ask-a-couch/new', 'Ask a Coach')
       ]),
       helper.h('li', [
-        fpu_link('join-a-group', 'classes')
+        fpu_link('join-a-group', 'Groups')
       ]),
     ];
     var admin_li = helper.h('li', [
