@@ -6,13 +6,9 @@
 <script type="text/discourse-plugin" version="0.8.13">
 api.decorateWidget('header:before', helper => {
 
-  var fpu_link = function(link, text = '', community) {
+  var fpu_link = function(link, text = '', fpu = true) {
     if (text === '') { text = link; }
-    if (community) { 
-      link = 'https://community.financialpeace.com/' + link;
-    } else {
-      link = 'https://www.financialpeace.com/' + link;
-    }
+    if (fpu) { link = 'https://www.financialpeace.com/' + link; }
 
     return [
       helper.h('a', {
@@ -34,7 +30,7 @@ api.decorateWidget('header:before', helper => {
         fpu_link('budget', 'everydollar')
       ),
       helper.h('li.active', [
-        fpu_link('connect')
+        fpu_link('/', 'connect', false)
       ]),
       helper.h('li', [
         fpu_link('ask-a-couch/new', 'Ask a Coach')
@@ -44,7 +40,7 @@ api.decorateWidget('header:before', helper => {
       ]),
     ];
     var admin_li = helper.h('li', [
-        fpu_link('admin', '', true)
+        fpu_link('/admin', 'admin', false)
     ]);
     if (Discourse.User.current().admin) {
       menu_li.push(admin_li);
