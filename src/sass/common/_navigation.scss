@@ -9,6 +9,7 @@
   }
 }
 
+.discourse-no-touch .btn, 
 .btn {
   background: $gds-color-blue-50;
   border-radius: $gds-border-radius-s;
@@ -17,14 +18,18 @@
   &[href] {
     color: $gds-color-white;
   }
-  
+
   &:hover, &.btn-hover {
     background-color: $gds-color-blue-10;
     color: $gds-color-blue-50;
   }
+
+  .d-icon {
+    color: $gds-color-white;
+  }
 }
 
-.nav-pills>li{
+.nav-pills>li.active{
   &.navigation-toggle a.toggle-link:hover {
       background: $gds-color-white;
       border-radius: unset;

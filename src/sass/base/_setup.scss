@@ -1,12 +1,9 @@
 @import url("https://use.typekit.net/ndh0ilz.css");
 @import "gazelle-design-system/sass/tools";
-@import "gazelle-design-system/sass/base";
-@import "gazelle-design-system/sass/utilities";
-@import "gazelle-design-system/sass/components/button";
-@import "gazelle-design-system/sass/components/hero";
-@import "gazelle-design-system/sass/components/feature_group";
-@import "gazelle-design-system/sass/components/card";
-@import "gazelle-design-system/sass/design-tokens";
+@import "gazelle-design-system/components/button/button";
+@import "gazelle-design-system/components/card/card";
+@import "gazelle-design-system/sass/slices/feature_group";
+@import "gazelle-design-system/sass/slices/hero";
 @import "variables"; // Override variables
 @import "mixins";
 

@@ -33,7 +33,7 @@
 
   function startHere() {
     if ($(".start-here-item").length > 0) return;
-    $.get("/c/get-started.json", startHereDataSuccess);
+    $.get("/top.json", startHereDataSuccess);
   };
 
   var linkTags = function(tags) {
