@@ -3118,6 +3118,11 @@ a.tech-support {
   }
 } 
 
+.nav-pills>li.active>a,
+.nav-pills>li>a.active {
+  background-color: $gds-color-blue-50;
+}
+
 .nav-pills>li>a:hover {
   background-color: $gds-color-blue-10;
   color: $gds-color-blue-50;
