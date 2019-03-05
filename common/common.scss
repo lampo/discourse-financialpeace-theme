@@ -3104,7 +3104,6 @@ a.tech-support {
   }
   a {
     border-radius: $gds-border-radius-s;
-    background-color: $gds-color-blue-50;
     .d-icon {
       color: $gds-color-blue-50;
     }
@@ -3118,6 +3117,11 @@ a.tech-support {
     }
   }
 } 
+
+.nav-pills>li>a:hover {
+  background-color: $gds-color-blue-10;
+  color: $gds-color-blue-50;
+}
 
 .select-kit {
   &.combo-box.tag-drop .select-kit-row, 
