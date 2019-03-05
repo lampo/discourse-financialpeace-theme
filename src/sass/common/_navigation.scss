@@ -11,7 +11,7 @@
 
 .discourse-no-touch .btn, 
 .btn {
-  background: $gds-color-blue-50;
+  background-color: $gds-color-blue-50;
   border-radius: $gds-border-radius-s;
   color: $gds-color-white;
 
@@ -32,17 +32,17 @@
 .nav-pills>li, 
 .nav-pills>li.active{
   &.navigation-toggle a.toggle-link:hover {
-      background: $gds-color-white;
+      background-color: $gds-color-white;
       border-radius: unset;
   }
   a {
     border-radius: $gds-border-radius-s;
-    background: $gds-color-blue-50;
+    background-color: $gds-color-blue-50;
     .d-icon {
       color: $gds-color-blue-50;
     }
     &.active {
-      background: $gds-color-blue-50;
+      background-color: $gds-color-blue-50;
       border-radius: $gds-border-radius-s;
       color: $gds-color-white;
       .d-icon {
@@ -70,7 +70,7 @@
 
 .list-controls {
   .combo-box .combo-box-header {
-    background: $gds-color-white;
+    background-color: $gds-color-white;
     border: 1px solid $gds-color-blue-50;
     color: $gds-color-black;
   }
@@ -78,7 +78,7 @@
     color: $gds-color-blue-50;
   }
   .nav-pills .navigation-toggle {
-    background: $gds-color-white;
+    background-color: $gds-color-white;
     border: 1px solid $gds-color-blue-50;
     color: $gds-color-black;
     margin-bottom: 0;
