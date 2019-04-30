@@ -12,7 +12,8 @@ tmp/
 # ignore files
 .DS_Store
 .discourse-site
-.vscode
+.ruby-version
+.tool-versions
 *.log
 *.tgz
 *.tar.gz
