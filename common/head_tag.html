@@ -119,6 +119,24 @@ api.decorateWidget('header:before', helper => {
     });
   });
 </script>
+<script type="text/discourse-plugin" version="0.8">
+  $(document).ready(function() {
+    $('a[href="/new-topic"]').on('click', function(event) {
+      event.preventDefault();
+      var $createTopicButton = $("#create-topic");
+      if ($createTopicButton.length) {
+        $createTopicButton.click();
+      } else {
+        var new_topic_url = document.location.protocol + '//' + document.location.host;
+        if (document.location.port != '') {
+          new_topic_url = new_topic_url + ':' + document.location.port;
+        }
+        new_topic_url = new_topic_url + '/new-topic';
+        document.location = new_topic_url;
+      }
+    });
+  });
+</script>
 
 <script type='text/x-handlebars' data-template-name='/connectors/below-site-header/add-landing-page-content'>
   <div class="homepage-wrapper">
