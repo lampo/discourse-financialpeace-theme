@@ -3783,6 +3783,15 @@ th.activity.num {
   }
 }
 
+.timeline-container {
+  .topic-timeline {
+    .timeline-footer-controls,
+    .timeline-scrollarea-wrapper {
+        display: none;
+    }    
+  }
+}
+
 .title-wrapper {
   .topic-status,
   .edit-topic {
