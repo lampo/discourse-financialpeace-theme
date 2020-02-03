@@ -9,6 +9,22 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl+q;f.parentNode.insertBefore(j,f);
   })(window,document,'script','gtmDataLayer','GTM-5Z3Z28D');
 </script>
+
+<link rel="preload" href="https://cdn.optimizely.com/public/7808901045/s/rs_church_d2c.js" as="script" type="text/javascript">
+<script src="https://cdn.optimizely.com/public/7808901045/s/rs_church_d2c.js"></script>
+<script type="text/discourse-plugin" version="0.8.13">
+  $(document).ready(function() {
+    window.optimizely = window.optimizely || [];
+    window.optimizely.push({
+      'type': 'waitForOriginSync',
+      'canonicalOrigins': [
+        'daveramsey.com',
+        'financialpeace.com'
+      ]
+    });
+  });
+</script>
+
 <script type="text/discourse-plugin" version="0.8.13">
   $(document).ready(function() {
     document.body.className += " " + "financial-peace";
