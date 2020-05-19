@@ -1,5 +1,6 @@
 # ignore cached dependency files
 node_modules/
+yarn.lock
 
 # ignore documentation source files
 sassdoc/
@@ -14,6 +15,7 @@ tmp/
 .discourse-site
 .ruby-version
 .tool-versions
+.vscode
 *.log
 *.tgz
 *.tar.gz
