@@ -38,6 +38,7 @@ h2 {
   font-size: 2rem;
   line-height: 1.875rem;
 }
+
 .body-page h2 {
   @include gds-typeset(m);
   @include gds-respond-to(lap-and-up) {
@@ -51,6 +52,10 @@ h3 {
   @include gds-respond-to(lap-and-up) {
     @include gds-typeset(m);
   }
+}
+
+.d-header-wrap{
+  position: fixed;
 }
 
 .call-out {
