@@ -1012,7 +1012,7 @@ gaze@^1.0.0:
 
 gazelle-design-system@^0.27.2:
   version "0.27.4"
-  resolved "https://npm-proxy.fury.io/dm3hysRnxkfYgkxkDCd7/lampogroup/~/d/gazelle-design-system/gazelle-design-system-0.27.4#3c0438d1420c209e94a4ac963665594618d7feb7"
+  resolved "https://npm-proxy.fury.io/1jxRej-fqif0eLuEO8sdHq4wAPMvQv6ps/lampogroup/~/d/gazelle-design-system/gazelle-design-system-0.27.4#3c0438d1420c209e94a4ac963665594618d7feb7"
   integrity sha1-PAQ40UIMIJ6UpKyWNmVZRhjX/rc=
   dependencies:
     normalize.css "8.0.0"
@@ -2417,7 +2417,7 @@ qs@~6.5.2:
 
 ramsey-boilerplate@^1.3.2:
   version "1.6.0"
-  resolved "https://npm-proxy.fury.io/dm3hysRnxkfYgkxkDCd7/lampogroup/~/d/ramsey-boilerplate/ramsey-boilerplate-1.6.0#6701ed89ad6e3ae3e71dac7db0ea3d2345900110"
+  resolved "https://npm-proxy.fury.io/1jxRej-fqif0eLuEO8sdHq4wAPMvQv6ps/lampogroup/~/d/ramsey-boilerplate/ramsey-boilerplate-1.6.0#6701ed89ad6e3ae3e71dac7db0ea3d2345900110"
   integrity sha1-ZwHtia1uOuPnHax9sOo9I0WQARA=
   dependencies:
     normalize.css "^8.0.0"
